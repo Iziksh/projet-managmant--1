@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: ThreadSafe::Util::Striped64::Cell</title>
+
+  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../../lib/thread_safe/util/striped64_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/thread_safe/util/striped64.rb">lib/thread_safe/util/striped64.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">AtomicReference</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-cas_computed">#cas_computed</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../../ThreadSafe.html">ThreadSafe</a></li>
+        
+          <li><a href="../../../ThreadSafe/Array.html">ThreadSafe::Array</a></li>
+        
+          <li><a href="../../../ThreadSafe/AtomicReferenceCacheBackend.html">ThreadSafe::AtomicReferenceCacheBackend</a></li>
+        
+          <li><a href="../../../ThreadSafe/AtomicReferenceCacheBackend/Node.html">ThreadSafe::AtomicReferenceCacheBackend::Node</a></li>
+        
+          <li><a href="../../../ThreadSafe/AtomicReferenceCacheBackend/Table.html">ThreadSafe::AtomicReferenceCacheBackend::Table</a></li>
+        
+          <li><a href="../../../ThreadSafe/Cache.html">ThreadSafe::Cache</a></li>
+        
+          <li><a href="../../../ThreadSafe/Hash.html">ThreadSafe::Hash</a></li>
+        
+          <li><a href="../../../ThreadSafe/MriCacheBackend.html">ThreadSafe::MriCacheBackend</a></li>
+        
+          <li><a href="../../../ThreadSafe/NonConcurrentCacheBackend.html">ThreadSafe::NonConcurrentCacheBackend</a></li>
+        
+          <li><a href="../../../ThreadSafe/SynchronizedCacheBackend.html">ThreadSafe::SynchronizedCacheBackend</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util.html">ThreadSafe::Util</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/Adder.html">ThreadSafe::Util::Adder</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/CheapLockable.html">ThreadSafe::Util::CheapLockable</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/PowerOfTwoTuple.html">ThreadSafe::Util::PowerOfTwoTuple</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/Striped64.html">ThreadSafe::Util::Striped64</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/Striped64/Cell.html">ThreadSafe::Util::Striped64::Cell</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/Volatile.html">ThreadSafe::Util::Volatile</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/VolatileTuple.html">ThreadSafe::Util::VolatileTuple</a></li>
+        
+          <li><a href="../../../ThreadSafe/Util/XorShiftRandom.html">ThreadSafe::Util::XorShiftRandom</a></li>
+        
+          <li><a href="../../../SynchronizedDelegator.html">SynchronizedDelegator</a></li>
+        
+          <li><a href="../../../Threadsafe.html">Threadsafe</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">ThreadSafe::Util::Striped64::Cell</h1>
+
+    <div id="description" class="description">
+      
+<p>Padded variant of AtomicLong supporting only raw accesses plus CAS. The
+<tt>value</tt> field is placed between pads, hoping that the JVM doesn’t
+reorder them.</p>
+
+<p>Optimisation note: It would be possible to use a release-only form of CAS
+here, if it were provided.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="cas_computed-method" class="method-detail ">
+          <a name="method-i-cas_computed"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cas_computed</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cas_computed-source">
+<pre>
+<span class="ruby-comment"># File lib/thread_safe/util/striped64.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cas_computed</span>
+  <span class="ruby-identifier">cas</span>(<span class="ruby-identifier">current_value</span> = <span class="ruby-identifier">value</span>, <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">current_value</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cas_computed-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cas_computed-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

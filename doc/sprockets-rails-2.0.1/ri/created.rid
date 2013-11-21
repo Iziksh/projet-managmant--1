@@ -1,0 +1,7 @@
+Tue, 19 Nov 2013 19:56:32 +0200
+lib/sprockets/railtie.rb	Tue, 19 Nov 2013 19:54:14 +0200
+lib/sprockets/rails.rb	Tue, 19 Nov 2013 19:54:14 +0200
+lib/sprockets/rails/legacy_asset_url_helper.rb	Tue, 19 Nov 2013 19:54:14 +0200
+lib/sprockets/rails/task.rb	Tue, 19 Nov 2013 19:54:14 +0200
+lib/sprockets/rails/helper.rb	Tue, 19 Nov 2013 19:54:14 +0200
+lib/sprockets/rails/legacy_asset_tag_helper.rb	Tue, 19 Nov 2013 19:54:14 +0200

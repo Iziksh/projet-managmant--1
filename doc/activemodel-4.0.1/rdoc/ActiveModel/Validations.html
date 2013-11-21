@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveModel::Validations</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/active_model/validations_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations.rb">lib/active_model/validations.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/numericality_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/numericality.rb">lib/active_model/validations/numericality.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/absence_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/absence.rb">lib/active_model/validations/absence.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/callbacks_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/callbacks.rb">lib/active_model/validations/callbacks.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/confirmation_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/confirmation.rb">lib/active_model/validations/confirmation.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/presence_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/presence.rb">lib/active_model/validations/presence.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/clusivity_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/clusivity.rb">lib/active_model/validations/clusivity.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/acceptance_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/acceptance.rb">lib/active_model/validations/acceptance.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/with_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/with.rb">lib/active_model/validations/with.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/length_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/length.rb">lib/active_model/validations/length.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/inclusion_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/inclusion.rb">lib/active_model/validations/inclusion.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/validates_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/validates.rb">lib/active_model/validations/validates.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/exclusion_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/exclusion.rb">lib/active_model/validations/exclusion.rb</a></li>
+          
+            <li><a href="../lib/active_model/validations/format_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/validations/format.rb">lib/active_model/validations/format.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-errors">#errors</a></li>
+          
+          <li><a href="#method-i-invalid-3F">#invalid?</a></li>
+          
+          <li><a href="#method-i-valid-3F">#valid?</a></li>
+          
+          <li><a href="#method-i-validates_with">#validates_with</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActiveModel.html">ActiveModel</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+        
+          <li><a href="../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+        
+          <li><a href="../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+        
+          <li><a href="../ActiveModel/ForbiddenAttributesError.html">ActiveModel::ForbiddenAttributesError</a></li>
+        
+          <li><a href="../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+        
+          <li><a href="../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+        
+          <li><a href="../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+        
+          <li><a href="../ActiveModel/Model.html">ActiveModel::Model</a></li>
+        
+          <li><a href="../ActiveModel/Name.html">ActiveModel::Name</a></li>
+        
+          <li><a href="../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword.html">ActiveModel::SecurePassword</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods.html">ActiveModel::SecurePassword::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods/InstanceMethodsOnActivation.html">ActiveModel::SecurePassword::ClassMethods::InstanceMethodsOnActivation</a></li>
+        
+          <li><a href="../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+        
+          <li><a href="../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+        
+          <li><a href="../ActiveModel/StrictValidationFailed.html">ActiveModel::StrictValidationFailed</a></li>
+        
+          <li><a href="../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+        
+          <li><a href="../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveModel::Validations</h1>
+
+    <div id="description" class="description">
+      
+<h2>Active Model <a href="Validations.html">Validations</a></h2>
+
+<p>Provides a full validation framework to your objects.</p>
+
+<p>A minimal implementation could be:</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  attr_accessor :first_name, :last_name
+
+  validates_each :first_name, :last_name do |record, attr, value|
+    record.errors.add attr, 'starts with z.' if value.to_s[0] == ?z
+  end
+end</pre>
+
+<p>Which provides you with the full standard validation stack that you know
+from Active Record:</p>
+
+<pre>person = Person.new
+person.valid?                   # =&gt; true
+person.invalid?                 # =&gt; false
+
+person.first_name = 'zoolander'
+person.valid?                   # =&gt; false
+person.invalid?                 # =&gt; true
+person.errors.messages          # =&gt; {first_name:[&quot;starts with z.&quot;]}</pre>
+
+<p>Note that <tt>ActiveModel::Validations</tt> automatically adds an
+<tt>errors</tt> method to your instances initialized with a new
+<tt>ActiveModel::Errors</tt> object, so there is no need for you to do this
+manually.</p>
+<hr style="height: 1px">
+
+<h2>Active Model Length Validator</h2>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="errors-method" class="method-detail ">
+          <a name="method-i-errors"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">errors</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the <tt>Errors</tt> object that holds all information about
+attribute error messages.</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  attr_accessor :name
+  validates_presence_of :name
+end
+
+person = Person.new
+person.valid? # =&gt; false
+person.errors # =&gt; #&lt;ActiveModel::Errors:0x007fe603816640 @messages={name:[&quot;can't be blank&quot;]}&gt;</pre>
+            
+
+            
+            <div class="method-source-code" id="errors-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/validations.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">errors</span>
+  <span class="ruby-ivar">@errors</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Errors</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- errors-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- errors-method -->
+
+      
+        <div id="invalid-3F-method" class="method-detail ">
+          <a name="method-i-invalid-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">invalid?</span><span
+              class="method-args">(context = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Performs the opposite of <tt>valid?</tt>. Returns <tt>true</tt> if errors
+were added, <tt>false</tt> otherwise.</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  attr_accessor :name
+  validates_presence_of :name
+end
+
+person = Person.new
+person.name = ''
+person.invalid? # =&gt; true
+person.name = 'david'
+person.invalid? # =&gt; false</pre>
+
+<p>Context can optionally be supplied to define which callbacks to test
+against (the context is defined on the validations using <tt>:on</tt>).</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  attr_accessor :name
+  validates_presence_of :name, on: :new
+end
+
+person = Person.new
+person.invalid?       # =&gt; false
+person.invalid?(:new) # =&gt; true</pre>
+            
+
+            
+            <div class="method-source-code" id="invalid-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/validations.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invalid?</span>(<span class="ruby-identifier">context</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">context</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- invalid-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- invalid-3F-method -->
+
+      
+        <div id="valid-3F-method" class="method-detail ">
+          <a name="method-i-valid-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">valid?</span><span
+              class="method-args">(context = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs all the specified validations and returns <tt>true</tt> if no errors
+were added otherwise <tt>false</tt>.</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  attr_accessor :name
+  validates_presence_of :name
+end
+
+person = Person.new
+person.name = ''
+person.valid? # =&gt; false
+person.name = 'david'
+person.valid? # =&gt; true</pre>
+
+<p>Context can optionally be supplied to define which callbacks to test
+against (the context is defined on the validations using <tt>:on</tt>).</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  attr_accessor :name
+  validates_presence_of :name, on: :new
+end
+
+person = Person.new
+person.valid?       # =&gt; true
+person.valid?(:new) # =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="valid-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/validations.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">context</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">current_context</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validation_context</span> = <span class="ruby-identifier">validation_context</span>, <span class="ruby-identifier">context</span>
+  <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-identifier">run_validations!</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validation_context</span> = <span class="ruby-identifier">current_context</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- valid-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- valid-3F-method -->
+
+      
+        <div id="validates_with-method" class="method-detail ">
+          <a name="method-i-validates_with"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">validates_with</span><span
+              class="method-args">(*args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Passes the record off to the class or classes specified and allows them to
+add errors based on more complex conditions.</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  validate :instance_validations
+
+  def instance_validations
+    validates_with MyValidator
+  end
+end</pre>
+
+<p>Please consult the class method documentation for more information on
+creating your own validator.</p>
+
+<p>You may also pass it multiple classes, like so:</p>
+
+<pre>class Person
+  include ActiveModel::Validations
+
+  validate :instance_validations, on: :create
+
+  def instance_validations
+    validates_with MyValidator, MyOtherValidator
+  end
+end</pre>
+
+<p>Standard configuration options (<tt>:on</tt>, <tt>:if</tt> and
+<tt>:unless</tt>), which are available on the class version of
+<tt>validates_with</tt>, should instead be placed on the <tt>validates</tt>
+method as these are applied and tested in the callback.</p>
+
+<p>If you pass any additional configuration options, they will be passed to
+the class and available as <tt>options</tt>, please refer to the class
+version of this method for more information.</p>
+            
+
+            
+            <div class="method-source-code" id="validates_with-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/validations/with.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validates_with</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">validator</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">validator</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- validates_with-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- validates_with-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

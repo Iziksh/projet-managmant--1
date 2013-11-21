@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: ActiveModel::Name</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/active_model/naming_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/naming.rb">lib/active_model/naming.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-21-7E">#!~</a></li>
+          
+          <li><a href="#method-i-3C-3D-3E">#<=></a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-3D-3D-3D">#===</a></li>
+          
+          <li><a href="#method-i-3D-7E">#=~</a></li>
+          
+          <li><a href="#method-i-eql-3F">#eql?</a></li>
+          
+          <li><a href="#method-i-human">#human</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-to_str">#to_str</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Comparable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActiveModel.html">ActiveModel</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+        
+          <li><a href="../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+        
+          <li><a href="../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+        
+          <li><a href="../ActiveModel/ForbiddenAttributesError.html">ActiveModel::ForbiddenAttributesError</a></li>
+        
+          <li><a href="../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+        
+          <li><a href="../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+        
+          <li><a href="../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+        
+          <li><a href="../ActiveModel/Model.html">ActiveModel::Model</a></li>
+        
+          <li><a href="../ActiveModel/Name.html">ActiveModel::Name</a></li>
+        
+          <li><a href="../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword.html">ActiveModel::SecurePassword</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods.html">ActiveModel::SecurePassword::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods/InstanceMethodsOnActivation.html">ActiveModel::SecurePassword::ClassMethods::InstanceMethodsOnActivation</a></li>
+        
+          <li><a href="../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+        
+          <li><a href="../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+        
+          <li><a href="../ActiveModel/StrictValidationFailed.html">ActiveModel::StrictValidationFailed</a></li>
+        
+          <li><a href="../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+        
+          <li><a href="../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">ActiveModel::Name</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="cache_key-attribute-method" class="method-detail">
+          <a name="cache_key"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">cache_key</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="collection-attribute-method" class="method-detail">
+          <a name="collection"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">collection</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="element-attribute-method" class="method-detail">
+          <a name="element"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">element</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="i18n_key-attribute-method" class="method-detail">
+          <a name="i18n_key"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">i18n_key</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="name-attribute-method" class="method-detail">
+          <a name="name"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">name</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="param_key-attribute-method" class="method-detail">
+          <a name="param_key"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">param_key</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="plural-attribute-method" class="method-detail">
+          <a name="plural"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">plural</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="route_key-attribute-method" class="method-detail">
+          <a name="route_key"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">route_key</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="singular-attribute-method" class="method-detail">
+          <a name="singular"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">singular</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="singular_route_key-attribute-method" class="method-detail">
+          <a name="singular_route_key"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">singular_route_key</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(klass, namespace = nil, name = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a new <a href="Name.html">ActiveModel::Name</a> instance. By
+default, the <tt>namespace</tt> and <tt>name</tt> option will take the
+namespace and name of the given class respectively.</p>
+
+<pre>module Foo
+  class Bar
+  end
+end
+
+ActiveModel::Name.new(Foo::Bar).to_s
+# =&gt; &quot;Foo::Bar&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">namespace</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Class name cannot be blank. You need to supply a name argument when anonymous class given&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">blank?</span>
+
+  <span class="ruby-ivar">@unnamespaced</span> = <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">/^#{namespace.name}::/</span>, <span class="ruby-string">''</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">namespace</span>
+  <span class="ruby-ivar">@klass</span>        = <span class="ruby-identifier">klass</span>
+  <span class="ruby-ivar">@singular</span>     = <span class="ruby-identifier">_singularize</span>(<span class="ruby-ivar">@name</span>)
+  <span class="ruby-ivar">@plural</span>       = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">pluralize</span>(<span class="ruby-ivar">@singular</span>)
+  <span class="ruby-ivar">@element</span>      = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">underscore</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">demodulize</span>(<span class="ruby-ivar">@name</span>))
+  <span class="ruby-ivar">@human</span>        = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">humanize</span>(<span class="ruby-ivar">@element</span>)
+  <span class="ruby-ivar">@collection</span>   = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">tableize</span>(<span class="ruby-ivar">@name</span>)
+  <span class="ruby-ivar">@param_key</span>    = (<span class="ruby-identifier">namespace</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">_singularize</span>(<span class="ruby-ivar">@unnamespaced</span>) <span class="ruby-operator">:</span> <span class="ruby-ivar">@singular</span>)
+  <span class="ruby-ivar">@i18n_key</span>     = <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">to_sym</span>
+
+  <span class="ruby-ivar">@route_key</span>          = (<span class="ruby-identifier">namespace</span> <span class="ruby-operator">?</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">pluralize</span>(<span class="ruby-ivar">@param_key</span>) <span class="ruby-operator">:</span> <span class="ruby-ivar">@plural</span>.<span class="ruby-identifier">dup</span>)
+  <span class="ruby-ivar">@singular_route_key</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">singularize</span>(<span class="ruby-ivar">@route_key</span>)
+  <span class="ruby-ivar">@route_key</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;_index&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@plural</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@singular</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="21-7E-method" class="method-detail ">
+          <a name="method-i-21-7E"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">!~(regexp)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>String#!~</tt>. Match the class name against the given
+regexp. Returns <tt>true</tt> if there is no match, otherwise
+<tt>false</tt>.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name !~ /Post/ # =&gt; false
+BlogPost.model_name !~ /\d/   # =&gt; true</pre>
+            
+
+            
+            <div class="method-source-code" id="21-7E-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 94</span>
+    </pre>
+            </div><!-- 21-7E-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 21-7E-method -->
+
+      
+        <div id="3C-3D-3E-method" class="method-detail ">
+          <a name="method-i-3C-3D-3E"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">==(other)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>String#&lt;=&gt;</tt>.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name &lt;=&gt; 'BlogPost'  # =&gt; 0
+BlogPost.model_name &lt;=&gt; 'Blog'      # =&gt; 1
+BlogPost.model_name &lt;=&gt; 'BlogPosts' # =&gt; -1</pre>
+            
+
+            
+            <div class="method-source-code" id="3C-3D-3E-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 61</span>
+    </pre>
+            </div><!-- 3C-3D-3E-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3C-3D-3E-method -->
+
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">==(other)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>String#==</tt>. Returns <tt>true</tt> if the class name
+and <tt>other</tt> are equal, otherwise <tt>false</tt>.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name == 'BlogPost'  # =&gt; true
+BlogPost.model_name == 'Blog Post' # =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 30</span>
+    </pre>
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+
+      
+        <div id="3D-3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">===(other)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>#==</tt>.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name === 'BlogPost'  # =&gt; true
+BlogPost.model_name === 'Blog Post' # =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 45</span>
+    </pre>
+            </div><!-- 3D-3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-3D-method -->
+
+      
+        <div id="3D-7E-method" class="method-detail ">
+          <a name="method-i-3D-7E"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">=~(regexp)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>String#=~</tt>. Match the class name against the given
+regexp. Returns the position where the match starts or <tt>nil</tt> if
+there is no match.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name =~ /Post/ # =&gt; 4
+BlogPost.model_name =~ /\d/   # =&gt; nil</pre>
+            
+
+            
+            <div class="method-source-code" id="3D-7E-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 78</span>
+    </pre>
+            </div><!-- 3D-7E-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-7E-method -->
+
+      
+        <div id="eql-3F-method" class="method-detail ">
+          <a name="method-i-eql-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">eql?(other)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>String#eql?</tt>. Returns <tt>true</tt> if the class name
+and <tt>other</tt> have the same length and content, otherwise
+<tt>false</tt>.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name.eql?('BlogPost')  # =&gt; true
+BlogPost.model_name.eql?('Blog Post') # =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="eql-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 110</span>
+    </pre>
+            </div><!-- eql-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- eql-3F-method -->
+
+      
+        <div id="human-method" class="method-detail ">
+          <a name="method-i-human"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">human</span><span
+              class="method-args">(options={})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Transform the model name into a more humane format, using I18n. By default,
+it will underscore then humanize the class name.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name.human # =&gt; &quot;Blog post&quot;</pre>
+
+<p>Specify <tt>options</tt> with additional translating options.</p>
+            
+
+            
+            <div class="method-source-code" id="human-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">human</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@human</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:lookup_ancestors</span>) <span class="ruby-operator">&amp;&amp;</span>
+                       <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:i18n_scope</span>)
+
+  <span class="ruby-identifier">defaults</span> = <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">lookup_ancestors</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">model_name</span>.<span class="ruby-identifier">i18n_key</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">defaults</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]
+  <span class="ruby-identifier">defaults</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@human</span>
+
+  <span class="ruby-identifier">options</span> = { <span class="ruby-value">:scope</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">i18n_scope</span>, <span class="ruby-value">:models</span>], <span class="ruby-value">:count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">defaults</span> }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:default</span>))
+  <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">translate</span>(<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">shift</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- human-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- human-method -->
+
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_s()</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns the class name.</p>
+
+<pre>class BlogPost
+  extend ActiveModel::Naming
+end
+
+BlogPost.model_name.to_s # =&gt; &quot;BlogPost&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 124</span>
+    </pre>
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+
+      
+        <div id="to_str-method" class="method-detail ">
+          <a name="method-i-to_str"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_str()</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Equivalent to <tt>to_s</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="to_str-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/naming.rb, line 131</span>
+<span class="ruby-identifier">delegate</span> <span class="ruby-value">:==</span>, <span class="ruby-value">:===</span>, <span class="ruby-value">:&lt;=&gt;</span>, <span class="ruby-value">:=~</span>, <span class="ruby-value">:&quot;!~&quot;</span>, <span class="ruby-value">:eql?</span>, <span class="ruby-value">:to_s</span>,
+         <span class="ruby-value">:to_str</span>, <span class="ruby-value">:to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:name</span>
+</pre>
+            </div><!-- to_str-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_str-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

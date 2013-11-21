@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveRecord::AttributeMethods</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/active_record_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record.rb">lib/active_record.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/query_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/query.rb">lib/active_record/attribute_methods/query.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/time_zone_conversion_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/time_zone_conversion.rb">lib/active_record/attribute_methods/time_zone_conversion.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/primary_key_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/primary_key.rb">lib/active_record/attribute_methods/primary_key.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/serialization_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/serialization.rb">lib/active_record/attribute_methods/serialization.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/write_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/write.rb">lib/active_record/attribute_methods/write.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/before_type_cast_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/before_type_cast.rb">lib/active_record/attribute_methods/before_type_cast.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/dirty_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/dirty.rb">lib/active_record/attribute_methods/dirty.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods/read_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods/read.rb">lib/active_record/attribute_methods/read.rb</a></li>
+          
+            <li><a href="../lib/active_record/attribute_methods_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/attribute_methods.rb">lib/active_record/attribute_methods.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-attribute_for_inspect">#attribute_for_inspect</a></li>
+          
+          <li><a href="#method-i-attribute_names">#attribute_names</a></li>
+          
+          <li><a href="#method-i-attribute_present-3F">#attribute_present?</a></li>
+          
+          <li><a href="#method-i-attributes">#attributes</a></li>
+          
+          <li><a href="#method-i-column_for_attribute">#column_for_attribute</a></li>
+          
+          <li><a href="#method-i-has_attribute-3F">#has_attribute?</a></li>
+          
+          <li><a href="#method-i-respond_to-3F">#respond_to?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">ActiveModel::AttributeMethods</span></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+        
+        
+        
+          <li><a class="include" href="AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActiveRecord.html">ActiveRecord</a></li>
+        
+          <li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+        
+          <li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+        
+          <li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+        
+          <li><a href="../ActiveRecord/Aggregations.html">ActiveRecord::Aggregations</a></li>
+        
+          <li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AssociationRelation.html">ActiveRecord::AssociationRelation</a></li>
+        
+          <li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+        
+          <li><a href="../ActiveRecord/Associations.html">ActiveRecord::Associations</a></li>
+        
+          <li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Associations/CollectionProxy.html">ActiveRecord::Associations::CollectionProxy</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeAssignment.html">ActiveRecord::AttributeAssignment</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods.html">ActiveRecord::AttributeMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Serialization/ClassMethods.html">ActiveRecord::AttributeMethods::Serialization::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+        
+          <li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+        
+          <li><a href="../ActiveRecord/Batches.html">ActiveRecord::Batches</a></li>
+        
+          <li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+        
+          <li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+        
+          <li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters.html">ActiveRecord::ConnectionAdapters</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::AbstractAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ColumnDumper.html">ActiveRecord::ConnectionAdapters::ColumnDumper</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool/Queue.html">ActiveRecord::ConnectionAdapters::ConnectionPool::Queue</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool/Reaper.html">ActiveRecord::ConnectionAdapters::ConnectionPool::Reaper</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Boolean.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Boolean</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Date.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Date</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/DateTime.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::DateTime</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Decimal.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Decimal</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Float.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Float</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Identity.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Identity</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Integer.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Integer</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Time.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Time</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Type.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Type</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ColumnDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ColumnDefinition</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ColumnMethods.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ColumnMethods</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::DatabaseStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Array.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Array</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Bit.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Bit</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Boolean.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Boolean</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Bytea.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Bytea</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Cidr.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Cidr</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Date.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Date</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Decimal.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Decimal</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Float.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Float</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Hstore.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Hstore</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Identity.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Identity</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Integer.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Integer</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Json.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Json</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Money.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Money</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Point.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Point</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Range.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Range</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Time.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Time</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Timestamp.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Timestamp</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Type.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Type</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/TypeMap.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::TypeMap</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Vector.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Vector</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Quoting.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Quoting</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ReferentialIntegrity.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ReferentialIntegrity</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/SchemaStatements.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Table.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Table</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/TableDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::TableDefinition</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Utils.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Utils</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn/ArrayParser.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn::ArrayParser</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn/Cast.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn::Cast</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter/ExplainPrettyPrinter.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::ExplainPrettyPrinter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter/StatementPool.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter/Version.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::Version</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SchemaCache.html">ActiveRecord::ConnectionAdapters::SchemaCache</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/StatementPool.html">ActiveRecord::ConnectionAdapters::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/TransactionState.html">ActiveRecord::ConnectionAdapters::TransactionState</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionHandling.html">ActiveRecord::ConnectionHandling</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+        
+          <li><a href="../ActiveRecord/Core.html">ActiveRecord::Core</a></li>
+        
+          <li><a href="../ActiveRecord/Core/ClassMethods.html">ActiveRecord::Core::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+        
+          <li><a href="../ActiveRecord/CounterCache/ClassMethods.html">ActiveRecord::CounterCache::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers.html">ActiveRecord::DynamicMatchers</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/FindBy.html">ActiveRecord::DynamicMatchers::FindBy</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/FindByBang.html">ActiveRecord::DynamicMatchers::FindByBang</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/Finder.html">ActiveRecord::DynamicMatchers::Finder</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/Method.html">ActiveRecord::DynamicMatchers::Method</a></li>
+        
+          <li><a href="../ActiveRecord/Explain.html">ActiveRecord::Explain</a></li>
+        
+          <li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+        
+          <li><a href="../ActiveRecord/FixtureSet.html">ActiveRecord::FixtureSet</a></li>
+        
+          <li><a href="../ActiveRecord/ImmutableRelation.html">ActiveRecord::ImmutableRelation</a></li>
+        
+          <li><a href="../ActiveRecord/Inheritance.html">ActiveRecord::Inheritance</a></li>
+        
+          <li><a href="../ActiveRecord/Inheritance/ClassMethods.html">ActiveRecord::Inheritance::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Integration.html">ActiveRecord::Integration</a></li>
+        
+          <li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+        
+          <li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+        
+          <li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+        
+          <li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+        
+          <li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+        
+          <li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+        
+          <li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+        
+          <li><a href="../ActiveRecord/Migration/CheckPending.html">ActiveRecord::Migration::CheckPending</a></li>
+        
+          <li><a href="../ActiveRecord/Migration/CommandRecorder.html">ActiveRecord::Migration::CommandRecorder</a></li>
+        
+          <li><a href="../ActiveRecord/Migration/CommandRecorder/StraightReversions.html">ActiveRecord::Migration::CommandRecorder::StraightReversions</a></li>
+        
+          <li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+        
+          <li><a href="../ActiveRecord/ModelSchema.html">ActiveRecord::ModelSchema</a></li>
+        
+          <li><a href="../ActiveRecord/ModelSchema/ClassMethods.html">ActiveRecord::ModelSchema::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+        
+          <li><a href="../ActiveRecord/NestedAttributes.html">ActiveRecord::NestedAttributes</a></li>
+        
+          <li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+        
+          <li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+        
+          <li><a href="../ActiveRecord/Persistence/ClassMethods.html">ActiveRecord::Persistence::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+        
+          <li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+        
+          <li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+        
+          <li><a href="../ActiveRecord/QueryMethods/WhereChain.html">ActiveRecord::QueryMethods::WhereChain</a></li>
+        
+          <li><a href="../ActiveRecord/Querying.html">ActiveRecord::Querying</a></li>
+        
+          <li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+        
+          <li><a href="../ActiveRecord/ReadonlyAttributes.html">ActiveRecord::ReadonlyAttributes</a></li>
+        
+          <li><a href="../ActiveRecord/ReadonlyAttributes/ClassMethods.html">ActiveRecord::ReadonlyAttributes::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotDestroyed.html">ActiveRecord::RecordNotDestroyed</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+        
+          <li><a href="../ActiveRecord/Reflection.html">ActiveRecord::Reflection</a></li>
+        
+          <li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+        
+          <li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+        
+          <li><a href="../ActiveRecord/Result.html">ActiveRecord::Result</a></li>
+        
+          <li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+        
+          <li><a href="../ActiveRecord/SQLCounter.html">ActiveRecord::SQLCounter</a></li>
+        
+          <li><a href="../ActiveRecord/Sanitization.html">ActiveRecord::Sanitization</a></li>
+        
+          <li><a href="../ActiveRecord/Sanitization/ClassMethods.html">ActiveRecord::Sanitization::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+        
+          <li><a href="../ActiveRecord/SchemaMigration.html">ActiveRecord::SchemaMigration</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping.html">ActiveRecord::Scoping</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/ClassMethods.html">ActiveRecord::Scoping::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Default.html">ActiveRecord::Scoping::Default</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Default/ClassMethods.html">ActiveRecord::Scoping::Default::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Named.html">ActiveRecord::Scoping::Named</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Named/ClassMethods.html">ActiveRecord::Scoping::Named::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+        
+          <li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+        
+          <li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+        
+          <li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+        
+          <li><a href="../ActiveRecord/StatementCache.html">ActiveRecord::StatementCache</a></li>
+        
+          <li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+        
+          <li><a href="../ActiveRecord/Store.html">ActiveRecord::Store</a></li>
+        
+          <li><a href="../ActiveRecord/Store/ClassMethods.html">ActiveRecord::Store::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks.html">ActiveRecord::Tasks</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks/DatabaseAlreadyExists.html">ActiveRecord::Tasks::DatabaseAlreadyExists</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks/DatabaseNotSupported.html">ActiveRecord::Tasks::DatabaseNotSupported</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks/DatabaseTasks.html">ActiveRecord::Tasks::DatabaseTasks</a></li>
+        
+          <li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+        
+          <li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+        
+          <li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+        
+          <li><a href="../ActiveRecord/TransactionIsolationError.html">ActiveRecord::TransactionIsolationError</a></li>
+        
+          <li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+        
+          <li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Translation.html">ActiveRecord::Translation</a></li>
+        
+          <li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+        
+          <li><a href="../ActiveRecord/UnknownPrimaryKey.html">ActiveRecord::UnknownPrimaryKey</a></li>
+        
+          <li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+        
+          <li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+        
+          <li><a href="../Mysql.html">Mysql</a></li>
+        
+          <li><a href="../Mysql/Result.html">Mysql::Result</a></li>
+        
+          <li><a href="../Mysql/Stmt.html">Mysql::Stmt</a></li>
+        
+          <li><a href="../Mysql/Time.html">Mysql::Time</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveRecord::AttributeMethods</h1>
+
+    <div id="description" class="description">
+      
+<h1>Active Record Attribute Methods</h1>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(attr_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the value of the attribute identified by <tt>attr_name</tt> after
+it has been typecast (for example, “2004-12-12” in a data column is cast to
+a date object, like Date.new(2004, 12, 12)). It raises
+<tt>ActiveModel::MissingAttributeError</tt> if the identified attribute is
+missing.</p>
+
+<p>Alias for the <tt>read_attribute</tt> method.</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+  belongs_to :organization
+end
+
+person = Person.new(name: 'Francesco', age: '22')
+person[:name] # =&gt; &quot;Francesco&quot;
+person[:age]  # =&gt; 22
+
+person = Person.select('id').first
+person[:name]            # =&gt; ActiveModel::MissingAttributeError: missing attribute: name
+person[:organization_id] # =&gt; ActiveModel::MissingAttributeError: missing attribute: organization_id</pre>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">attr_name</span>)
+  <span class="ruby-identifier">read_attribute</span>(<span class="ruby-identifier">attr_name</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">missing_attribute</span>(<span class="ruby-identifier">n</span>, <span class="ruby-identifier">caller</span>) }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]=</span><span
+              class="method-args">(attr_name, value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Updates the attribute identified by <tt>attr_name</tt> with the specified
+<tt>value</tt>. (Alias for the protected <tt>write_attribute</tt> method).</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+end
+
+person = Person.new
+person[:age] = '22'
+person[:age] # =&gt; 22
+person[:age] # =&gt; Fixnum</pre>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">attr_name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">write_attribute</span>(<span class="ruby-identifier">attr_name</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+
+      
+        <div id="attribute_for_inspect-method" class="method-detail ">
+          <a name="method-i-attribute_for_inspect"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attribute_for_inspect</span><span
+              class="method-args">(attr_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns an <tt>#inspect</tt>-like string for the value of the attribute
+<tt>attr_name</tt>. String attributes are truncated upto 50 characters, and
+Date and Time attributes are returned in the <tt>:db</tt> format. Other
+attributes return the value of <tt>#inspect</tt> without modification.</p>
+
+<pre>person = Person.create!(name: 'David Heinemeier Hansson ' * 3)
+
+person.attribute_for_inspect(:name)
+# =&gt; &quot;\&quot;David Heinemeier Hansson David Heinemeier Hansson D...\&quot;&quot;
+
+person.attribute_for_inspect(:created_at)
+# =&gt; &quot;\&quot;2012-10-22 00:15:07\&quot;&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="attribute_for_inspect-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attribute_for_inspect</span>(<span class="ruby-identifier">attr_name</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">read_attribute</span>(<span class="ruby-identifier">attr_name</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">50</span>
+    <span class="ruby-node">&quot;#{value[0..50]}...&quot;</span>.<span class="ruby-identifier">inspect</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Date</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>)
+    <span class="ruby-node">%(&quot;#{value.to_s(:db)}&quot;)</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">inspect</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- attribute_for_inspect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attribute_for_inspect-method -->
+
+      
+        <div id="attribute_names-method" class="method-detail ">
+          <a name="method-i-attribute_names"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attribute_names</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns an array of names for the attributes available on this object.</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+end
+
+person = Person.new
+person.attribute_names
+# =&gt; [&quot;id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;name&quot;, &quot;age&quot;]</pre>
+            
+
+            
+            <div class="method-source-code" id="attribute_names-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attribute_names</span>
+  <span class="ruby-ivar">@attributes</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- attribute_names-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attribute_names-method -->
+
+      
+        <div id="attribute_present-3F-method" class="method-detail ">
+          <a name="method-i-attribute_present-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attribute_present?</span><span
+              class="method-args">(attribute)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns <tt>true</tt> if the specified <tt>attribute</tt> has been set by
+the user or by a database load and is neither <tt>nil</tt> nor
+<tt>empty?</tt> (the latter only applies to objects that respond to
+<tt>empty?</tt>, most notably Strings). Otherwise, <tt>false</tt>. Note
+that it always returns <tt>true</tt> with boolean attributes.</p>
+
+<pre>class Task &lt; ActiveRecord::Base
+end
+
+person = Task.new(title: '', is_done: false)
+person.attribute_present?(:title)   # =&gt; false
+person.attribute_present?(:is_done) # =&gt; true
+person.name = 'Francesco'
+person.is_done = true
+person.attribute_present?(:title)   # =&gt; true
+person.attribute_present?(:is_done) # =&gt; true</pre>
+            
+
+            
+            <div class="method-source-code" id="attribute_present-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attribute_present?</span>(<span class="ruby-identifier">attribute</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">read_attribute</span>(<span class="ruby-identifier">attribute</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:empty?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">empty?</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- attribute_present-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attribute_present-3F-method -->
+
+      
+        <div id="attributes-method" class="method-detail ">
+          <a name="method-i-attributes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attributes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a hash of all the attributes with their names as keys and the
+values of the attributes as values.</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+end
+
+person = Person.create(name: 'Francesco', age: 22)
+person.attributes
+# =&gt; {&quot;id&quot;=&gt;3, &quot;created_at&quot;=&gt;Sun, 21 Oct 2012 04:53:04, &quot;updated_at&quot;=&gt;Sun, 21 Oct 2012 04:53:04, &quot;name&quot;=&gt;&quot;Francesco&quot;, &quot;age&quot;=&gt;22}</pre>
+            
+
+            
+            <div class="method-source-code" id="attributes-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attributes</span>
+  <span class="ruby-identifier">attribute_names</span>.<span class="ruby-identifier">each_with_object</span>({}) { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">attrs</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">read_attribute</span>(<span class="ruby-identifier">name</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- attributes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attributes-method -->
+
+      
+        <div id="column_for_attribute-method" class="method-detail ">
+          <a name="method-i-column_for_attribute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">column_for_attribute</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the column object for the named attribute. Returns <tt>nil</tt> if
+the named attribute not exists.</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+end
+
+person = Person.new
+person.column_for_attribute(:name) # the result depends on the ConnectionAdapter
+# =&gt; #&lt;ActiveRecord::ConnectionAdapters::SQLite3Column:0x007ff4ab083980 @name=&quot;name&quot;, @sql_type=&quot;varchar(255)&quot;, @null=true, ...&gt;
+
+person.column_for_attribute(:nothing)
+# =&gt; nil</pre>
+            
+
+            
+            <div class="method-source-code" id="column_for_attribute-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">column_for_attribute</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-comment"># FIXME: should this return a null object for columns that don't exist?</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">columns_hash</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- column_for_attribute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- column_for_attribute-method -->
+
+      
+        <div id="has_attribute-3F-method" class="method-detail ">
+          <a name="method-i-has_attribute-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">has_attribute?</span><span
+              class="method-args">(attr_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns <tt>true</tt> if the given attribute is in the attributes hash,
+otherwise <tt>false</tt>.</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+end
+
+person = Person.new
+person.has_attribute?(:name)    # =&gt; true
+person.has_attribute?('age')    # =&gt; true
+person.has_attribute?(:nothing) # =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="has_attribute-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_attribute?</span>(<span class="ruby-identifier">attr_name</span>)
+  <span class="ruby-ivar">@attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">attr_name</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- has_attribute-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- has_attribute-3F-method -->
+
+      
+        <div id="respond_to-3F-method" class="method-detail ">
+          <a name="method-i-respond_to-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_to?</span><span
+              class="method-args">(name, include_private = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>A Person object with a name attribute can ask
+<tt>person.respond_to?(:name)</tt>, <tt>person.respond_to?(:name=)</tt>,
+and <tt>person.respond_to?(:name?)</tt> which will all return
+<tt>true</tt>. It also define the attribute methods if they have not been
+generated.</p>
+
+<pre>class Person &lt; ActiveRecord::Base
+end
+
+person = Person.new
+person.respond_to(:name)    # =&gt; true
+person.respond_to(:name=)   # =&gt; true
+person.respond_to(:name?)   # =&gt; true
+person.respond_to('age')    # =&gt; true
+person.respond_to('age=')   # =&gt; true
+person.respond_to('age?')   # =&gt; true
+person.respond_to(:nothing) # =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="respond_to-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/attribute_methods.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">define_attribute_methods</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attribute_methods_generated?</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">super</span>
+
+  <span class="ruby-comment"># If the result is false the answer is false.</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>
+
+  <span class="ruby-comment"># If the result is true then check for the select case.</span>
+  <span class="ruby-comment"># For queries selecting a subset of columns, return false for unselected columns.</span>
+  <span class="ruby-comment"># We check defined?(@attributes) not to issue warnings if called on objects that</span>
+  <span class="ruby-comment"># have been allocated but not yet initialized.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@attributes</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@attributes</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">column_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">has_attribute?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- respond_to-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- respond_to-3F-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

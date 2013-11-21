@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: MiniTest::Unit::LifecycleHooks</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/minitest/unit_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/minitest/unit.rb">lib/minitest/unit.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-after_setup">#after_setup</a></li>
+          
+          <li><a href="#method-i-after_teardown">#after_teardown</a></li>
+          
+          <li><a href="#method-i-before_setup">#before_setup</a></li>
+          
+          <li><a href="#method-i-before_teardown">#before_teardown</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../History_txt.html">History.txt</a></li>
+        
+          <li class="file"><a href="../../Manifest_txt.html">Manifest.txt</a></li>
+        
+          <li class="file"><a href="../../README_txt.html">README.txt</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../MiniTest.html">MiniTest</a></li>
+        
+          <li><a href="../../MiniTest/Assertion.html">MiniTest::Assertion</a></li>
+        
+          <li><a href="../../MiniTest/Assertions.html">MiniTest::Assertions</a></li>
+        
+          <li><a href="../../MiniTest/Expectations.html">MiniTest::Expectations</a></li>
+        
+          <li><a href="../../MiniTest/Mock.html">MiniTest::Mock</a></li>
+        
+          <li><a href="../../MiniTest/Skip.html">MiniTest::Skip</a></li>
+        
+          <li><a href="../../MiniTest/Spec.html">MiniTest::Spec</a></li>
+        
+          <li><a href="../../MiniTest/Spec/DSL.html">MiniTest::Spec::DSL</a></li>
+        
+          <li><a href="../../MiniTest/Unit.html">MiniTest::Unit</a></li>
+        
+          <li><a href="../../MiniTest/Unit/Guard.html">MiniTest::Unit::Guard</a></li>
+        
+          <li><a href="../../MiniTest/Unit/LifecycleHooks.html">MiniTest::Unit::LifecycleHooks</a></li>
+        
+          <li><a href="../../MiniTest/Unit/TestCase.html">MiniTest::Unit::TestCase</a></li>
+        
+          <li><a href="../../Minitest.html">Minitest</a></li>
+        
+          <li><a href="../../Minitest/Unit.html">Minitest::Unit</a></li>
+        
+          <li><a href="../../Minitest/Unit/TestCase.html">Minitest::Unit::TestCase</a></li>
+        
+          <li><a href="../../MockExpectationError.html">MockExpectationError</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+          <li><a href="../../ParallelEach.html">ParallelEach</a></li>
+        
+          <li><a href="../../PrideIO.html">PrideIO</a></li>
+        
+          <li><a href="../../PrideLOL.html">PrideLOL</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">MiniTest::Unit::LifecycleHooks</h1>
+
+    <div id="description" class="description">
+      
+<p>Provides before/after hooks for setup and teardown. These are meant for
+library writers, NOT for regular test authors. See <a
+href="LifecycleHooks.html#method-i-before_setup">before_setup</a> for an
+example.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="after_setup-method" class="method-detail ">
+          <a name="method-i-after_setup"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">after_setup</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs before every test, after setup. This hook is meant for libraries to
+extend minitest. It is not meant to be used by test developers.</p>
+
+<p>See <a href="LifecycleHooks.html#method-i-before_setup">before_setup</a>
+for an example.</p>
+            
+
+            
+            <div class="method-source-code" id="after_setup-source">
+<pre>
+<span class="ruby-comment"># File lib/minitest/unit.rb, line 1164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_setup</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- after_setup-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- after_setup-method -->
+
+      
+        <div id="after_teardown-method" class="method-detail ">
+          <a name="method-i-after_teardown"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">after_teardown</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs after every test, after teardown. This hook is meant for libraries to
+extend minitest. It is not meant to be used by test developers.</p>
+
+<p>See <a href="LifecycleHooks.html#method-i-before_setup">before_setup</a>
+for an example.</p>
+            
+
+            
+            <div class="method-source-code" id="after_teardown-source">
+<pre>
+<span class="ruby-comment"># File lib/minitest/unit.rb, line 1217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_teardown</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- after_teardown-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- after_teardown-method -->
+
+      
+        <div id="before_setup-method" class="method-detail ">
+          <a name="method-i-before_setup"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">before_setup</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs before every test, before setup. This hook is meant for libraries to
+extend minitest. It is not meant to be used by test developers.</p>
+
+<p>As a simplistic example:</p>
+
+<pre>module MyMinitestPlugin
+  def before_setup
+    super
+    # ... stuff to do before setup is run
+  end
+
+  def after_setup
+    # ... stuff to do after setup is run
+    super
+  end
+
+  def before_teardown
+    super
+    # ... stuff to do before teardown is run
+  end
+
+  def after_teardown
+    # ... stuff to do after teardown is run
+    super
+  end
+end
+
+class MiniTest::Unit::TestCase
+  include MyMinitestPlugin
+end</pre>
+            
+
+            
+            <div class="method-source-code" id="before_setup-source">
+<pre>
+<span class="ruby-comment"># File lib/minitest/unit.rb, line 1199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_setup</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- before_setup-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- before_setup-method -->
+
+      
+        <div id="before_teardown-method" class="method-detail ">
+          <a name="method-i-before_teardown"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">before_teardown</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs after every test, before teardown. This hook is meant for libraries to
+extend minitest. It is not meant to be used by test developers.</p>
+
+<p>See <a href="LifecycleHooks.html#method-i-before_setup">before_setup</a>
+for an example.</p>
+            
+
+            
+            <div class="method-source-code" id="before_teardown-source">
+<pre>
+<span class="ruby-comment"># File lib/minitest/unit.rb, line 1208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_teardown</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- before_teardown-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- before_teardown-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

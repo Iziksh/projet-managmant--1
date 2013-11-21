@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActionController::MimeResponds</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/action_controller/metal/mime_responds_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/action_controller/metal/mime_responds.rb">lib/action_controller/metal/mime_responds.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="MimeResponds/Collector.html">ActionController::MimeResponds::Collector</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-respond_to">#respond_to</a></li>
+          
+          <li><a href="#method-i-respond_with">#respond_with</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActionDispatch.html">ActionDispatch</a></li>
+        
+          <li><a href="../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a></li>
+        
+          <li><a href="../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a></li>
+        
+          <li><a href="../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a></li>
+        
+          <li><a href="../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a></li>
+        
+          <li><a href="../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a></li>
+        
+          <li><a href="../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a></li>
+        
+          <li><a href="../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a></li>
+        
+          <li><a href="../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a></li>
+        
+          <li><a href="../ActionDispatch/Cookies/ChainedCookieJars.html">ActionDispatch::Cookies::ChainedCookieJars</a></li>
+        
+          <li><a href="../ActionDispatch/Cookies/VerifyAndUpgradeLegacySignedMessage.html">ActionDispatch::Cookies::VerifyAndUpgradeLegacySignedMessage</a></li>
+        
+          <li><a href="../ActionDispatch/DebugExceptions.html">ActionDispatch::DebugExceptions</a></li>
+        
+          <li><a href="../ActionDispatch/ExceptionWrapper.html">ActionDispatch::ExceptionWrapper</a></li>
+        
+          <li><a href="../ActionDispatch/FileHandler.html">ActionDispatch::FileHandler</a></li>
+        
+          <li><a href="../ActionDispatch/Flash.html">ActionDispatch::Flash</a></li>
+        
+          <li><a href="../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a></li>
+        
+          <li><a href="../ActionDispatch/Http.html">ActionDispatch::Http</a></li>
+        
+          <li><a href="../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a></li>
+        
+          <li><a href="../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a></li>
+        
+          <li><a href="../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a></li>
+        
+          <li><a href="../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a></li>
+        
+          <li><a href="../ActionDispatch/Http/FilterRedirect.html">ActionDispatch::Http::FilterRedirect</a></li>
+        
+          <li><a href="../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a></li>
+        
+          <li><a href="../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a></li>
+        
+          <li><a href="../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a></li>
+        
+          <li><a href="../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a></li>
+        
+          <li><a href="../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a></li>
+        
+          <li><a href="../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a></li>
+        
+          <li><a href="../ActionDispatch/IllegalStateError.html">ActionDispatch::IllegalStateError</a></li>
+        
+          <li><a href="../ActionDispatch/Integration.html">ActionDispatch::Integration</a></li>
+        
+          <li><a href="../ActionDispatch/Integration.html">ActionDispatch::Integration</a></li>
+        
+          <li><a href="../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a></li>
+        
+          <li><a href="../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a></li>
+        
+          <li><a href="../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a></li>
+        
+          <li><a href="../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+        
+          <li><a href="../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+        
+          <li><a href="../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a></li>
+        
+          <li><a href="../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a></li>
+        
+          <li><a href="../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a></li>
+        
+          <li><a href="../ActionDispatch/ParamsParser/ParseError.html">ActionDispatch::ParamsParser::ParseError</a></li>
+        
+          <li><a href="../ActionDispatch/PublicExceptions.html">ActionDispatch::PublicExceptions</a></li>
+        
+          <li><a href="../ActionDispatch/RailsEntityStore.html">ActionDispatch::RailsEntityStore</a></li>
+        
+          <li><a href="../ActionDispatch/RailsMetaStore.html">ActionDispatch::RailsMetaStore</a></li>
+        
+          <li><a href="../ActionDispatch/Reloader.html">ActionDispatch::Reloader</a></li>
+        
+          <li><a href="../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a></li>
+        
+          <li><a href="../ActionDispatch/RemoteIp/GetIp.html">ActionDispatch::RemoteIp::GetIp</a></li>
+        
+          <li><a href="../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a></li>
+        
+          <li><a href="../ActionDispatch/Request.html">ActionDispatch::Request</a></li>
+        
+          <li><a href="../ActionDispatch/RequestId.html">ActionDispatch::RequestId</a></li>
+        
+          <li><a href="../ActionDispatch/Response.html">ActionDispatch::Response</a></li>
+        
+          <li><a href="../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+        
+          <li><a href="../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/ConsoleFormatter.html">ActionDispatch::Routing::ConsoleFormatter</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/HtmlTableFormatter.html">ActionDispatch::Routing::HtmlTableFormatter</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Mapper/Concerns.html">ActionDispatch::Routing::Mapper::Concerns</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/PathRedirect.html">ActionDispatch::Routing::PathRedirect</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/Redirection.html">ActionDispatch::Routing::Redirection</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/RouteWrapper.html">ActionDispatch::Routing::RouteWrapper</a></li>
+        
+          <li><a href="../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+        
+          <li><a href="../ActionDispatch/SSL.html">ActionDispatch::SSL</a></li>
+        
+          <li><a href="../ActionDispatch/Session.html">ActionDispatch::Session</a></li>
+        
+          <li><a href="../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a></li>
+        
+          <li><a href="../ActionDispatch/Session/CacheStore.html">ActionDispatch::Session::CacheStore</a></li>
+        
+          <li><a href="../ActionDispatch/Session/Compatibility.html">ActionDispatch::Session::Compatibility</a></li>
+        
+          <li><a href="../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a></li>
+        
+          <li><a href="../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a></li>
+        
+          <li><a href="../ActionDispatch/Session/StaleSessionCheck.html">ActionDispatch::Session::StaleSessionCheck</a></li>
+        
+          <li><a href="../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a></li>
+        
+          <li><a href="../ActionDispatch/Static.html">ActionDispatch::Static</a></li>
+        
+          <li><a href="../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a></li>
+        
+          <li><a href="../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a></li>
+        
+          <li><a href="../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a></li>
+        
+          <li><a href="../ActionController.html">ActionController</a></li>
+        
+          <li><a href="../ActionController/ActionController.html">ActionController::ActionController</a></li>
+        
+          <li><a href="../ActionController/ActionController/ActionController.html">ActionController::ActionController::ActionController</a></li>
+        
+          <li><a href="../ActionController/Base.html">ActionController::Base</a></li>
+        
+          <li><a href="../ActionController/Caching.html">ActionController::Caching</a></li>
+        
+          <li><a href="../ActionController/Caching/ClassMethods.html">ActionController::Caching::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+        
+          <li><a href="../ActionController/Caching/Fragments.html">ActionController::Caching::Fragments</a></li>
+        
+          <li><a href="../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+        
+          <li><a href="../ActionController/ConditionalGet/ClassMethods.html">ActionController::ConditionalGet::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/Cookies.html">ActionController::Cookies</a></li>
+        
+          <li><a href="../ActionController/DataStreaming.html">ActionController::DataStreaming</a></li>
+        
+          <li><a href="../ActionController/Flash.html">ActionController::Flash</a></li>
+        
+          <li><a href="../ActionController/Flash/ClassMethods.html">ActionController::Flash::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/ForceSSL.html">ActionController::ForceSSL</a></li>
+        
+          <li><a href="../ActionController/ForceSSL/ClassMethods.html">ActionController::ForceSSL::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/Head.html">ActionController::Head</a></li>
+        
+          <li><a href="../ActionController/Helpers.html">ActionController::Helpers</a></li>
+        
+          <li><a href="../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/HideActions.html">ActionController::HideActions</a></li>
+        
+          <li><a href="../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Basic/ControllerMethods/ClassMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+        
+          <li><a href="../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+        
+          <li><a href="../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+        
+          <li><a href="../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+        
+          <li><a href="../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/Live.html">ActionController::Live</a></li>
+        
+          <li><a href="../ActionController/Live/Response.html">ActionController::Live::Response</a></li>
+        
+          <li><a href="../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+        
+          <li><a href="../ActionController/Metal.html">ActionController::Metal</a></li>
+        
+          <li><a href="../ActionController/Middleware.html">ActionController::Middleware</a></li>
+        
+          <li><a href="../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+        
+          <li><a href="../ActionController/MimeResponds.html">ActionController::MimeResponds</a></li>
+        
+          <li><a href="../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/MimeResponds/Collector.html">ActionController::MimeResponds::Collector</a></li>
+        
+          <li><a href="../ActionController/ModelNaming.html">ActionController::ModelNaming</a></li>
+        
+          <li><a href="../ActionController/ParameterMissing.html">ActionController::ParameterMissing</a></li>
+        
+          <li><a href="../ActionController/Parameters.html">ActionController::Parameters</a></li>
+        
+          <li><a href="../ActionController/ParamsWrapper.html">ActionController::ParamsWrapper</a></li>
+        
+          <li><a href="../ActionController/ParamsWrapper/ClassMethods.html">ActionController::ParamsWrapper::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+        
+          <li><a href="../ActionController/Railties.html">ActionController::Railties</a></li>
+        
+          <li><a href="../ActionController/Railties/Helpers.html">ActionController::Railties::Helpers</a></li>
+        
+          <li><a href="../ActionController/RecordIdentifier.html">ActionController::RecordIdentifier</a></li>
+        
+          <li><a href="../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+        
+          <li><a href="../ActionController/Renderers.html">ActionController::Renderers</a></li>
+        
+          <li><a href="../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+        
+          <li><a href="../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/Rendering.html">ActionController::Rendering</a></li>
+        
+          <li><a href="../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+        
+          <li><a href="../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/RequestForgeryProtection/ProtectionMethods.html">ActionController::RequestForgeryProtection::ProtectionMethods</a></li>
+        
+          <li><a href="../ActionController/RequestForgeryProtection/ProtectionMethods/Exception.html">ActionController::RequestForgeryProtection::ProtectionMethods::Exception</a></li>
+        
+          <li><a href="../ActionController/RequestForgeryProtection/ProtectionMethods/NullSession.html">ActionController::RequestForgeryProtection::ProtectionMethods::NullSession</a></li>
+        
+          <li><a href="../ActionController/RequestForgeryProtection/ProtectionMethods/ResetSession.html">ActionController::RequestForgeryProtection::ProtectionMethods::ResetSession</a></li>
+        
+          <li><a href="../ActionController/Rescue.html">ActionController::Rescue</a></li>
+        
+          <li><a href="../ActionController/Responder.html">ActionController::Responder</a></li>
+        
+          <li><a href="../ActionController/Streaming.html">ActionController::Streaming</a></li>
+        
+          <li><a href="../ActionController/StrongParameters.html">ActionController::StrongParameters</a></li>
+        
+          <li><a href="../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+        
+          <li><a href="../ActionController/TestCase.html">ActionController::TestCase</a></li>
+        
+          <li><a href="../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+        
+          <li><a href="../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+        
+          <li><a href="../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+        
+          <li><a href="../ActionController/Testing.html">ActionController::Testing</a></li>
+        
+          <li><a href="../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+        
+          <li><a href="../ActionController/UnpermittedParameters.html">ActionController::UnpermittedParameters</a></li>
+        
+          <li><a href="../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+        
+          <li><a href="../ActionView.html">ActionView</a></li>
+        
+          <li><a href="../ActionView/Base.html">ActionView::Base</a></li>
+        
+          <li><a href="../ActionView/Context.html">ActionView::Context</a></li>
+        
+          <li><a href="../ActionView/DependencyTracker.html">ActionView::DependencyTracker</a></li>
+        
+          <li><a href="../ActionView/DependencyTracker/ERBTracker.html">ActionView::DependencyTracker::ERBTracker</a></li>
+        
+          <li><a href="../ActionView/Digestor.html">ActionView::Digestor</a></li>
+        
+          <li><a href="../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+        
+          <li><a href="../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+        
+          <li><a href="../ActionView/Helpers.html">ActionView::Helpers</a></li>
+        
+          <li><a href="../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+        
+          <li><a href="../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/AssetUrlHelper.html">ActionView::Helpers::AssetUrlHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/CacheHelper.html">ActionView::Helpers::CacheHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/CaptureHelper.html">ActionView::Helpers::CaptureHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a></li>
+        
+          <li><a href="../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+        
+          <li><a href="../ActionView/Helpers/OutputSafetyHelper.html">ActionView::Helpers::OutputSafetyHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/RecordTagHelper.html">ActionView::Helpers::RecordTagHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/RenderingHelper.html">ActionView::Helpers::RenderingHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+        
+          <li><a href="../ActionView/Helpers/UrlHelper/ClassMethods.html">ActionView::Helpers::UrlHelper::ClassMethods</a></li>
+        
+          <li><a href="../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+        
+          <li><a href="../ActionView/LookupContext.html">ActionView::LookupContext</a></li>
+        
+          <li><a href="../ActionView/LookupContext/DetailsCache.html">ActionView::LookupContext::DetailsCache</a></li>
+        
+          <li><a href="../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+        
+          <li><a href="../ActionView/ModelNaming.html">ActionView::ModelNaming</a></li>
+        
+          <li><a href="../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+        
+          <li><a href="../ActionView/PartialRenderer.html">ActionView::PartialRenderer</a></li>
+        
+          <li><a href="../ActionView/RecordIdentifier.html">ActionView::RecordIdentifier</a></li>
+        
+          <li><a href="../ActionView/Renderer.html">ActionView::Renderer</a></li>
+        
+          <li><a href="../ActionView/Resolver.html">ActionView::Resolver</a></li>
+        
+          <li><a href="../ActionView/Resolver/Cache.html">ActionView::Resolver::Cache</a></li>
+        
+          <li><a href="../ActionView/Resolver/Cache/SmallCache.html">ActionView::Resolver::Cache::SmallCache</a></li>
+        
+          <li><a href="../ActionView/Resolver/Path.html">ActionView::Resolver::Path</a></li>
+        
+          <li><a href="../ActionView/RoutingUrlFor.html">ActionView::RoutingUrlFor</a></li>
+        
+          <li><a href="../ActionView/Template.html">ActionView::Template</a></li>
+        
+          <li><a href="../ActionView/Template/Handlers.html">ActionView::Template::Handlers</a></li>
+        
+          <li><a href="../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+        
+          <li><a href="../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+        
+          <li><a href="../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+        
+          <li><a href="../ActionView/Template/Handlers/Raw.html">ActionView::Template::Handlers::Raw</a></li>
+        
+          <li><a href="../ActionView/Template/Types.html">ActionView::Template::Types</a></li>
+        
+          <li><a href="../ActionView/Template/Types/Type.html">ActionView::Template::Types::Type</a></li>
+        
+          <li><a href="../ActionView/TestCase.html">ActionView::TestCase</a></li>
+        
+          <li><a href="../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+        
+          <li><a href="../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+        
+          <li><a href="../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+        
+          <li><a href="../ActionView/TestCase/Behavior/RenderedViewsCollection.html">ActionView::TestCase::Behavior::RenderedViewsCollection</a></li>
+        
+          <li><a href="../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+        
+          <li><a href="../AbstractController.html">AbstractController</a></li>
+        
+          <li><a href="../AbstractController/Base.html">AbstractController::Base</a></li>
+        
+          <li><a href="../AbstractController/Callbacks.html">AbstractController::Callbacks</a></li>
+        
+          <li><a href="../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../AbstractController/Collector.html">AbstractController::Collector</a></li>
+        
+          <li><a href="../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+        
+          <li><a href="../AbstractController/Helpers.html">AbstractController::Helpers</a></li>
+        
+          <li><a href="../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a></li>
+        
+          <li><a href="../AbstractController/Helpers/ClassMethods/MissingHelperError.html">AbstractController::Helpers::ClassMethods::MissingHelperError</a></li>
+        
+          <li><a href="../AbstractController/Layouts.html">AbstractController::Layouts</a></li>
+        
+          <li><a href="../AbstractController/Layouts/ClassMethods.html">AbstractController::Layouts::ClassMethods</a></li>
+        
+          <li><a href="../AbstractController/Railties.html">AbstractController::Railties</a></li>
+        
+          <li><a href="../AbstractController/Railties/RoutesHelpers.html">AbstractController::Railties::RoutesHelpers</a></li>
+        
+          <li><a href="../AbstractController/Rendering.html">AbstractController::Rendering</a></li>
+        
+          <li><a href="../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a></li>
+        
+          <li><a href="../AbstractController/Translation.html">AbstractController::Translation</a></li>
+        
+          <li><a href="../AbstractController/UrlFor.html">AbstractController::UrlFor</a></li>
+        
+          <li><a href="../AbstractController/UrlFor/ClassMethods.html">AbstractController::UrlFor::ClassMethods</a></li>
+        
+          <li><a href="../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a></li>
+        
+          <li><a href="../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a></li>
+        
+          <li><a href="../HTML.html">HTML</a></li>
+        
+          <li><a href="../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+        
+          <li><a href="../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+        
+          <li><a href="../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+        
+          <li><a href="../HTML/Selector.html">HTML::Selector</a></li>
+        
+          <li><a href="../HTML/Tag.html">HTML::Tag</a></li>
+        
+          <li><a href="../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+        
+          <li><a href="../Mime.html">Mime</a></li>
+        
+          <li><a href="../Mime/Mimes.html">Mime::Mimes</a></li>
+        
+          <li><a href="../Mime/NullType.html">Mime::NullType</a></li>
+        
+          <li><a href="../Mime/Type.html">Mime::Type</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../ActionDispatch/Integration.html">Object::Integration</a></li>
+        
+          <li><a href="../ActionDispatch/IntegrationTest.html">Object::IntegrationTest</a></li>
+        
+          <li><a href="../ActionDispatch/Routing.html">Object::Routing</a></li>
+        
+          <li><a href="../I18n.html">I18n</a></li>
+        
+          <li><a href="../I18n/ExceptionHandler.html">I18n::ExceptionHandler</a></li>
+        
+          <li><a href="../ActionPack.html">ActionPack</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActionController::MimeResponds</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="respond_to-method" class="method-detail ">
+          <a name="method-i-respond_to"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_to</span><span
+              class="method-args">(*mimes, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Without web-service support, an action which collects the data for
+displaying a list of people might look something like this:</p>
+
+<pre>def index
+  @people = Person.all
+end</pre>
+
+<p>Here’s the same action, with web-service support baked in:</p>
+
+<pre>def index
+  @people = Person.all
+
+  respond_to do |format|
+    format.html
+    format.xml { render xml: @people }
+  end
+end</pre>
+
+<p>What that says is, “if the client wants <a href="../HTML.html">HTML</a> in
+response to this action, just respond as we would have before, but if the
+client wants XML, return them the list of people in XML format.” (Rails
+determines the desired response format from the HTTP Accept header
+submitted by the client.)</p>
+
+<p>Supposing you have an action that adds a new person, optionally creating
+their company (by name) if it does not already exist, without web-services,
+it might look like this:</p>
+
+<pre>def create
+  @company = Company.find_or_create_by(name: params[:company][:name])
+  @person  = @company.people.create(params[:person])
+
+  redirect_to(person_list_url)
+end</pre>
+
+<p>Here’s the same action, with web-service support baked in:</p>
+
+<pre>def create
+  company  = params[:person].delete(:company)
+  @company = Company.find_or_create_by(name: company[:name])
+  @person  = @company.people.create(params[:person])
+
+  respond_to do |format|
+    format.html { redirect_to(person_list_url) }
+    format.js
+    format.xml  { render xml: @person.to_xml(include: @company) }
+  end
+end</pre>
+
+<p>If the client wants <a href="../HTML.html">HTML</a>, we just redirect them
+back to the person list. If they want JavaScript, then it is an Ajax
+request and we render the JavaScript template associated with this action.
+Lastly, if the client wants XML, we render the created person as XML, but
+with a twist: we also include the person’s company in the rendered XML, so
+you get something like this:</p>
+
+<pre>&lt;person&gt;
+  &lt;id&gt;...&lt;/id&gt;
+  ...
+  &lt;company&gt;
+    &lt;id&gt;...&lt;/id&gt;
+    &lt;name&gt;...&lt;/name&gt;
+    ...
+  &lt;/company&gt;
+&lt;/person&gt;</pre>
+
+<p>Note, however, the extra bit at the top of that action:</p>
+
+<pre>company  = params[:person].delete(:company)
+@company = Company.find_or_create_by(name: company[:name])</pre>
+
+<p>This is because the incoming XML document (if a web-service request is in
+process) can only contain a single root-node. So, we have to rearrange
+things so that the request looks like this (url-encoded):</p>
+
+<pre>person[name]=...&amp;person[company][name]=...&amp;...</pre>
+
+<p>And, like this (xml-encoded):</p>
+
+<pre>&lt;person&gt;
+  &lt;name&gt;...&lt;/name&gt;
+  &lt;company&gt;
+    &lt;name&gt;...&lt;/name&gt;
+  &lt;/company&gt;
+&lt;/person&gt;</pre>
+
+<p>In other words, we make the request so that it operates on a single
+entity’s person. Then, in the action, we extract the company data from the
+request, find or create the company, and then create the new person with
+the remaining data.</p>
+
+<p>Note that you can define your own XML parameter parser which would allow
+you to describe multiple entities in a single request (i.e., by wrapping
+them all in a single root node), but if you just go with the flow and
+accept Rails’ defaults, life will be much easier.</p>
+
+<p>If you need to use a MIME type which isn’t supported by default, you can
+register your own handlers in config/initializers/mime_types.rb as follows.</p>
+
+<pre>Mime::Type.register &quot;image/jpg&quot;, :jpg</pre>
+
+<p>Respond to also allows you to specify a common block for different formats
+by using any:</p>
+
+<pre>def index
+  @people = Person.all
+
+  respond_to do |format|
+    format.html
+    format.any(:xml, :json) { render request.format.to_sym =&gt; @people }
+  end
+end</pre>
+
+<p>In the example above, if the format is xml, it will render:</p>
+
+<pre>render xml: @people</pre>
+
+<p>Or if the format is json:</p>
+
+<pre>render json: @people</pre>
+
+<p>Since this is a common pattern, you can use the class method <a
+href="MimeResponds.html#method-i-respond_to">respond_to</a> with the <a
+href="MimeResponds.html#method-i-respond_with">respond_with</a> method to
+have the same results:</p>
+
+<pre>class PeopleController &lt; ApplicationController
+  respond_to :html, :xml, :json
+
+  def index
+    @people = Person.all
+    respond_with(@people)
+  end
+end</pre>
+
+<p>Be sure to check the documentation of <tt>respond_with</tt> and
+<tt>ActionController::MimeResponds.respond_to</tt> for more examples.</p>
+            
+
+            
+            <div class="method-source-code" id="respond_to-source">
+<pre>
+<span class="ruby-comment"># File lib/action_controller/metal/mime_responds.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">respond_to</span>(*<span class="ruby-identifier">mimes</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;respond_to takes either types or a block, never both&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">mimes</span>.<span class="ruby-identifier">any?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">collector</span> = <span class="ruby-identifier">retrieve_collector_from_mimes</span>(<span class="ruby-identifier">mimes</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">collector</span>.<span class="ruby-identifier">response</span>
+    <span class="ruby-identifier">response</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">call</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">render</span>({})
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- respond_to-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- respond_to-method -->
+
+      
+        <div id="respond_with-method" class="method-detail ">
+          <a name="method-i-respond_with"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_with</span><span
+              class="method-args">(*resources, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>For a given controller action, <a
+href="MimeResponds.html#method-i-respond_with">respond_with</a> generates
+an appropriate response based on the mime-type requested by the client.</p>
+
+<p>If the method is called with just a resource, as in this example -</p>
+
+<pre>class PeopleController &lt; ApplicationController
+  respond_to :html, :xml, :json
+
+  def index
+    @people = Person.all
+    respond_with @people
+  end
+end</pre>
+
+<p>then the mime-type of the response is typically selected based on the
+request’s Accept header and the set of available formats declared by
+previous calls to the controller’s class method <tt>respond_to</tt>.
+Alternatively the mime-type can be selected by explicitly setting
+<tt>request.format</tt> in the controller.</p>
+
+<p>If an acceptable format is not identified, the application returns a ‘406 -
+not acceptable’ status. Otherwise, the default response is to render a
+template named after the current action and the selected format, e.g.
+<tt>index.html.erb</tt>. If no template is available, the behavior depends
+on the selected format:</p>
+<ul><li>
+<p>for an html response - if the request method is <tt>get</tt>, an exception
+is raised but for other requests such as <tt>post</tt> the response depends
+on whether the resource has any validation errors (i.e. assuming that an
+attempt has been made to save the resource, e.g. by a <tt>create</tt>
+action) -</p>
+<ol><li>
+<p>If there are no errors, i.e. the resource was saved successfully, the
+response <tt>redirect</tt>‘s to the resource i.e. its <tt>show</tt> action.</p>
+</li><li>
+<p>If there are validation errors, the response renders a default action,
+which is <tt>:new</tt> for a <tt>post</tt> request or <tt>:edit</tt> for
+<tt>patch</tt> or <tt>put</tt>.</p>
+</li></ol>
+
+<p>Thus an example like this -</p>
+
+<pre>respond_to :html, :xml
+
+def create
+  @user = User.new(params[:user])
+  flash[:notice] = 'User was successfully created.' if @user.save
+  respond_with(@user)
+end</pre>
+
+<p>is equivalent, in the absence of <tt>create.html.erb</tt>, to -</p>
+
+<pre>def create
+  @user = User.new(params[:user])
+  respond_to do |format|
+    if @user.save
+      flash[:notice] = 'User was successfully created.'
+      format.html { redirect_to(@user) }
+      format.xml { render xml: @user }
+    else
+      format.html { render action: &quot;new&quot; }
+      format.xml { render xml: @user }
+    end
+  end
+end</pre>
+</li><li>
+<p>for a javascript request - if the template isn’t found, an exception is
+raised.</p>
+</li><li>
+<p>for other requests - i.e. data formats such as xml, json, csv etc, if the
+resource passed to <tt>respond_with</tt> responds to
+<tt>to_&lt;format&gt;</tt>, the method attempts to render the resource in
+the requested format directly, e.g. for an xml request, the response is
+equivalent to calling  <tt>render xml: resource</tt>.</p>
+</li></ul>
+
+<h3>Nested resources</h3>
+
+<p>As outlined above, the <tt>resources</tt> argument passed to
+<tt>respond_with</tt> can play two roles. It can be used to generate the
+redirect url for successful html requests (e.g. for <tt>create</tt> actions
+when no template exists), while for formats other than html and javascript
+it is the object that gets rendered, by being converted directly to the
+required format (again assuming no template exists).</p>
+
+<p>For redirecting successful html requests, <tt>respond_with</tt> also
+supports the use of nested resources, which are supplied in the same way as
+in <tt>form_for</tt> and <tt>polymorphic_url</tt>. For example -</p>
+
+<pre>def create
+  @project = Project.find(params[:project_id])
+  @task = @project.comments.build(params[:task])
+  flash[:notice] = 'Task was successfully created.' if @task.save
+  respond_with(@project, @task)
+end</pre>
+
+<p>This would cause <tt>respond_with</tt> to redirect to
+<tt>project_task_url</tt> instead of <tt>task_url</tt>. For request formats
+other than html or javascript, if multiple resources are passed in this
+way, it is the last one specified that is rendered.</p>
+
+<h3>Customizing response behavior</h3>
+
+<p>Like <tt>respond_to</tt>, <tt>respond_with</tt> may also be called with a
+block that can be used to overwrite any of the default responses, e.g. -</p>
+
+<pre>def create
+  @user = User.new(params[:user])
+  flash[:notice] = &quot;User was successfully created.&quot; if @user.save
+
+  respond_with(@user) do |format|
+    format.html { render }
+  end
+end</pre>
+
+<p>The argument passed to the block is an <a
+href="MimeResponds/Collector.html">ActionController::MimeResponds::Collector</a>
+object which stores the responses for the formats defined within the block.
+Note that formats with responses defined explicitly in this way do not have
+to first be declared using the class method <tt>respond_to</tt>.</p>
+
+<p>Also, a hash passed to <tt>respond_with</tt> immediately after the
+specified resource(s) is interpreted as a set of options relevant to all
+formats. Any option accepted by <tt>render</tt> can be used, e.g.</p>
+
+<pre>respond_with @people, status: 200</pre>
+
+<p>However, note that these options are ignored after an unsuccessful attempt
+to save a resource, e.g. when automatically rendering <tt>:new</tt> after a
+post request.</p>
+
+<p>Two additional options are relevant specifically to <tt>respond_with</tt> -</p>
+<ol><li>
+<p><tt>:location</tt> - overwrites the default redirect location used after a
+successful html <tt>post</tt> request.</p>
+</li><li>
+<p><tt>:action</tt> - overwrites the default render action used after an
+unsuccessful html <tt>post</tt> request.</p>
+</li></ol>
+            
+
+            
+            <div class="method-source-code" id="respond_with-source">
+<pre>
+<span class="ruby-comment"># File lib/action_controller/metal/mime_responds.rb, line 323</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">respond_with</span>(*<span class="ruby-identifier">resources</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;In order to use respond_with, first you need to declare the formats your &quot;</span>              <span class="ruby-string">&quot;controller responds to in the class level&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">mimes_for_respond_to</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">collector</span> = <span class="ruby-identifier">retrieve_collector_from_mimes</span>(&amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">resources</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> {} <span class="ruby-operator">:</span> <span class="ruby-identifier">resources</span>.<span class="ruby-identifier">extract_options!</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:default_response</span>] = <span class="ruby-identifier">collector</span>.<span class="ruby-identifier">response</span>
+    (<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:responder</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">responder</span>).<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">resources</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- respond_with-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- respond_with-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

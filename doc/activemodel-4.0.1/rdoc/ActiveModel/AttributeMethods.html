@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveModel::AttributeMethods</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/active_model/attribute_methods_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/attribute_methods.rb">lib/active_model/attribute_methods.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-attribute_missing">#attribute_missing</a></li>
+          
+          <li><a href="#method-i-method_missing">#method_missing</a></li>
+          
+          <li><a href="#method-i-respond_to-3F">#respond_to?</a></li>
+          
+          <li><a href="#method-i-respond_to_without_attributes-3F">#respond_to_without_attributes?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActiveModel.html">ActiveModel</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+        
+          <li><a href="../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+        
+          <li><a href="../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+        
+          <li><a href="../ActiveModel/ForbiddenAttributesError.html">ActiveModel::ForbiddenAttributesError</a></li>
+        
+          <li><a href="../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+        
+          <li><a href="../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+        
+          <li><a href="../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+        
+          <li><a href="../ActiveModel/Model.html">ActiveModel::Model</a></li>
+        
+          <li><a href="../ActiveModel/Name.html">ActiveModel::Name</a></li>
+        
+          <li><a href="../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword.html">ActiveModel::SecurePassword</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods.html">ActiveModel::SecurePassword::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods/InstanceMethodsOnActivation.html">ActiveModel::SecurePassword::ClassMethods::InstanceMethodsOnActivation</a></li>
+        
+          <li><a href="../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+        
+          <li><a href="../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+        
+          <li><a href="../ActiveModel/StrictValidationFailed.html">ActiveModel::StrictValidationFailed</a></li>
+        
+          <li><a href="../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+        
+          <li><a href="../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveModel::AttributeMethods</h1>
+
+    <div id="description" class="description">
+      
+<h2>Active Model Attribute Methods</h2>
+
+<p><tt>ActiveModel::AttributeMethods</tt> provides a way to add prefixes and
+suffixes to your methods as well as handling the creation of
+<tt>ActiveRecord::Base</tt>-like class methods such as <tt>table_name</tt>.</p>
+
+<p>The requirements to implement <tt>ActiveModel::AttributeMethods</tt> are
+to:</p>
+<ul><li>
+<p><tt>include ActiveModel::AttributeMethods</tt> in your class.</p>
+</li><li>
+<p>Call each of its method you want to add, such as
+<tt>attribute_method_suffix</tt> or <tt>attribute_method_prefix</tt>.</p>
+</li><li>
+<p>Call <tt>define_attribute_methods</tt> after the other methods are called.</p>
+</li><li>
+<p>Define the various generic <tt>_attribute</tt> methods that you have
+declared.</p>
+</li><li>
+<p>Define an <tt>attributes</tt> method, see below.</p>
+</li></ul>
+
+<p>A minimal implementation could be:</p>
+
+<pre>class Person
+  include ActiveModel::AttributeMethods
+
+  attribute_method_affix  prefix: 'reset_', suffix: '_to_default!'
+  attribute_method_suffix '_contrived?'
+  attribute_method_prefix 'clear_'
+  define_attribute_methods :name
+
+  attr_accessor :name
+
+  def attributes
+    {'name' =&gt; @name}
+  end
+
+  private
+
+  def attribute_contrived?(attr)
+    true
+  end
+
+  def clear_attribute(attr)
+    send(&quot;#{attr}=&quot;, nil)
+  end
+
+  def reset_attribute_to_default!(attr)
+    send(&quot;#{attr}=&quot;, 'Default Name')
+  end
+end</pre>
+
+<p>Note that whenever you include <tt>ActiveModel::AttributeMethods</tt> in
+your class, it requires you to implement an <tt>attributes</tt> method
+which returns a hash with each attribute name in your model as hash key and
+the attribute value as hash value.</p>
+
+<p>Hash keys must be strings.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="CALL_COMPILABLE_REGEXP">CALL_COMPILABLE_REGEXP</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="NAME_COMPILABLE_REGEXP">NAME_COMPILABLE_REGEXP</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="attribute_missing-method" class="method-detail ">
+          <a name="method-i-attribute_missing"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attribute_missing</span><span
+              class="method-args">(match, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><tt>attribute_missing</tt> is like <tt>method_missing</tt>, but for
+attributes. When <tt>method_missing</tt> is called we check to see if there
+is a matching attribute method. If so, we tell <tt>attribute_missing</tt>
+to dispatch the attribute. This method can be overloaded to customize the
+behavior.</p>
+            
+
+            
+            <div class="method-source-code" id="attribute_missing-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/attribute_methods.rb, line 447</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attribute_missing</span>(<span class="ruby-identifier">match</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">match</span>.<span class="ruby-identifier">target</span>, <span class="ruby-identifier">match</span>.<span class="ruby-identifier">attr_name</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- attribute_missing-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attribute_missing-method -->
+
+      
+        <div id="method_missing-method" class="method-detail ">
+          <a name="method-i-method_missing"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">method_missing</span><span
+              class="method-args">(method, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Allows access to the object attributes, which are held in the hash returned
+by <tt>attributes</tt>, as though they were first-class methods. So a
+<tt>Person</tt> class with a <tt>name</tt> attribute can for example use
+<tt>Person#name</tt> and <tt>Person#name=</tt> and never directly use the
+attributes hash – except for multiple assigns with
+<tt>ActiveRecord::Base#attributes=</tt>.</p>
+
+<p>It’s also possible to instantiate related objects, so a <tt>Client</tt>
+class belonging to the <tt>clients</tt> table with a <tt>master_id</tt>
+foreign key can instantiate master through <tt>Client#master</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="method_missing-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/attribute_methods.rb, line 434</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to_without_attributes?</span>(<span class="ruby-identifier">method</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">match</span> = <span class="ruby-identifier">match_attribute_method?</span>(<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">match</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">attribute_missing</span>(<span class="ruby-identifier">match</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- method_missing-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- method_missing-method -->
+
+      
+        <div id="respond_to-3F-method" class="method-detail ">
+          <a name="method-i-respond_to-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_to?</span><span
+              class="method-args">(method, include_private_methods = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="respond_to-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/attribute_methods.rb, line 455</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">include_private_methods</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">include_private_methods</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">method</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-comment"># If we're here then we haven't found among non-private methods</span>
+    <span class="ruby-comment"># but found among all methods. Which means that the given method is private.</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-operator">!</span><span class="ruby-identifier">match_attribute_method?</span>(<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- respond_to-3F-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="AttributeMethods.html#method-i-respond_to_without_attributes-3F">respond_to_without_attributes?</a>
+          </div>
+          
+
+          
+        </div><!-- respond_to-3F-method -->
+
+      
+        <div id="respond_to_without_attributes-3F-method" class="method-detail method-alias">
+          <a name="method-i-respond_to_without_attributes-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_to_without_attributes?</span><span
+              class="method-args">(method, include_private_methods = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>A <tt>Person</tt> instance with a <tt>name</tt> attribute can ask
+<tt>person.respond_to?(:name)</tt>, <tt>person.respond_to?(:name=)</tt>,
+and <tt>person.respond_to?(:name?)</tt> which will all return
+<tt>true</tt>.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="AttributeMethods.html#method-i-respond_to-3F">respond_to?</a>
+          </div>
+          
+        </div><!-- respond_to_without_attributes-3F-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

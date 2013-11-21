@@ -1,0 +1,8 @@
+Tue, 19 Nov 2013 19:55:34 +0200
+lib/active_record/deprecated_finders/collection_proxy.rb	Tue, 19 Nov 2013 19:53:58 +0200
+lib/active_record/deprecated_finders/dynamic_matchers.rb	Tue, 19 Nov 2013 19:53:58 +0200
+lib/active_record/deprecated_finders/association_builder.rb	Tue, 19 Nov 2013 19:53:58 +0200
+lib/active_record/deprecated_finders/relation.rb	Tue, 19 Nov 2013 19:53:58 +0200
+lib/active_record/deprecated_finders/base.rb	Tue, 19 Nov 2013 19:53:58 +0200
+lib/active_record/deprecated_finders/version.rb	Tue, 19 Nov 2013 19:53:58 +0200
+lib/active_record/deprecated_finders.rb	Tue, 19 Nov 2013 19:53:58 +0200

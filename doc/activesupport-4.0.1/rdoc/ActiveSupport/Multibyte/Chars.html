@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: ActiveSupport::Multibyte::Chars</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/active_support/multibyte/chars_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_support/multibyte/chars.rb">lib/active_support/multibyte/chars.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-consumes-3F">::consumes?</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-capitalize">#capitalize</a></li>
+          
+          <li><a href="#method-i-compose">#compose</a></li>
+          
+          <li><a href="#method-i-decompose">#decompose</a></li>
+          
+          <li><a href="#method-i-downcase">#downcase</a></li>
+          
+          <li><a href="#method-i-grapheme_length">#grapheme_length</a></li>
+          
+          <li><a href="#method-i-limit">#limit</a></li>
+          
+          <li><a href="#method-i-method_missing">#method_missing</a></li>
+          
+          <li><a href="#method-i-normalize">#normalize</a></li>
+          
+          <li><a href="#method-i-respond_to_missing-3F">#respond_to_missing?</a></li>
+          
+          <li><a href="#method-i-reverse">#reverse</a></li>
+          
+          <li><a href="#method-i-slice-21">#slice!</a></li>
+          
+          <li><a href="#method-i-split">#split</a></li>
+          
+          <li><a href="#method-i-swapcase">#swapcase</a></li>
+          
+          <li><a href="#method-i-tidy_bytes">#tidy_bytes</a></li>
+          
+          <li><a href="#method-i-titlecase">#titlecase</a></li>
+          
+          <li><a href="#method-i-titleize">#titleize</a></li>
+          
+          <li><a href="#method-i-upcase">#upcase</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Comparable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../ActiveSupport.html">ActiveSupport</a></li>
+        
+          <li><a href="../../ActiveSupport/Autoload.html">ActiveSupport::Autoload</a></li>
+        
+          <li><a href="../../ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a></li>
+        
+          <li><a href="../../ActiveSupport/Benchmarkable.html">ActiveSupport::Benchmarkable</a></li>
+        
+          <li><a href="../../ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache.html">ActiveSupport::Cache</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/NullStore.html">ActiveSupport::Cache::NullStore</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a></li>
+        
+          <li><a href="../../ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a></li>
+        
+          <li><a href="../../ActiveSupport/CachingKeyGenerator.html">ActiveSupport::CachingKeyGenerator</a></li>
+        
+          <li><a href="../../ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a></li>
+        
+          <li><a href="../../ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveSupport/Concern.html">ActiveSupport::Concern</a></li>
+        
+          <li><a href="../../ActiveSupport/Concurrency.html">ActiveSupport::Concurrency</a></li>
+        
+          <li><a href="../../ActiveSupport/Concurrency/Latch.html">ActiveSupport::Concurrency::Latch</a></li>
+        
+          <li><a href="../../ActiveSupport/Configurable.html">ActiveSupport::Configurable</a></li>
+        
+          <li><a href="../../ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveSupport/Configurable/Configuration.html">ActiveSupport::Configurable::Configuration</a></li>
+        
+          <li><a href="../../ActiveSupport/Dependencies.html">ActiveSupport::Dependencies</a></li>
+        
+          <li><a href="../../ActiveSupport/Dependencies/ClassCache.html">ActiveSupport::Dependencies::ClassCache</a></li>
+        
+          <li><a href="../../ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation.html">ActiveSupport::Deprecation</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation/Behavior.html">ActiveSupport::Deprecation::Behavior</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation/DeprecatedConstantProxy.html">ActiveSupport::Deprecation::DeprecatedConstantProxy</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation/DeprecatedInstanceVariableProxy.html">ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation/DeprecatedObjectProxy.html">ActiveSupport::Deprecation::DeprecatedObjectProxy</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation/MethodWrapper.html">ActiveSupport::Deprecation::MethodWrapper</a></li>
+        
+          <li><a href="../../ActiveSupport/Deprecation/Reporting.html">ActiveSupport::Deprecation::Reporting</a></li>
+        
+          <li><a href="../../ActiveSupport/DeprecationException.html">ActiveSupport::DeprecationException</a></li>
+        
+          <li><a href="../../ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a></li>
+        
+          <li><a href="../../ActiveSupport/Duration.html">ActiveSupport::Duration</a></li>
+        
+          <li><a href="../../ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a></li>
+        
+          <li><a href="../../ActiveSupport/FileWatcher.html">ActiveSupport::FileWatcher</a></li>
+        
+          <li><a href="../../ActiveSupport/FileWatcher/Backend.html">ActiveSupport::FileWatcher::Backend</a></li>
+        
+          <li><a href="../../ActiveSupport/Gzip.html">ActiveSupport::Gzip</a></li>
+        
+          <li><a href="../../ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a></li>
+        
+          <li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+        
+          <li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess::HashWithIndifferentAccess</a></li>
+        
+          <li><a href="../../ActiveSupport/Inflector.html">ActiveSupport::Inflector</a></li>
+        
+          <li><a href="../../ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a></li>
+        
+          <li><a href="../../ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a></li>
+        
+          <li><a href="../../ActiveSupport/JSON.html">ActiveSupport::JSON</a></li>
+        
+          <li><a href="../../ActiveSupport/JSON/Encoding.html">ActiveSupport::JSON::Encoding</a></li>
+        
+          <li><a href="../../ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a></li>
+        
+          <li><a href="../../ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a></li>
+        
+          <li><a href="../../ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a></li>
+        
+          <li><a href="../../ActiveSupport/KeyGenerator.html">ActiveSupport::KeyGenerator</a></li>
+        
+          <li><a href="../../ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a></li>
+        
+          <li><a href="../../ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a></li>
+        
+          <li><a href="../../ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a></li>
+        
+          <li><a href="../../ActiveSupport/Logger.html">ActiveSupport::Logger</a></li>
+        
+          <li><a href="../../ActiveSupport/Logger/SimpleFormatter.html">ActiveSupport::Logger::SimpleFormatter</a></li>
+        
+          <li><a href="../../ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a></li>
+        
+          <li><a href="../../ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a></li>
+        
+          <li><a href="../../ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a></li>
+        
+          <li><a href="../../ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a></li>
+        
+          <li><a href="../../ActiveSupport/Multibyte.html">ActiveSupport::Multibyte</a></li>
+        
+          <li><a href="../../ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a></li>
+        
+          <li><a href="../../ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a></li>
+        
+          <li><a href="../../ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a></li>
+        
+          <li><a href="../../ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a></li>
+        
+          <li><a href="../../ActiveSupport/Notifications.html">ActiveSupport::Notifications</a></li>
+        
+          <li><a href="../../ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a></li>
+        
+          <li><a href="../../ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a></li>
+        
+          <li><a href="../../ActiveSupport/Notifications/Fanout/Subscribers.html">ActiveSupport::Notifications::Fanout::Subscribers</a></li>
+        
+          <li><a href="../../ActiveSupport/Notifications/Fanout/Subscribers/Timed.html">ActiveSupport::Notifications::Fanout::Subscribers::Timed</a></li>
+        
+          <li><a href="../../ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a></li>
+        
+          <li><a href="../../ActiveSupport/NumberHelper.html">ActiveSupport::NumberHelper</a></li>
+        
+          <li><a href="../../ActiveSupport/OrderedHash.html">ActiveSupport::OrderedHash</a></li>
+        
+          <li><a href="../../ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a></li>
+        
+          <li><a href="../../ActiveSupport/PerThreadRegistry.html">ActiveSupport::PerThreadRegistry</a></li>
+        
+          <li><a href="../../ActiveSupport/ProxyObject.html">ActiveSupport::ProxyObject</a></li>
+        
+          <li><a href="../../ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a></li>
+        
+          <li><a href="../../ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a></li>
+        
+          <li><a href="../../ActiveSupport/SafeBuffer/SafeConcatError.html">ActiveSupport::SafeBuffer::SafeConcatError</a></li>
+        
+          <li><a href="../../ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a></li>
+        
+          <li><a href="../../ActiveSupport/Subscriber.html">ActiveSupport::Subscriber</a></li>
+        
+          <li><a href="../../ActiveSupport/TaggedLogging.html">ActiveSupport::TaggedLogging</a></li>
+        
+          <li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing.html">ActiveSupport::Testing</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/ConstantLookup.html">ActiveSupport::Testing::ConstantLookup</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a></li>
+        
+          <li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
+        
+          <li><a href="../../ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
+        
+          <li><a href="../../ActiveSupport/XMLConverter.html">ActiveSupport::XMLConverter</a></li>
+        
+          <li><a href="../../ActiveSupport/XMLConverter/DisallowedType.html">ActiveSupport::XMLConverter::DisallowedType</a></li>
+        
+          <li><a href="../../ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a></li>
+        
+          <li><a href="../../ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a></li>
+        
+          <li><a href="../../ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a></li>
+        
+          <li><a href="../../ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a></li>
+        
+          <li><a href="../../ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a></li>
+        
+          <li><a href="../../DateAndTime.html">DateAndTime</a></li>
+        
+          <li><a href="../../DateAndTime/Calculations.html">DateAndTime::Calculations</a></li>
+        
+          <li><a href="../../ERB.html">ERB</a></li>
+        
+          <li><a href="../../ERB/Util.html">ERB::Util</a></li>
+        
+          <li><a href="../../I18n.html">I18n</a></li>
+        
+          <li><a href="../../I18n/Railtie.html">I18n::Railtie</a></li>
+        
+          <li><a href="../../LoadError.html">LoadError</a></li>
+        
+          <li><a href="../../LoadError.html">LoadError</a></li>
+        
+          <li><a href="../../Logger.html">Logger</a></li>
+        
+          <li><a href="../../Logger/SimpleFormatter.html">Logger::SimpleFormatter</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+          <li><a href="../../LoadError.html">Object::MissingSourceFile</a></li>
+        
+          <li><a href="../../Process.html">Process</a></li>
+        
+          <li><a href="../../Process/Status.html">Process::Status</a></li>
+        
+          <li><a href="../../Array.html">Array</a></li>
+        
+          <li><a href="../../Benchmark.html">Benchmark</a></li>
+        
+          <li><a href="../../BigDecimal.html">BigDecimal</a></li>
+        
+          <li><a href="../../Class.html">Class</a></li>
+        
+          <li><a href="../../Date.html">Date</a></li>
+        
+          <li><a href="../../DateTime.html">DateTime</a></li>
+        
+          <li><a href="../../Enumerable.html">Enumerable</a></li>
+        
+          <li><a href="../../FalseClass.html">FalseClass</a></li>
+        
+          <li><a href="../../File.html">File</a></li>
+        
+          <li><a href="../../Float.html">Float</a></li>
+        
+          <li><a href="../../Hash.html">Hash</a></li>
+        
+          <li><a href="../../Integer.html">Integer</a></li>
+        
+          <li><a href="../../Kernel.html">Kernel</a></li>
+        
+          <li><a href="../../LoggerSilence.html">LoggerSilence</a></li>
+        
+          <li><a href="../../Marshal.html">Marshal</a></li>
+        
+          <li><a href="../../Module.html">Module</a></li>
+        
+          <li><a href="../../NameError.html">NameError</a></li>
+        
+          <li><a href="../../NilClass.html">NilClass</a></li>
+        
+          <li><a href="../../Numeric.html">Numeric</a></li>
+        
+          <li><a href="../../QualifiedConstUtils.html">QualifiedConstUtils</a></li>
+        
+          <li><a href="../../Range.html">Range</a></li>
+        
+          <li><a href="../../String.html">String</a></li>
+        
+          <li><a href="../../Symbol.html">Symbol</a></li>
+        
+          <li><a href="../../Thread.html">Thread</a></li>
+        
+          <li><a href="../../Time.html">Time</a></li>
+        
+          <li><a href="../../TrueClass.html">TrueClass</a></li>
+        
+          <li><a href="../../URI.html">URI</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">ActiveSupport::Multibyte::Chars</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Chars.html">Chars</a> enables you to work transparently with UTF-8
+encoding in the Ruby <a href="../../String.html">String</a> class without
+having extensive knowledge about the encoding. A <a
+href="Chars.html">Chars</a> object accepts a string upon initialization and
+proxies <a href="../../String.html">String</a> methods in an encoding safe
+manner. All the normal <a href="../../String.html">String</a> methods are
+also implemented on the proxy.</p>
+
+<p><a href="../../String.html">String</a> methods are proxied through the <a
+href="Chars.html">Chars</a> object, and can be accessed through the
+<tt>mb_chars</tt> method. Methods which would normally return a <a
+href="../../String.html">String</a> object now return a <a
+href="Chars.html">Chars</a> object so methods can be chained.</p>
+
+<pre>'The Perfect String  '.mb_chars.downcase.strip.normalize # =&gt; &quot;the perfect string&quot;</pre>
+
+<p><a href="Chars.html">Chars</a> objects are perfectly interchangeable with
+<a href="../../String.html">String</a> objects as long as no explicit class
+checks are made. If certain methods do explicitly check the class, call
+<tt>to_s</tt> before you pass chars objects to them.</p>
+
+<pre>bad.explicit_checking_method 'T'.mb_chars.downcase.to_s</pre>
+
+<p>The default <a href="Chars.html">Chars</a> implementation assumes that the
+encoding of the string is UTF-8, if you want to handle different encodings
+you can write your own multibyte string handler and configure it through <a
+href="../Multibyte.html#method-c-proxy_class">ActiveSupport::Multibyte.proxy_class</a>.</p>
+
+<pre>class CharsForUTF32
+  def size
+    @wrapped_string.size / 4
+  end
+
+  def self.accepts?(string)
+    string.length % 4 == 0
+  end
+end
+
+ActiveSupport::Multibyte.proxy_class = CharsForUTF32</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="to_s-attribute-method" class="method-detail">
+          <a name="to_s"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">to_s</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="to_str-attribute-method" class="method-detail">
+          <a name="to_str"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">to_str</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="wrapped_string-attribute-method" class="method-detail">
+          <a name="wrapped_string"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">wrapped_string</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="consumes-3F-method" class="method-detail ">
+          <a name="method-c-consumes-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">consumes?</span><span
+              class="method-args">(string)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns <tt>true</tt> when the proxy class can handle the string. Returns
+<tt>false</tt> otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="consumes-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">consumes?</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">string</span>.<span class="ruby-identifier">encoding</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- consumes-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- consumes-3F-method -->
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(string)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Creates a new <a href="Chars.html">Chars</a> instance by wrapping
+<em>string</em>.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-ivar">@wrapped_string</span> = <span class="ruby-identifier">string</span>
+  <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">frozen?</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="capitalize-method" class="method-detail ">
+          <a name="method-i-capitalize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">capitalize</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts the first character to uppercase and the remainder to lowercase.</p>
+
+<pre>'über'.mb_chars.capitalize.to_s # =&gt; &quot;Über&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="capitalize-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">capitalize</span>
+  (<span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">chars</span>(<span class="ruby-string">''</span>)).<span class="ruby-identifier">upcase</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">slice</span>(<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">chars</span>(<span class="ruby-string">''</span>)).<span class="ruby-identifier">downcase</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- capitalize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- capitalize-method -->
+
+      
+        <div id="compose-method" class="method-detail ">
+          <a name="method-i-compose"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">compose</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Performs composition on all the characters.</p>
+
+<pre>'é'.length                       # =&gt; 3
+'é'.mb_chars.compose.to_s.length # =&gt; 2</pre>
+            
+
+            
+            <div class="method-source-code" id="compose-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compose</span>
+  <span class="ruby-identifier">chars</span>(<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">compose</span>(<span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">to_a</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- compose-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- compose-method -->
+
+      
+        <div id="decompose-method" class="method-detail ">
+          <a name="method-i-decompose"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">decompose</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Performs canonical decomposition on all the characters.</p>
+
+<pre>'é'.length                         # =&gt; 2
+'é'.mb_chars.decompose.to_s.length # =&gt; 3</pre>
+            
+
+            
+            <div class="method-source-code" id="decompose-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decompose</span>
+  <span class="ruby-identifier">chars</span>(<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">decompose</span>(<span class="ruby-value">:canonical</span>, <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">to_a</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- decompose-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- decompose-method -->
+
+      
+        <div id="downcase-method" class="method-detail ">
+          <a name="method-i-downcase"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">downcase</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts characters in the string to lowercase.</p>
+
+<pre>'VĚDA A VÝZKUM'.mb_chars.downcase.to_s # =&gt; &quot;věda a výzkum&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="downcase-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">chars</span> <span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">downcase</span>(<span class="ruby-ivar">@wrapped_string</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- downcase-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- downcase-method -->
+
+      
+        <div id="grapheme_length-method" class="method-detail ">
+          <a name="method-i-grapheme_length"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">grapheme_length</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the number of grapheme clusters in the string.</p>
+
+<pre>'क्षि'.mb_chars.length   # =&gt; 4
+'क्षि'.mb_chars.grapheme_length # =&gt; 3</pre>
+            
+
+            
+            <div class="method-source-code" id="grapheme_length-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grapheme_length</span>
+  <span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">unpack_graphemes</span>(<span class="ruby-ivar">@wrapped_string</span>).<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- grapheme_length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- grapheme_length-method -->
+
+      
+        <div id="limit-method" class="method-detail ">
+          <a name="method-i-limit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">limit</span><span
+              class="method-args">(limit)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Limits the byte size of the string to a number of bytes without breaking
+characters. Usable when the storage for a string is limited for some
+reason.</p>
+
+<pre>'こんにちは'.mb_chars.limit(7).to_s # =&gt; &quot;こん&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="limit-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">limit</span>(<span class="ruby-identifier">limit</span>)
+  <span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">limit</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- limit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- limit-method -->
+
+      
+        <div id="method_missing-method" class="method-detail ">
+          <a name="method-i-method_missing"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">method_missing</span><span
+              class="method-args">(method, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Forward all undefined methods to the wrapped string.</p>
+            
+
+            
+            <div class="method-source-code" id="method_missing-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/!$/</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">chars</span>(<span class="ruby-identifier">result</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- method_missing-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- method_missing-method -->
+
+      
+        <div id="normalize-method" class="method-detail ">
+          <a name="method-i-normalize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">normalize</span><span
+              class="method-args">(form = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the KC normalization of the string by default. NFKC is considered
+the best normalization form for passing strings to databases and
+validations.</p>
+<ul><li>
+<p><tt>form</tt> - The form you want to normalize in. Should be one of the
+following: <tt>:c</tt>, <tt>:kc</tt>, <tt>:d</tt>, or <tt>:kd</tt>. Default
+is <a
+href="Unicode.html#attribute-i-default_normalization_form">ActiveSupport::Multibyte::Unicode.default_normalization_form</a></p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="normalize-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">form</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">chars</span>(<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-ivar">@wrapped_string</span>, <span class="ruby-identifier">form</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- normalize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- normalize-method -->
+
+      
+        <div id="respond_to_missing-3F-method" class="method-detail ">
+          <a name="method-i-respond_to_missing-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_to_missing?</span><span
+              class="method-args">(method, include_private)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns <tt>true</tt> if <em>obj</em> responds to the given method. Private
+methods are included in the search only if the optional second parameter
+evaluates to <tt>true</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="respond_to_missing-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">respond_to_missing?</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">include_private</span>)
+  <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">include_private</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- respond_to_missing-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- respond_to_missing-3F-method -->
+
+      
+        <div id="reverse-method" class="method-detail ">
+          <a name="method-i-reverse"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reverse</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Reverses all characters in the string.</p>
+
+<pre>'Café'.mb_chars.reverse.to_s # =&gt; 'éfaC'</pre>
+            
+
+            
+            <div class="method-source-code" id="reverse-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse</span>
+  <span class="ruby-identifier">chars</span>(<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">unpack_graphemes</span>(<span class="ruby-ivar">@wrapped_string</span>).<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- reverse-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reverse-method -->
+
+      
+        <div id="slice-21-method" class="method-detail ">
+          <a name="method-i-slice-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">slice!</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Works like like <tt>String#slice!</tt>, but returns an instance of <a
+href="Chars.html">Chars</a>, or nil if the string was not modified.</p>
+            
+
+            
+            <div class="method-source-code" id="slice-21-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slice!</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">chars</span>(<span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">slice!</span>(*<span class="ruby-identifier">args</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- slice-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- slice-21-method -->
+
+      
+        <div id="split-method" class="method-detail ">
+          <a name="method-i-split"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">split</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Works just like <tt>String#split</tt>, with the exception that the items in
+the resulting list are <a href="Chars.html">Chars</a> instances instead of
+<a href="../../String.html">String</a>. This makes chaining methods easier.</p>
+
+<pre>'Café périferôl'.mb_chars.split(/é/).map { |part| part.upcase.to_s } # =&gt; [&quot;CAF&quot;, &quot; P&quot;, &quot;RIFERÔL&quot;]</pre>
+            
+
+            
+            <div class="method-source-code" id="split-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">split</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@wrapped_string</span>.<span class="ruby-identifier">split</span>(*<span class="ruby-identifier">args</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">i</span>) }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- split-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- split-method -->
+
+      
+        <div id="swapcase-method" class="method-detail ">
+          <a name="method-i-swapcase"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">swapcase</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts characters in the string to the opposite case.</p>
+
+<pre>'El Cañón&quot;.mb_chars.swapcase.to_s # =&gt; &quot;eL cAÑÓN&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="swapcase-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">swapcase</span>
+  <span class="ruby-identifier">chars</span> <span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">swapcase</span>(<span class="ruby-ivar">@wrapped_string</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- swapcase-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- swapcase-method -->
+
+      
+        <div id="tidy_bytes-method" class="method-detail ">
+          <a name="method-i-tidy_bytes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tidy_bytes</span><span
+              class="method-args">(force = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Replaces all ISO-8859-1 or CP1252 characters by their UTF-8 equivalent
+resulting in a valid UTF-8 string.</p>
+
+<p>Passing <tt>true</tt> will forcibly tidy all bytes, assuming that the
+string’s encoding is entirely CP1252 or ISO-8859-1.</p>
+            
+
+            
+            <div class="method-source-code" id="tidy_bytes-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-identifier">force</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">chars</span>(<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-ivar">@wrapped_string</span>, <span class="ruby-identifier">force</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tidy_bytes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tidy_bytes-method -->
+
+      
+        <div id="titlecase-method" class="method-detail method-alias">
+          <a name="method-i-titlecase"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">titlecase</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Chars.html#method-i-titleize">titleize</a>
+          </div>
+          
+        </div><!-- titlecase-method -->
+
+      
+        <div id="titleize-method" class="method-detail ">
+          <a name="method-i-titleize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">titleize</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Capitalizes the first letter of every word, when possible.</p>
+
+<pre>&quot;ÉL QUE SE ENTERÓ&quot;.mb_chars.titleize    # =&gt; &quot;Él Que Se Enteró&quot;
+&quot;日本語&quot;.mb_chars.titleize                 # =&gt; &quot;日本語&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="titleize-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">titleize</span>
+  <span class="ruby-identifier">chars</span>(<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\b('?\S)/</span>) { <span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-node">$1</span>)})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- titleize-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Chars.html#method-i-titlecase">titlecase</a>
+          </div>
+          
+
+          
+        </div><!-- titleize-method -->
+
+      
+        <div id="upcase-method" class="method-detail ">
+          <a name="method-i-upcase"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">upcase</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts characters in the string to uppercase.</p>
+
+<pre>'Laurent, où sont les tests ?'.mb_chars.upcase.to_s # =&gt; &quot;LAURENT, OÙ SONT LES TESTS ?&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="upcase-source">
+<pre>
+<span class="ruby-comment"># File lib/active_support/multibyte/chars.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upcase</span>
+  <span class="ruby-identifier">chars</span> <span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-ivar">@wrapped_string</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- upcase-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- upcase-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveModel::Lint::Tests</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/active_model/lint_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/lint.rb">lib/active_model/lint.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-test_errors_aref">#test_errors_aref</a></li>
+          
+          <li><a href="#method-i-test_model_naming">#test_model_naming</a></li>
+          
+          <li><a href="#method-i-test_persisted-3F">#test_persisted?</a></li>
+          
+          <li><a href="#method-i-test_to_key">#test_to_key</a></li>
+          
+          <li><a href="#method-i-test_to_param">#test_to_param</a></li>
+          
+          <li><a href="#method-i-test_to_partial_path">#test_to_partial_path</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../ActiveModel.html">ActiveModel</a></li>
+        
+          <li><a href="../../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+        
+          <li><a href="../../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+        
+          <li><a href="../../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+        
+          <li><a href="../../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+        
+          <li><a href="../../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+        
+          <li><a href="../../ActiveModel/ForbiddenAttributesError.html">ActiveModel::ForbiddenAttributesError</a></li>
+        
+          <li><a href="../../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+        
+          <li><a href="../../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+        
+          <li><a href="../../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+        
+          <li><a href="../../ActiveModel/Model.html">ActiveModel::Model</a></li>
+        
+          <li><a href="../../ActiveModel/Name.html">ActiveModel::Name</a></li>
+        
+          <li><a href="../../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+        
+          <li><a href="../../ActiveModel/SecurePassword.html">ActiveModel::SecurePassword</a></li>
+        
+          <li><a href="../../ActiveModel/SecurePassword/ClassMethods.html">ActiveModel::SecurePassword::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveModel/SecurePassword/ClassMethods/InstanceMethodsOnActivation.html">ActiveModel::SecurePassword::ClassMethods::InstanceMethodsOnActivation</a></li>
+        
+          <li><a href="../../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+        
+          <li><a href="../../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+        
+          <li><a href="../../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+        
+          <li><a href="../../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+        
+          <li><a href="../../ActiveModel/StrictValidationFailed.html">ActiveModel::StrictValidationFailed</a></li>
+        
+          <li><a href="../../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+        
+          <li><a href="../../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+        
+          <li><a href="../../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+        
+          <li><a href="../../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+        
+          <li><a href="../../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+        
+          <li><a href="../../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveModel::Lint::Tests</h1>
+
+    <div id="description" class="description">
+      
+<h2>Active Model Lint Tests</h2>
+
+<p>You can test whether an object is compliant with the Active Model API by
+including <tt>ActiveModel::Lint::Tests</tt> in your TestCase. It will
+include tests that tell you whether your object is fully compliant, or if
+not, which aspects of the API are not implemented.</p>
+
+<p>Note an object is not required to implement all APIs in order to work with
+Action Pack. This module only intends to provide guidance in case you want
+all features out of the box.</p>
+
+<p>These tests do not attempt to determine the semantic correctness of the
+returned values. For instance, you could implement <tt>valid?</tt> to
+always return true, and the tests would pass. It is up to you to ensure
+that the values are semantically meaningful.</p>
+
+<p>Objects you pass in are expected to return a compliant object from a call
+to <tt>to_model</tt>. It is perfectly fine for <tt>to_model</tt> to return
+<tt>self</tt>.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="test_errors_aref-method" class="method-detail ">
+          <a name="method-i-test_errors_aref"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_errors_aref</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <h2>Errors Testing</h2>
+
+<p>Returns an object that implements [](attribute) defined which returns an
+Array of Strings that are the errors for the attribute in question. If
+localization is used, the Strings should be localized for the current
+locale. If no error is present, this method should return an empty Array.</p>
+            
+
+            
+            <div class="method-source-code" id="test_errors_aref-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/lint.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_errors_aref</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:errors</span>), <span class="ruby-string">&quot;The model should respond to errors&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-value">:hello</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>), <span class="ruby-node">&quot;errors#[] should return an Array&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_errors_aref-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_errors_aref-method -->
+
+      
+        <div id="test_model_naming-method" class="method-detail ">
+          <a name="method-i-test_model_naming"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_model_naming</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <h2>Naming</h2>
+
+<p>Model.model_name must return a string with some convenience methods:
+<tt>:human</tt>, <tt>:singular</tt> and <tt>:plural</tt>. Check <a
+href="../Naming.html">ActiveModel::Naming</a> for more information.</p>
+            
+
+            
+            <div class="method-source-code" id="test_model_naming-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/lint.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_model_naming</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:model_name</span>), <span class="ruby-string">&quot;The model should respond to model_name&quot;</span>
+  <span class="ruby-identifier">model_name</span> = <span class="ruby-identifier">model</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">model_name</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model_name</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model_name</span>.<span class="ruby-identifier">human</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model_name</span>.<span class="ruby-identifier">singular</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model_name</span>.<span class="ruby-identifier">plural</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_model_naming-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_model_naming-method -->
+
+      
+        <div id="test_persisted-3F-method" class="method-detail ">
+          <a name="method-i-test_persisted-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_persisted?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <h2>Responds to <tt>persisted?</tt></h2>
+
+<p>Returns a boolean that specifies whether the object has been persisted yet.
+This is used when calculating the URL for an object. If the object is not
+persisted, a form for that object, for instance, will route to the create
+action. If it is persisted, a form for the object will routes to the update
+action.</p>
+            
+
+            
+            <div class="method-source-code" id="test_persisted-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/lint.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_persisted?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:persisted?</span>), <span class="ruby-string">&quot;The model should respond to persisted?&quot;</span>
+  <span class="ruby-identifier">assert_boolean</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">persisted?</span>, <span class="ruby-string">&quot;persisted?&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_persisted-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_persisted-3F-method -->
+
+      
+        <div id="test_to_key-method" class="method-detail ">
+          <a name="method-i-test_to_key"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_to_key</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <h2>Responds to <tt>to_key</tt></h2>
+
+<p>Returns an Enumerable of all (primary) key attributes or nil if
+<tt>model.persisted?</tt> is false. This is used by <tt>dom_id</tt> to
+generate unique ids for the object.</p>
+            
+
+            
+            <div class="method-source-code" id="test_to_key-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/lint.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_to_key</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_key</span>), <span class="ruby-string">&quot;The model should respond to to_key&quot;</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">persisted?</span>() <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_key</span>.<span class="ruby-identifier">nil?</span>, <span class="ruby-string">&quot;to_key should return nil when `persisted?` returns false&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_to_key-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_to_key-method -->
+
+      
+        <div id="test_to_param-method" class="method-detail ">
+          <a name="method-i-test_to_param"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_to_param</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <h2>Responds to <tt>to_param</tt></h2>
+
+<p>Returns a string representing the object’s key suitable for use in URLs or
+<tt>nil</tt> if <tt>model.persisted?</tt> is <tt>false</tt>.</p>
+
+<p>Implementers can decide to either raise an exception or provide a default
+in case the record uses a composite primary key. There are no tests for
+this behavior in lint because it doesn’t make sense to force any of the
+possible implementation strategies on the implementer. However, if the
+resource is not persisted?, then <tt>to_param</tt> should always return
+<tt>nil</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="test_to_param-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/lint.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_to_param</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_param</span>), <span class="ruby-string">&quot;The model should respond to to_param&quot;</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_key</span>() [<span class="ruby-value">1</span>] <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">persisted?</span>() <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_param</span>.<span class="ruby-identifier">nil?</span>, <span class="ruby-string">&quot;to_param should return nil when `persisted?` returns false&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_to_param-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_to_param-method -->
+
+      
+        <div id="test_to_partial_path-method" class="method-detail ">
+          <a name="method-i-test_to_partial_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_to_partial_path</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <h2>Responds to <tt>to_partial_path</tt></h2>
+
+<p>Returns a string giving a relative path. This is used for looking up
+partials. For example, a BlogPost model might return “blog_posts/blog_post”</p>
+            
+
+            
+            <div class="method-source-code" id="test_to_partial_path-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/lint.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_to_partial_path</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_partial_path</span>), <span class="ruby-string">&quot;The model should respond to to_partial_path&quot;</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">String</span>, <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_partial_path</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_to_partial_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_to_partial_path-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

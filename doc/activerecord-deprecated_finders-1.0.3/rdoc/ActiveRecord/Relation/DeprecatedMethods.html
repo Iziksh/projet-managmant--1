@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveRecord::Relation::DeprecatedMethods</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/active_record/deprecated_finders/relation_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/deprecated_finders/relation.rb">lib/active_record/deprecated_finders/relation.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-all">#all</a></li>
+          
+          <li><a href="#method-i-apply_finder_options">#apply_finder_options</a></li>
+          
+          <li><a href="#method-i-calculate">#calculate</a></li>
+          
+          <li><a href="#method-i-find">#find</a></li>
+          
+          <li><a href="#method-i-find_in_batches">#find_in_batches</a></li>
+          
+          <li><a href="#method-i-first">#first</a></li>
+          
+          <li><a href="#method-i-last">#last</a></li>
+          
+          <li><a href="#method-i-update_all_with_deprecated_options">#update_all_with_deprecated_options</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../ActiveRecord.html">ActiveRecord</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations.html">ActiveRecord::Associations</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations/Builder.html">ActiveRecord::Associations::Builder</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations/Builder/Association.html">ActiveRecord::Associations::Builder::Association</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations/Builder/CollectionAssociation.html">ActiveRecord::Associations::Builder::CollectionAssociation</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations/Builder/DeprecatedOptionsProc.html">ActiveRecord::Associations::Builder::DeprecatedOptionsProc</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations/CollectionProxy.html">ActiveRecord::Associations::CollectionProxy</a></li>
+        
+          <li><a href="../../ActiveRecord/Associations/CollectionProxy/InterceptDynamicInstantiators.html">ActiveRecord::Associations::CollectionProxy::InterceptDynamicInstantiators</a></li>
+        
+          <li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+        
+          <li><a href="../../ActiveRecord/DeprecatedFinders.html">ActiveRecord::DeprecatedFinders</a></li>
+        
+          <li><a href="../../ActiveRecord/DeprecatedFinders/ScopeWrapper.html">ActiveRecord::DeprecatedFinders::ScopeWrapper</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers.html">ActiveRecord::DynamicMatchers</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/DeprecatedFinder.html">ActiveRecord::DynamicMatchers::DeprecatedFinder</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/DeprecationWarning.html">ActiveRecord::DynamicMatchers::DeprecationWarning</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindAllBy.html">ActiveRecord::DynamicMatchers::FindAllBy</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindBy.html">ActiveRecord::DynamicMatchers::FindBy</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindByBang.html">ActiveRecord::DynamicMatchers::FindByBang</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindByDeprecationWarning.html">ActiveRecord::DynamicMatchers::FindByDeprecationWarning</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindLastBy.html">ActiveRecord::DynamicMatchers::FindLastBy</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindOrCreateBy.html">ActiveRecord::DynamicMatchers::FindOrCreateBy</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindOrCreateByBang.html">ActiveRecord::DynamicMatchers::FindOrCreateByBang</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/FindOrInitializeBy.html">ActiveRecord::DynamicMatchers::FindOrInitializeBy</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/Instantiator.html">ActiveRecord::DynamicMatchers::Instantiator</a></li>
+        
+          <li><a href="../../ActiveRecord/DynamicMatchers/ScopedBy.html">ActiveRecord::DynamicMatchers::ScopedBy</a></li>
+        
+          <li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+        
+          <li><a href="../../ActiveRecord/Relation/DeprecatedMethods.html">ActiveRecord::Relation::DeprecatedMethods</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveRecord::Relation::DeprecatedMethods</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VALID_FIND_OPTIONS">VALID_FIND_OPTIONS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="all-method" class="method-detail ">
+          <a name="method-i-all"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">all</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="all-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+    <span class="ruby-node">&quot;Relation#all is deprecated. If you want to eager-load a relation, you can &quot;</span>            <span class="ruby-node">&quot;call #load (e.g. `Post.where(published: true).load`). If you want &quot;</span>            <span class="ruby-node">&quot;to get an array of records from a relation, you can call #to_a (e.g. &quot;</span>            <span class="ruby-string">&quot;`Post.where(published: true).to_a`).&quot;</span>, <span class="ruby-identifier">caller</span>
+  )
+  <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>, <span class="ruby-keyword">true</span>).<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- all-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- all-method -->
+
+      
+        <div id="apply_finder_options-method" class="method-detail ">
+          <a name="method-i-apply_finder_options"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply_finder_options</span><span
+              class="method-args">(options, silence_deprecation = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>The silence_deprecation arg is for internal use, where we have already
+output a deprecation further up the call stack.</p>
+            
+
+            
+            <div class="method-source-code" id="apply_finder_options-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">silence_deprecation</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;#apply_finder_options is deprecated&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">silence_deprecation</span>
+
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">relation</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>
+
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">assert_valid_keys</span>(<span class="ruby-constant">VALID_FIND_OPTIONS</span>)
+  <span class="ruby-identifier">finders</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">finders</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:limit</span> }
+
+  ((<span class="ruby-constant">VALID_FIND_OPTIONS</span> <span class="ruby-operator">-</span> [<span class="ruby-value">:conditions</span>, <span class="ruby-value">:include</span>]) &amp; <span class="ruby-identifier">finders</span>.<span class="ruby-identifier">keys</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">finder</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">finder</span>, <span class="ruby-identifier">finders</span>[<span class="ruby-identifier">finder</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">finders</span>[<span class="ruby-value">:conditions</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:conditions</span>)
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-identifier">finders</span>[<span class="ruby-value">:include</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:include</span>)
+
+  <span class="ruby-identifier">relation</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- apply_finder_options-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- apply_finder_options-method -->
+
+      
+        <div id="calculate-method" class="method-detail ">
+          <a name="method-i-calculate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">calculate</span><span
+              class="method-args">(operation, column_name, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="calculate-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calculate</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:distinct</span>).<span class="ruby-identifier">present?</span>
+    <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+      <span class="ruby-node">&quot;Relation#calculate with finder options is deprecated. Please build &quot;</span>              <span class="ruby-string">&quot;a scope and then call calculate on it instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+    )
+
+    <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:distinct</span>), <span class="ruby-keyword">true</span>)
+      .<span class="ruby-identifier">calculate</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-value">:distinct</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:distinct</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- calculate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- calculate-method -->
+
+      
+        <div id="find-method" class="method-detail ">
+          <a name="method-i-find"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">scope</span> = <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-keyword">true</span>)
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">finder</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:first</span>, <span class="ruby-value">:last</span>, <span class="ruby-value">:all</span>
+      <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+        <span class="ruby-node">&quot;Calling #find(#{finder.inspect}) is deprecated. Please call &quot;</span>                <span class="ruby-node">&quot;##{finder} directly instead. You have also used finder options. &quot;</span>                <span class="ruby-string">&quot;These are also deprecated. Please build a scope instead of using &quot;</span>                <span class="ruby-string">&quot;finder options.&quot;</span>, <span class="ruby-identifier">caller</span>
+      )
+
+      <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">finder</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+        <span class="ruby-node">&quot;Passing options to #find is deprecated. Please build a scope &quot;</span>                <span class="ruby-node">&quot;and then call #find on it.&quot;</span>, <span class="ruby-identifier">caller</span>
+      )
+
+      <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">find</span>(*<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">finder</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:first</span>, <span class="ruby-value">:last</span>, <span class="ruby-value">:all</span>
+      <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+        <span class="ruby-node">&quot;Calling #find(#{finder.inspect}) is deprecated. Please call &quot;</span>                <span class="ruby-node">&quot;##{finder} directly instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+      )
+
+      <span class="ruby-identifier">send</span>(<span class="ruby-identifier">finder</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find-method -->
+
+      
+        <div id="find_in_batches-method" class="method-detail ">
+          <a name="method-i-find_in_batches"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_in_batches</span><span
+              class="method-args">(options = {}, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_in_batches-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_in_batches</span>(<span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">finder_options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:start</span>, <span class="ruby-value">:batch_size</span>)).<span class="ruby-identifier">present?</span>
+    <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+      <span class="ruby-node">&quot;Relation#find_in_batches with finder options is deprecated. Please build &quot;</span>              <span class="ruby-string">&quot;a scope and then call find_in_batches on it instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+    )
+
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;You can't specify an order, it's forced to be #{batch_order}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:order</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;You can't specify a limit, it's forced to be the batch_size&quot;</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>].<span class="ruby-identifier">present?</span>
+
+    <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">finder_options</span>, <span class="ruby-keyword">true</span>).
+      <span class="ruby-identifier">find_in_batches</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">:start</span>, <span class="ruby-value">:batch_size</span>), &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_in_batches-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_in_batches-method -->
+
+      
+        <div id="first-method" class="method-detail ">
+          <a name="method-i-first"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">first</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="first-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">loaded?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>))
+      <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+        <span class="ruby-node">&quot;Relation#first with finder options is deprecated. Please build &quot;</span>                <span class="ruby-node">&quot;a scope and then call #first on it instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+      )
+
+      <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>, <span class="ruby-keyword">true</span>).<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- first-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- first-method -->
+
+      
+        <div id="last-method" class="method-detail ">
+          <a name="method-i-last"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">last</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="last-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">loaded?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>))
+      <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+        <span class="ruby-node">&quot;Relation#last with finder options is deprecated. Please build &quot;</span>                <span class="ruby-node">&quot;a scope and then call #last on it instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+      )
+
+      <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>, <span class="ruby-keyword">true</span>).<span class="ruby-identifier">last</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- last-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- last-method -->
+
+      
+        <div id="update_all_with_deprecated_options-method" class="method-detail ">
+          <a name="method-i-update_all_with_deprecated_options"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">update_all_with_deprecated_options</span><span
+              class="method-args">(updates, conditions = nil, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="update_all_with_deprecated_options-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/deprecated_finders/relation.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_all_with_deprecated_options</span>(<span class="ruby-identifier">updates</span>, <span class="ruby-identifier">conditions</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">scope</span> = <span class="ruby-keyword">self</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span>
+    <span class="ruby-identifier">scope</span> = <span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+
+    <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+      <span class="ruby-node">&quot;Relation#update_all with conditions is deprecated. Please use &quot;</span>              <span class="ruby-string">&quot;Item.where(color: 'red').update_all(...) rather than &quot;</span>              <span class="ruby-string">&quot;Item.update_all(..., color: 'red').&quot;</span>, <span class="ruby-identifier">caller</span>
+    )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">scope</span> = <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">:limit</span>, <span class="ruby-value">:order</span>), <span class="ruby-keyword">true</span>)
+
+    <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(
+      <span class="ruby-node">&quot;Relation#update_all with :limit / :order options is deprecated. &quot;</span>              <span class="ruby-string">&quot;Please use e.g. Post.limit(1).order(:foo).update_all instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+    )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">update_all_without_deprecated_options</span>(<span class="ruby-identifier">updates</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- update_all_with_deprecated_options-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- update_all_with_deprecated_options-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

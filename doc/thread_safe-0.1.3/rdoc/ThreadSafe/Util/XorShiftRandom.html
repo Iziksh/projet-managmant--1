@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ThreadSafe::Util::XorShiftRandom</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/thread_safe/util/xor_shift_random_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/thread_safe/util/xor_shift_random.rb">lib/thread_safe/util/xor_shift_random.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-get">#get</a></li>
+          
+          <li><a href="#method-i-xorshift">#xorshift</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../ThreadSafe.html">ThreadSafe</a></li>
+        
+          <li><a href="../../ThreadSafe/Array.html">ThreadSafe::Array</a></li>
+        
+          <li><a href="../../ThreadSafe/AtomicReferenceCacheBackend.html">ThreadSafe::AtomicReferenceCacheBackend</a></li>
+        
+          <li><a href="../../ThreadSafe/AtomicReferenceCacheBackend/Node.html">ThreadSafe::AtomicReferenceCacheBackend::Node</a></li>
+        
+          <li><a href="../../ThreadSafe/AtomicReferenceCacheBackend/Table.html">ThreadSafe::AtomicReferenceCacheBackend::Table</a></li>
+        
+          <li><a href="../../ThreadSafe/Cache.html">ThreadSafe::Cache</a></li>
+        
+          <li><a href="../../ThreadSafe/Hash.html">ThreadSafe::Hash</a></li>
+        
+          <li><a href="../../ThreadSafe/MriCacheBackend.html">ThreadSafe::MriCacheBackend</a></li>
+        
+          <li><a href="../../ThreadSafe/NonConcurrentCacheBackend.html">ThreadSafe::NonConcurrentCacheBackend</a></li>
+        
+          <li><a href="../../ThreadSafe/SynchronizedCacheBackend.html">ThreadSafe::SynchronizedCacheBackend</a></li>
+        
+          <li><a href="../../ThreadSafe/Util.html">ThreadSafe::Util</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/Adder.html">ThreadSafe::Util::Adder</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/CheapLockable.html">ThreadSafe::Util::CheapLockable</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/PowerOfTwoTuple.html">ThreadSafe::Util::PowerOfTwoTuple</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/Striped64.html">ThreadSafe::Util::Striped64</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/Striped64/Cell.html">ThreadSafe::Util::Striped64::Cell</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/Volatile.html">ThreadSafe::Util::Volatile</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/VolatileTuple.html">ThreadSafe::Util::VolatileTuple</a></li>
+        
+          <li><a href="../../ThreadSafe/Util/XorShiftRandom.html">ThreadSafe::Util::XorShiftRandom</a></li>
+        
+          <li><a href="../../SynchronizedDelegator.html">SynchronizedDelegator</a></li>
+        
+          <li><a href="../../Threadsafe.html">Threadsafe</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ThreadSafe::Util::XorShiftRandom</h1>
+
+    <div id="description" class="description">
+      
+<p>A xorshift random number (positive +Fixnum+s) generator, provides
+reasonably cheap way to generate thread local random numbers without
+contending for the global <tt>Kernel.rand</tt>. Usage:</p>
+
+<pre>x = XorShiftRandom.get # uses Kernel.rand to generate an initial seed
+while true
+  if (x = XorShiftRandom.xorshift).odd? # thread-localy generate a next random number
+    do_something_at_random
+  end
+end</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="MAX_XOR_SHIFTABLE_INT">MAX_XOR_SHIFTABLE_INT</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="get-method" class="method-detail ">
+          <a name="method-i-get"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Generates an initial non-zero positive <tt>Fixnum</tt> via
+<tt>Kernel.rand</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="get-source">
+<pre>
+<span class="ruby-comment"># File lib/thread_safe/util/xor_shift_random.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>
+  <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">rand</span>(<span class="ruby-constant">MAX_XOR_SHIFTABLE_INT</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-comment"># 0 can't be xorshifted</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get-method -->
+
+      
+        <div id="xorshift-method" class="method-detail ">
+          <a name="method-i-xorshift"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xorshift</span><span
+              class="method-args">(x)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>using the “yˆ=y&gt;&gt;a; yˆ=y&lt;&lt;b; yˆ=y&gt;&gt;c;” transform with the
+(a,b,c) tuple with values (3,1,14) to minimise Bignum overflows</p>
+            
+
+            
+            <div class="method-source-code" id="xorshift-source">
+<pre>
+<span class="ruby-comment"># File lib/thread_safe/util/xor_shift_random.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xorshift</span>(<span class="ruby-identifier">x</span>)
+  <span class="ruby-identifier">x</span> <span class="ruby-operator">^=</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">3</span>
+  <span class="ruby-identifier">x</span> <span class="ruby-operator">^=</span> (<span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">1</span>) &amp; <span class="ruby-constant">MAX_INT</span> <span class="ruby-comment"># cut-off Bignum overflow</span>
+  <span class="ruby-identifier">x</span> <span class="ruby-operator">^=</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">14</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- xorshift-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- xorshift-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

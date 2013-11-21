@@ -1,0 +1,1602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveRecord::FinderMethods</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/active_record/relation/finder_methods_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/relation/finder_methods.rb">lib/active_record/relation/finder_methods.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-apply_join_dependency">#apply_join_dependency</a></li>
+          
+          <li><a href="#method-i-construct_join_dependency_for_association_find">#construct_join_dependency_for_association_find</a></li>
+          
+          <li><a href="#method-i-construct_limited_ids_condition">#construct_limited_ids_condition</a></li>
+          
+          <li><a href="#method-i-construct_relation_for_association_calculations">#construct_relation_for_association_calculations</a></li>
+          
+          <li><a href="#method-i-construct_relation_for_association_find">#construct_relation_for_association_find</a></li>
+          
+          <li><a href="#method-i-exists-3F">#exists?</a></li>
+          
+          <li><a href="#method-i-find">#find</a></li>
+          
+          <li><a href="#method-i-find_by">#find_by</a></li>
+          
+          <li><a href="#method-i-find_by-21">#find_by!</a></li>
+          
+          <li><a href="#method-i-find_first">#find_first</a></li>
+          
+          <li><a href="#method-i-find_last">#find_last</a></li>
+          
+          <li><a href="#method-i-find_one">#find_one</a></li>
+          
+          <li><a href="#method-i-find_some">#find_some</a></li>
+          
+          <li><a href="#method-i-find_take">#find_take</a></li>
+          
+          <li><a href="#method-i-find_with_associations">#find_with_associations</a></li>
+          
+          <li><a href="#method-i-find_with_ids">#find_with_ids</a></li>
+          
+          <li><a href="#method-i-first">#first</a></li>
+          
+          <li><a href="#method-i-first-21">#first!</a></li>
+          
+          <li><a href="#method-i-last">#last</a></li>
+          
+          <li><a href="#method-i-last-21">#last!</a></li>
+          
+          <li><a href="#method-i-take">#take</a></li>
+          
+          <li><a href="#method-i-take-21">#take!</a></li>
+          
+          <li><a href="#method-i-using_limitable_reflections-3F">#using_limitable_reflections?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActiveRecord.html">ActiveRecord</a></li>
+        
+          <li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+        
+          <li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+        
+          <li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+        
+          <li><a href="../ActiveRecord/Aggregations.html">ActiveRecord::Aggregations</a></li>
+        
+          <li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AssociationRelation.html">ActiveRecord::AssociationRelation</a></li>
+        
+          <li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+        
+          <li><a href="../ActiveRecord/Associations.html">ActiveRecord::Associations</a></li>
+        
+          <li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Associations/CollectionProxy.html">ActiveRecord::Associations::CollectionProxy</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeAssignment.html">ActiveRecord::AttributeAssignment</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods.html">ActiveRecord::AttributeMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Serialization/ClassMethods.html">ActiveRecord::AttributeMethods::Serialization::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+        
+          <li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+        
+          <li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+        
+          <li><a href="../ActiveRecord/Batches.html">ActiveRecord::Batches</a></li>
+        
+          <li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+        
+          <li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+        
+          <li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters.html">ActiveRecord::ConnectionAdapters</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::AbstractAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ColumnDumper.html">ActiveRecord::ConnectionAdapters::ColumnDumper</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool/Queue.html">ActiveRecord::ConnectionAdapters::ConnectionPool::Queue</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool/Reaper.html">ActiveRecord::ConnectionAdapters::ConnectionPool::Reaper</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Boolean.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Boolean</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Date.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Date</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/DateTime.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::DateTime</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Decimal.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Decimal</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Float.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Float</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Identity.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Identity</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Integer.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Integer</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Time.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Time</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Type.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Type</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ColumnDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ColumnDefinition</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ColumnMethods.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ColumnMethods</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::DatabaseStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Array.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Array</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Bit.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Bit</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Boolean.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Boolean</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Bytea.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Bytea</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Cidr.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Cidr</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Date.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Date</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Decimal.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Decimal</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Float.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Float</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Hstore.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Hstore</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Identity.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Identity</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Integer.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Integer</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Json.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Json</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Money.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Money</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Point.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Point</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Range.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Range</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Time.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Time</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Timestamp.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Timestamp</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Type.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Type</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/TypeMap.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::TypeMap</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Vector.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Vector</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Quoting.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Quoting</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ReferentialIntegrity.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ReferentialIntegrity</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/SchemaStatements.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Table.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Table</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/TableDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::TableDefinition</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Utils.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Utils</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn/ArrayParser.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn::ArrayParser</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn/Cast.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn::Cast</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter/ExplainPrettyPrinter.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::ExplainPrettyPrinter</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter/StatementPool.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SQLite3Adapter/Version.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::Version</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SchemaCache.html">ActiveRecord::ConnectionAdapters::SchemaCache</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/StatementPool.html">ActiveRecord::ConnectionAdapters::StatementPool</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionAdapters/TransactionState.html">ActiveRecord::ConnectionAdapters::TransactionState</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionHandling.html">ActiveRecord::ConnectionHandling</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+        
+          <li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+        
+          <li><a href="../ActiveRecord/Core.html">ActiveRecord::Core</a></li>
+        
+          <li><a href="../ActiveRecord/Core/ClassMethods.html">ActiveRecord::Core::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+        
+          <li><a href="../ActiveRecord/CounterCache/ClassMethods.html">ActiveRecord::CounterCache::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers.html">ActiveRecord::DynamicMatchers</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/FindBy.html">ActiveRecord::DynamicMatchers::FindBy</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/FindByBang.html">ActiveRecord::DynamicMatchers::FindByBang</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/Finder.html">ActiveRecord::DynamicMatchers::Finder</a></li>
+        
+          <li><a href="../ActiveRecord/DynamicMatchers/Method.html">ActiveRecord::DynamicMatchers::Method</a></li>
+        
+          <li><a href="../ActiveRecord/Explain.html">ActiveRecord::Explain</a></li>
+        
+          <li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+        
+          <li><a href="../ActiveRecord/FixtureSet.html">ActiveRecord::FixtureSet</a></li>
+        
+          <li><a href="../ActiveRecord/ImmutableRelation.html">ActiveRecord::ImmutableRelation</a></li>
+        
+          <li><a href="../ActiveRecord/Inheritance.html">ActiveRecord::Inheritance</a></li>
+        
+          <li><a href="../ActiveRecord/Inheritance/ClassMethods.html">ActiveRecord::Inheritance::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Integration.html">ActiveRecord::Integration</a></li>
+        
+          <li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+        
+          <li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+        
+          <li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+        
+          <li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+        
+          <li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+        
+          <li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+        
+          <li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+        
+          <li><a href="../ActiveRecord/Migration/CheckPending.html">ActiveRecord::Migration::CheckPending</a></li>
+        
+          <li><a href="../ActiveRecord/Migration/CommandRecorder.html">ActiveRecord::Migration::CommandRecorder</a></li>
+        
+          <li><a href="../ActiveRecord/Migration/CommandRecorder/StraightReversions.html">ActiveRecord::Migration::CommandRecorder::StraightReversions</a></li>
+        
+          <li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+        
+          <li><a href="../ActiveRecord/ModelSchema.html">ActiveRecord::ModelSchema</a></li>
+        
+          <li><a href="../ActiveRecord/ModelSchema/ClassMethods.html">ActiveRecord::ModelSchema::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+        
+          <li><a href="../ActiveRecord/NestedAttributes.html">ActiveRecord::NestedAttributes</a></li>
+        
+          <li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+        
+          <li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+        
+          <li><a href="../ActiveRecord/Persistence/ClassMethods.html">ActiveRecord::Persistence::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+        
+          <li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+        
+          <li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+        
+          <li><a href="../ActiveRecord/QueryMethods/WhereChain.html">ActiveRecord::QueryMethods::WhereChain</a></li>
+        
+          <li><a href="../ActiveRecord/Querying.html">ActiveRecord::Querying</a></li>
+        
+          <li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+        
+          <li><a href="../ActiveRecord/ReadonlyAttributes.html">ActiveRecord::ReadonlyAttributes</a></li>
+        
+          <li><a href="../ActiveRecord/ReadonlyAttributes/ClassMethods.html">ActiveRecord::ReadonlyAttributes::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotDestroyed.html">ActiveRecord::RecordNotDestroyed</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+        
+          <li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+        
+          <li><a href="../ActiveRecord/Reflection.html">ActiveRecord::Reflection</a></li>
+        
+          <li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+        
+          <li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+        
+          <li><a href="../ActiveRecord/Result.html">ActiveRecord::Result</a></li>
+        
+          <li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+        
+          <li><a href="../ActiveRecord/SQLCounter.html">ActiveRecord::SQLCounter</a></li>
+        
+          <li><a href="../ActiveRecord/Sanitization.html">ActiveRecord::Sanitization</a></li>
+        
+          <li><a href="../ActiveRecord/Sanitization/ClassMethods.html">ActiveRecord::Sanitization::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+        
+          <li><a href="../ActiveRecord/SchemaMigration.html">ActiveRecord::SchemaMigration</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping.html">ActiveRecord::Scoping</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/ClassMethods.html">ActiveRecord::Scoping::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Default.html">ActiveRecord::Scoping::Default</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Default/ClassMethods.html">ActiveRecord::Scoping::Default::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Named.html">ActiveRecord::Scoping::Named</a></li>
+        
+          <li><a href="../ActiveRecord/Scoping/Named/ClassMethods.html">ActiveRecord::Scoping::Named::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+        
+          <li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+        
+          <li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+        
+          <li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+        
+          <li><a href="../ActiveRecord/StatementCache.html">ActiveRecord::StatementCache</a></li>
+        
+          <li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+        
+          <li><a href="../ActiveRecord/Store.html">ActiveRecord::Store</a></li>
+        
+          <li><a href="../ActiveRecord/Store/ClassMethods.html">ActiveRecord::Store::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks.html">ActiveRecord::Tasks</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks/DatabaseAlreadyExists.html">ActiveRecord::Tasks::DatabaseAlreadyExists</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks/DatabaseNotSupported.html">ActiveRecord::Tasks::DatabaseNotSupported</a></li>
+        
+          <li><a href="../ActiveRecord/Tasks/DatabaseTasks.html">ActiveRecord::Tasks::DatabaseTasks</a></li>
+        
+          <li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+        
+          <li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+        
+          <li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+        
+          <li><a href="../ActiveRecord/TransactionIsolationError.html">ActiveRecord::TransactionIsolationError</a></li>
+        
+          <li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+        
+          <li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/Translation.html">ActiveRecord::Translation</a></li>
+        
+          <li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+        
+          <li><a href="../ActiveRecord/UnknownPrimaryKey.html">ActiveRecord::UnknownPrimaryKey</a></li>
+        
+          <li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+        
+          <li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+        
+          <li><a href="../Mysql.html">Mysql</a></li>
+        
+          <li><a href="../Mysql/Result.html">Mysql::Result</a></li>
+        
+          <li><a href="../Mysql/Stmt.html">Mysql::Stmt</a></li>
+        
+          <li><a href="../Mysql/Time.html">Mysql::Time</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveRecord::FinderMethods</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="exists-3F-method" class="method-detail ">
+          <a name="method-i-exists-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">exists?</span><span
+              class="method-args">(conditions = :none)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns <tt>true</tt> if a record exists in the table that matches the
+<tt>id</tt> or conditions given, or <tt>false</tt> otherwise. The argument
+can take six forms:</p>
+<ul><li>
+<p>Integer - Finds the record with this primary key.</p>
+</li><li>
+<p>String - Finds the record with a primary key corresponding to this string
+(such as <tt>'5'</tt>).</p>
+</li><li>
+<p>Array - Finds the record that matches these <tt>find</tt>-style conditions
+(such as <tt>['name LIKE ?', &quot;%#{query}%&quot;]</tt>).</p>
+</li><li>
+<p>Hash - Finds the record that matches these <tt>find</tt>-style conditions
+(such as <tt>{name: 'David'}</tt>).</p>
+</li><li>
+<p><tt>false</tt> - Returns always <tt>false</tt>.</p>
+</li><li>
+<p>No args - Returns <tt>false</tt> if the table is empty, <tt>true</tt>
+otherwise.</p>
+</li></ul>
+
+<p>For more information about specifying conditions as a hash or array, see
+the Conditions section in the introduction to <tt>ActiveRecord::Base</tt>.</p>
+
+<p>Note: You can’t pass in a condition as a string (like <tt>name =
+'Jamie'</tt>), since it would be sanitized and then queried against the
+primary key column, like <tt>id = 'name = \'Jamie\''</tt>.</p>
+
+<pre>Person.exists?(5)
+Person.exists?('5')
+Person.exists?(['name LIKE ?', &quot;%#{query}%&quot;])
+Person.exists?(name: 'David')
+Person.exists?(false)
+Person.exists?</pre>
+            
+
+            
+            <div class="method-source-code" id="exists-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">conditions</span> = <span class="ruby-value">:none</span>)
+  <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">id</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Base</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">conditions</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">conditions</span>
+
+  <span class="ruby-identifier">join_dependency</span> = <span class="ruby-identifier">construct_join_dependency_for_association_find</span>
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">construct_relation_for_association_find</span>(<span class="ruby-identifier">join_dependency</span>)
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:select</span>, <span class="ruby-value">:order</span>).<span class="ruby-identifier">select</span>(<span class="ruby-string">&quot;1 AS one&quot;</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-value">1</span>)
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">conditions</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>, <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">eq</span>(<span class="ruby-identifier">conditions</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:none</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_value</span>(<span class="ruby-identifier">relation</span>, <span class="ruby-node">&quot;#{name} Exists&quot;</span>, <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">bind_values</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ThrowResult</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- exists-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- exists-3F-method -->
+
+      
+        <div id="find-method" class="method-detail ">
+          <a name="method-i-find"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find by id - This can either be a specific id (1), a list of ids (1, 5, 6),
+or an array of ids ([5, 6, 10]). If no record can be found for all of the
+listed ids, then <a href="RecordNotFound.html">RecordNotFound</a> will be
+raised. If the primary key is an integer, find by id coerces its arguments
+using <tt>to_i</tt>.</p>
+
+<pre>Person.find(1)       # returns the object for ID = 1
+Person.find(&quot;1&quot;)     # returns the object for ID = 1
+Person.find(1, 2, 6) # returns an array for objects with IDs in (1, 2, 6)
+Person.find([7, 17]) # returns an array for objects with IDs in (7, 17)
+Person.find([1])     # returns an array for the object with ID = 1
+Person.where(&quot;administrator = 1&quot;).order(&quot;created_on DESC&quot;).find(1)</pre>
+
+<p>Note that returned records may not be in the same order as the ids you
+provide since database rows are unordered. Give an explicit <tt>order</tt>
+to ensure the results are sorted.</p>
+
+<h4>Find with lock</h4>
+
+<p>Example for find with a lock: Imagine two concurrent transactions: each
+will read <tt>person.visits == 2</tt>, add 1 to it, and save, resulting in
+two saves of <tt>person.visits = 3</tt>. By locking the row, the second
+transaction has to wait until the first is finished; we get the expected
+<tt>person.visits == 4</tt>.</p>
+
+<pre>Person.transaction do
+  person = Person.lock(true).find(1)
+  person.visits += 1
+  person.save!
+end</pre>
+            
+
+            
+            <div class="method-source-code" id="find-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span>*<span class="ruby-identifier">block_args</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span>(*<span class="ruby-identifier">block_args</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">find_with_ids</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find-method -->
+
+      
+        <div id="find_by-method" class="method-detail ">
+          <a name="method-i-find_by"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_by</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Finds the first record matching the specified conditions. There is no
+implied ordering so if order matters, you should specify it yourself.</p>
+
+<p>If no record is found, returns <tt>nil</tt>.</p>
+
+<pre>Post.find_by name: 'Spartacus', rating: 4
+Post.find_by &quot;published_at &lt; ?&quot;, 2.weeks.ago</pre>
+            
+
+            
+            <div class="method-source-code" id="find_by-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">where</span>(*<span class="ruby-identifier">args</span>).<span class="ruby-identifier">take</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_by-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_by-method -->
+
+      
+        <div id="find_by-21-method" class="method-detail ">
+          <a name="method-i-find_by-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_by!</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Like <tt>find_by</tt>, except that if no record is found, raises an
+<tt>ActiveRecord::RecordNotFound</tt> error.</p>
+            
+
+            
+            <div class="method-source-code" id="find_by-21-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by!</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">where</span>(*<span class="ruby-identifier">args</span>).<span class="ruby-identifier">take!</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_by-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_by-21-method -->
+
+      
+        <div id="first-method" class="method-detail ">
+          <a name="method-i-first"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">first</span><span
+              class="method-args">(limit = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find the first record (or first N records if a parameter is supplied). If
+no order is defined it will order by primary key.</p>
+
+<pre>Person.first # returns the first object fetched by SELECT * FROM people
+Person.where([&quot;user_name = ?&quot;, user_name]).first
+Person.where([&quot;user_name = :u&quot;, { u: user_name }]).first
+Person.order(&quot;created_on DESC&quot;).offset(5).first
+Person.first(3) # returns the first three objects fetched by SELECT * FROM people LIMIT 3</pre>
+            
+
+            
+            <div class="method-source-code" id="first-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">limit</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">order_values</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">primary_key</span>
+      <span class="ruby-identifier">order</span>(<span class="ruby-identifier">arel_table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">asc</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-identifier">limit</span>).<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">limit</span>(<span class="ruby-identifier">limit</span>).<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">find_first</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- first-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- first-method -->
+
+      
+        <div id="first-21-method" class="method-detail ">
+          <a name="method-i-first-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">first!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>first</tt> but raises <tt>ActiveRecord::RecordNotFound</tt> if
+no record is found. Note that <tt>first!</tt> accepts no arguments.</p>
+            
+
+            
+            <div class="method-source-code" id="first-21-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first!</span>
+  <span class="ruby-identifier">first</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">RecordNotFound</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- first-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- first-21-method -->
+
+      
+        <div id="last-method" class="method-detail ">
+          <a name="method-i-last"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">last</span><span
+              class="method-args">(limit = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Find the last record (or last N records if a parameter is supplied). If no
+order is defined it will order by primary key.</p>
+
+<pre>Person.last # returns the last object fetched by SELECT * FROM people
+Person.where([&quot;user_name = ?&quot;, user_name]).last
+Person.order(&quot;created_on DESC&quot;).offset(5).last
+Person.last(3) # returns the last three objects fetched by SELECT * FROM people.</pre>
+
+<p>Take note that in that last case, the results are sorted in ascending
+order:</p>
+
+<pre>[#&lt;Person id:2&gt;, #&lt;Person id:3&gt;, #&lt;Person id:4&gt;]</pre>
+
+<p>and not:</p>
+
+<pre>[#&lt;Person id:4&gt;, #&lt;Person id:3&gt;, #&lt;Person id:2&gt;]</pre>
+            
+
+            
+            <div class="method-source-code" id="last-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">limit</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">order_values</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">primary_key</span>
+      <span class="ruby-identifier">order</span>(<span class="ruby-identifier">arel_table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">desc</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-identifier">limit</span>).<span class="ruby-identifier">reverse</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">limit</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">find_last</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- last-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- last-method -->
+
+      
+        <div id="last-21-method" class="method-detail ">
+          <a name="method-i-last-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">last!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>last</tt> but raises <tt>ActiveRecord::RecordNotFound</tt> if
+no record is found. Note that <tt>last!</tt> accepts no arguments.</p>
+            
+
+            
+            <div class="method-source-code" id="last-21-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last!</span>
+  <span class="ruby-identifier">last</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">RecordNotFound</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- last-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- last-21-method -->
+
+      
+        <div id="take-method" class="method-detail ">
+          <a name="method-i-take"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">take</span><span
+              class="method-args">(limit = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Gives a record (or N records if a parameter is supplied) without any
+implied order. The order will depend on the database implementation. If an
+order is supplied it will be respected.</p>
+
+<pre>Person.take # returns an object fetched by SELECT * FROM people LIMIT 1
+Person.take(5) # returns 5 objects fetched by SELECT * FROM people LIMIT 5
+Person.where([&quot;name LIKE '%?'&quot;, name]).take</pre>
+            
+
+            
+            <div class="method-source-code" id="take-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">take</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">limit</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">limit</span>(<span class="ruby-identifier">limit</span>).<span class="ruby-identifier">to_a</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">find_take</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- take-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- take-method -->
+
+      
+        <div id="take-21-method" class="method-detail ">
+          <a name="method-i-take-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">take!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>take</tt> but raises <tt>ActiveRecord::RecordNotFound</tt> if
+no record is found. Note that <tt>take!</tt> accepts no arguments.</p>
+            
+
+            
+            <div class="method-source-code" id="take-21-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">take!</span>
+  <span class="ruby-identifier">take</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">RecordNotFound</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- take-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- take-21-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="apply_join_dependency-method" class="method-detail ">
+          <a name="method-i-apply_join_dependency"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply_join_dependency</span><span
+              class="method-args">(relation, join_dependency)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="apply_join_dependency-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_join_dependency</span>(<span class="ruby-identifier">relation</span>, <span class="ruby-identifier">join_dependency</span>)
+  <span class="ruby-identifier">join_dependency</span>.<span class="ruby-identifier">join_associations</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">association</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">association</span>.<span class="ruby-identifier">join_relation</span>(<span class="ruby-identifier">relation</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">limitable_reflections</span> = <span class="ruby-identifier">using_limitable_reflections?</span>(<span class="ruby-identifier">join_dependency</span>.<span class="ruby-identifier">reflections</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">limitable_reflections</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">limit_value</span>
+    <span class="ruby-identifier">limited_id_condition</span> = <span class="ruby-identifier">construct_limited_ids_condition</span>(<span class="ruby-identifier">relation</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:select</span>))
+    <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">limited_id_condition</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:limit</span>, <span class="ruby-value">:offset</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">limitable_reflections</span>
+
+  <span class="ruby-identifier">relation</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- apply_join_dependency-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- apply_join_dependency-method -->
+
+      
+        <div id="construct_join_dependency_for_association_find-method" class="method-detail ">
+          <a name="method-i-construct_join_dependency_for_association_find"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">construct_join_dependency_for_association_find</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="construct_join_dependency_for_association_find-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">construct_join_dependency_for_association_find</span>
+  <span class="ruby-identifier">including</span> = (<span class="ruby-identifier">eager_load_values</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">includes_values</span>).<span class="ruby-identifier">uniq</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinDependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>, <span class="ruby-identifier">including</span>, [])
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- construct_join_dependency_for_association_find-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- construct_join_dependency_for_association_find-method -->
+
+      
+        <div id="construct_limited_ids_condition-method" class="method-detail ">
+          <a name="method-i-construct_limited_ids_condition"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">construct_limited_ids_condition</span><span
+              class="method-args">(relation)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="construct_limited_ids_condition-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">construct_limited_ids_condition</span>(<span class="ruby-identifier">relation</span>)
+  <span class="ruby-identifier">orders</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">order_values</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">presence</span> }.<span class="ruby-identifier">compact</span>
+  <span class="ruby-identifier">values</span> = <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns_for_distinct</span>(<span class="ruby-node">&quot;#{quoted_table_name}.#{quoted_primary_key}&quot;</span>, <span class="ruby-identifier">orders</span>)
+
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">select</span>(<span class="ruby-identifier">values</span>).<span class="ruby-identifier">distinct!</span>
+
+  <span class="ruby-identifier">id_rows</span> = <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_all</span>(<span class="ruby-identifier">relation</span>.<span class="ruby-identifier">arel</span>, <span class="ruby-string">'SQL'</span>, <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">bind_values</span>)
+  <span class="ruby-identifier">ids_array</span> = <span class="ruby-identifier">id_rows</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span> <span class="ruby-identifier">row</span>[<span class="ruby-identifier">primary_key</span>]}
+
+  <span class="ruby-identifier">ids_array</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ThrowResult</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">in</span>(<span class="ruby-identifier">ids_array</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- construct_limited_ids_condition-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- construct_limited_ids_condition-method -->
+
+      
+        <div id="construct_relation_for_association_calculations-method" class="method-detail ">
+          <a name="method-i-construct_relation_for_association_calculations"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">construct_relation_for_association_calculations</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="construct_relation_for_association_calculations-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">construct_relation_for_association_calculations</span>
+  <span class="ruby-identifier">including</span> = (<span class="ruby-identifier">eager_load_values</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">includes_values</span>).<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">join_dependency</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinDependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>, <span class="ruby-identifier">including</span>, <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">froms</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">except</span>(<span class="ruby-value">:includes</span>, <span class="ruby-value">:eager_load</span>, <span class="ruby-value">:preload</span>)
+  <span class="ruby-identifier">apply_join_dependency</span>(<span class="ruby-identifier">relation</span>, <span class="ruby-identifier">join_dependency</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- construct_relation_for_association_calculations-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- construct_relation_for_association_calculations-method -->
+
+      
+        <div id="construct_relation_for_association_find-method" class="method-detail ">
+          <a name="method-i-construct_relation_for_association_find"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">construct_relation_for_association_find</span><span
+              class="method-args">(join_dependency)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="construct_relation_for_association_find-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">construct_relation_for_association_find</span>(<span class="ruby-identifier">join_dependency</span>)
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">except</span>(<span class="ruby-value">:includes</span>, <span class="ruby-value">:eager_load</span>, <span class="ruby-value">:preload</span>, <span class="ruby-value">:select</span>).<span class="ruby-identifier">select</span>(<span class="ruby-identifier">join_dependency</span>.<span class="ruby-identifier">columns</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">select_values</span>)
+  <span class="ruby-identifier">apply_join_dependency</span>(<span class="ruby-identifier">relation</span>, <span class="ruby-identifier">join_dependency</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- construct_relation_for_association_find-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- construct_relation_for_association_find-method -->
+
+      
+        <div id="find_first-method" class="method-detail ">
+          <a name="method-i-find_first"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_first</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_first-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_first</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">loaded?</span>
+    <span class="ruby-ivar">@records</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@first</span> <span class="ruby-operator">||=</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">with_default_scope</span>.<span class="ruby-identifier">order_values</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">primary_key</span>
+        <span class="ruby-identifier">order</span>(<span class="ruby-identifier">arel_table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">asc</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">limit</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_first-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_first-method -->
+
+      
+        <div id="find_last-method" class="method-detail ">
+          <a name="method-i-find_last"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_last</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_last-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_last</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">loaded?</span>
+    <span class="ruby-ivar">@records</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@last</span> <span class="ruby-operator">||=</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">offset_value</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">limit_value</span>
+        <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">last</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">reverse_order</span>.<span class="ruby-identifier">limit</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_last-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_last-method -->
+
+      
+        <div id="find_one-method" class="method-detail ">
+          <a name="method-i-find_one"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_one</span><span
+              class="method-args">(id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_one-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_one</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">id</span> = <span class="ruby-identifier">id</span>.<span class="ruby-identifier">id</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">id</span>
+
+  <span class="ruby-identifier">column</span> = <span class="ruby-identifier">columns_hash</span>[<span class="ruby-identifier">primary_key</span>]
+  <span class="ruby-identifier">substitute</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">substitute_at</span>(<span class="ruby-identifier">column</span>, <span class="ruby-identifier">bind_values</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">where</span>(<span class="ruby-identifier">table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">eq</span>(<span class="ruby-identifier">substitute</span>))
+  <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">bind_values</span> <span class="ruby-operator">+=</span> [[<span class="ruby-identifier">column</span>, <span class="ruby-identifier">id</span>]]
+  <span class="ruby-identifier">record</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">take</span>
+
+  <span class="ruby-identifier">raise_record_not_found_exception!</span>(<span class="ruby-identifier">id</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>
+
+  <span class="ruby-identifier">record</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_one-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_one-method -->
+
+      
+        <div id="find_some-method" class="method-detail ">
+          <a name="method-i-find_some"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_some</span><span
+              class="method-args">(ids)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_some-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_some</span>(<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">where</span>(<span class="ruby-identifier">table</span>[<span class="ruby-identifier">primary_key</span>].<span class="ruby-identifier">in</span>(<span class="ruby-identifier">ids</span>)).<span class="ruby-identifier">to_a</span>
+
+  <span class="ruby-identifier">expected_size</span> =
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">limit_value</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">limit_value</span>
+      <span class="ruby-identifier">limit_value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># 11 ids with limit 3, offset 9 should give 2 results.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">offset_value</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">offset_value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">expected_size</span>)
+    <span class="ruby-identifier">expected_size</span> = <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">offset_value</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected_size</span>
+    <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise_record_not_found_exception!</span>(<span class="ruby-identifier">ids</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">expected_size</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_some-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_some-method -->
+
+      
+        <div id="find_take-method" class="method-detail ">
+          <a name="method-i-find_take"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_take</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_take-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_take</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">loaded?</span>
+    <span class="ruby-ivar">@records</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@take</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">limit</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_take-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_take-method -->
+
+      
+        <div id="find_with_associations-method" class="method-detail ">
+          <a name="method-i-find_with_associations"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_with_associations</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_with_associations-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_with_associations</span>
+  <span class="ruby-identifier">join_dependency</span> = <span class="ruby-identifier">construct_join_dependency_for_association_find</span>
+  <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">construct_relation_for_association_find</span>(<span class="ruby-identifier">join_dependency</span>)
+  <span class="ruby-identifier">rows</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_all</span>(<span class="ruby-identifier">relation</span>, <span class="ruby-string">'SQL'</span>, <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">bind_values</span>.<span class="ruby-identifier">dup</span>)
+  <span class="ruby-identifier">join_dependency</span>.<span class="ruby-identifier">instantiate</span>(<span class="ruby-identifier">rows</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ThrowResult</span>
+  []
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_with_associations-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_with_associations-method -->
+
+      
+        <div id="find_with_ids-method" class="method-detail ">
+          <a name="method-i-find_with_ids"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_with_ids</span><span
+              class="method-args">(*ids)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="find_with_ids-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_with_ids</span>(*<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">expects_array</span> = <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">expects_array</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">uniq</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">RecordNotFound</span>, <span class="ruby-node">&quot;Couldn't find #{@klass.name} without an ID&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">find_one</span>(<span class="ruby-identifier">ids</span>.<span class="ruby-identifier">first</span>)
+    <span class="ruby-identifier">expects_array</span> <span class="ruby-operator">?</span> [ <span class="ruby-identifier">result</span> ] <span class="ruby-operator">:</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">find_some</span>(<span class="ruby-identifier">ids</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- find_with_ids-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_with_ids-method -->
+
+      
+        <div id="using_limitable_reflections-3F-method" class="method-detail ">
+          <a name="method-i-using_limitable_reflections-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">using_limitable_reflections?</span><span
+              class="method-args">(reflections)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="using_limitable_reflections-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/relation/finder_methods.rb, line 345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">using_limitable_reflections?</span>(<span class="ruby-identifier">reflections</span>)
+  <span class="ruby-identifier">reflections</span>.<span class="ruby-identifier">none?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">collection?</span> }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- using_limitable_reflections-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- using_limitable_reflections-3F-method -->
+
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

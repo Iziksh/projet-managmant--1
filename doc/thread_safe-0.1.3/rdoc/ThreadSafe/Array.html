@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: ThreadSafe::Array</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/thread_safe_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/thread_safe.rb">lib/thread_safe.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Array</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">JRuby::Synchronized</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ThreadSafe.html">ThreadSafe</a></li>
+        
+          <li><a href="../ThreadSafe/Array.html">ThreadSafe::Array</a></li>
+        
+          <li><a href="../ThreadSafe/AtomicReferenceCacheBackend.html">ThreadSafe::AtomicReferenceCacheBackend</a></li>
+        
+          <li><a href="../ThreadSafe/AtomicReferenceCacheBackend/Node.html">ThreadSafe::AtomicReferenceCacheBackend::Node</a></li>
+        
+          <li><a href="../ThreadSafe/AtomicReferenceCacheBackend/Table.html">ThreadSafe::AtomicReferenceCacheBackend::Table</a></li>
+        
+          <li><a href="../ThreadSafe/Cache.html">ThreadSafe::Cache</a></li>
+        
+          <li><a href="../ThreadSafe/Hash.html">ThreadSafe::Hash</a></li>
+        
+          <li><a href="../ThreadSafe/MriCacheBackend.html">ThreadSafe::MriCacheBackend</a></li>
+        
+          <li><a href="../ThreadSafe/NonConcurrentCacheBackend.html">ThreadSafe::NonConcurrentCacheBackend</a></li>
+        
+          <li><a href="../ThreadSafe/SynchronizedCacheBackend.html">ThreadSafe::SynchronizedCacheBackend</a></li>
+        
+          <li><a href="../ThreadSafe/Util.html">ThreadSafe::Util</a></li>
+        
+          <li><a href="../ThreadSafe/Util/Adder.html">ThreadSafe::Util::Adder</a></li>
+        
+          <li><a href="../ThreadSafe/Util/CheapLockable.html">ThreadSafe::Util::CheapLockable</a></li>
+        
+          <li><a href="../ThreadSafe/Util/PowerOfTwoTuple.html">ThreadSafe::Util::PowerOfTwoTuple</a></li>
+        
+          <li><a href="../ThreadSafe/Util/Striped64.html">ThreadSafe::Util::Striped64</a></li>
+        
+          <li><a href="../ThreadSafe/Util/Striped64/Cell.html">ThreadSafe::Util::Striped64::Cell</a></li>
+        
+          <li><a href="../ThreadSafe/Util/Volatile.html">ThreadSafe::Util::Volatile</a></li>
+        
+          <li><a href="../ThreadSafe/Util/VolatileTuple.html">ThreadSafe::Util::VolatileTuple</a></li>
+        
+          <li><a href="../ThreadSafe/Util/XorShiftRandom.html">ThreadSafe::Util::XorShiftRandom</a></li>
+        
+          <li><a href="../SynchronizedDelegator.html">SynchronizedDelegator</a></li>
+        
+          <li><a href="../Threadsafe.html">Threadsafe</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">ThreadSafe::Array</h1>
+
+    <div id="description" class="description">
+      
+<p>A thread-safe subclass of <a href="Array.html">Array</a>. This version
+locks against the object itself for every method call, ensuring only one
+thread can be reading or writing at a time. This includes iteration methods
+like each.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

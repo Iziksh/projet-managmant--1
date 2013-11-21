@@ -1,0 +1,1719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaStatements</title>
+
+  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../../lib/active_record/connection_adapters/postgresql/schema_statements_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_record/connection_adapters/postgresql/schema_statements.rb">lib/active_record/connection_adapters/postgresql/schema_statements.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-add_column">#add_column</a></li>
+          
+          <li><a href="#method-i-change_column">#change_column</a></li>
+          
+          <li><a href="#method-i-change_column_default">#change_column_default</a></li>
+          
+          <li><a href="#method-i-change_column_null">#change_column_null</a></li>
+          
+          <li><a href="#method-i-client_min_messages">#client_min_messages</a></li>
+          
+          <li><a href="#method-i-client_min_messages-3D">#client_min_messages=</a></li>
+          
+          <li><a href="#method-i-collation">#collation</a></li>
+          
+          <li><a href="#method-i-columns">#columns</a></li>
+          
+          <li><a href="#method-i-create_database">#create_database</a></li>
+          
+          <li><a href="#method-i-create_schema">#create_schema</a></li>
+          
+          <li><a href="#method-i-ctype">#ctype</a></li>
+          
+          <li><a href="#method-i-current_database">#current_database</a></li>
+          
+          <li><a href="#method-i-current_schema">#current_schema</a></li>
+          
+          <li><a href="#method-i-drop_schema">#drop_schema</a></li>
+          
+          <li><a href="#method-i-encoding">#encoding</a></li>
+          
+          <li><a href="#method-i-index_name_length">#index_name_length</a></li>
+          
+          <li><a href="#method-i-indexes">#indexes</a></li>
+          
+          <li><a href="#method-i-primary_key">#primary_key</a></li>
+          
+          <li><a href="#method-i-rename_column">#rename_column</a></li>
+          
+          <li><a href="#method-i-rename_index">#rename_index</a></li>
+          
+          <li><a href="#method-i-rename_table">#rename_table</a></li>
+          
+          <li><a href="#method-i-schema_exists-3F">#schema_exists?</a></li>
+          
+          <li><a href="#method-i-schema_names">#schema_names</a></li>
+          
+          <li><a href="#method-i-schema_search_path">#schema_search_path</a></li>
+          
+          <li><a href="#method-i-schema_search_path-3D">#schema_search_path=</a></li>
+          
+          <li><a href="#method-i-serial_sequence">#serial_sequence</a></li>
+          
+          <li><a href="#method-i-table_exists-3F">#table_exists?</a></li>
+          
+          <li><a href="#method-i-tables">#tables</a></li>
+          
+          <li><a href="#method-i-type_to_sql">#type_to_sql</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../../ActiveRecord.html">ActiveRecord</a></li>
+        
+          <li><a href="../../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+        
+          <li><a href="../../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+        
+          <li><a href="../../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+        
+          <li><a href="../../../ActiveRecord/Aggregations.html">ActiveRecord::Aggregations</a></li>
+        
+          <li><a href="../../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AssociationRelation.html">ActiveRecord::AssociationRelation</a></li>
+        
+          <li><a href="../../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+        
+          <li><a href="../../../ActiveRecord/Associations.html">ActiveRecord::Associations</a></li>
+        
+          <li><a href="../../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Associations/CollectionProxy.html">ActiveRecord::Associations::CollectionProxy</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeAssignment.html">ActiveRecord::AttributeAssignment</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods.html">ActiveRecord::AttributeMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Serialization/ClassMethods.html">ActiveRecord::AttributeMethods::Serialization::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+        
+          <li><a href="../../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+        
+          <li><a href="../../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+        
+          <li><a href="../../../ActiveRecord/Batches.html">ActiveRecord::Batches</a></li>
+        
+          <li><a href="../../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+        
+          <li><a href="../../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+        
+          <li><a href="../../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters.html">ActiveRecord::ConnectionAdapters</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/AbstractAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::AbstractAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/ColumnDumper.html">ActiveRecord::ConnectionAdapters::ColumnDumper</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/ConnectionPool/Queue.html">ActiveRecord::ConnectionAdapters::ConnectionPool::Queue</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/ConnectionPool/Reaper.html">ActiveRecord::ConnectionAdapters::ConnectionPool::Reaper</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Boolean.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Boolean</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Date.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Date</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/DateTime.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::DateTime</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Decimal.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Decimal</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Float.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Float</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Identity.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Identity</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Integer.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Integer</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Time.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Time</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/Fields/Type.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::Fields::Type</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/MysqlAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::StatementPool</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ColumnDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ColumnDefinition</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ColumnMethods.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ColumnMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::DatabaseStatements</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Array.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Array</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Bit.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Bit</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Boolean.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Boolean</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Bytea.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Bytea</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Cidr.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Cidr</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Date.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Date</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Decimal.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Decimal</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Float.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Float</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Hstore.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Hstore</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Identity.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Identity</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Integer.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Integer</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Json.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Json</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Money.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Money</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Point.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Point</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Range.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Range</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Time.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Time</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Timestamp.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Timestamp</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Type.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Type</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/TypeMap.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::TypeMap</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/OID/Vector.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Vector</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Quoting.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Quoting</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/ReferentialIntegrity.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::ReferentialIntegrity</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/SchemaCreation.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaCreation</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/SchemaStatements.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaStatements</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Table.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Table</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/TableDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::TableDefinition</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Utils.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Utils</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn/ArrayParser.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn::ArrayParser</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn/Cast.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn::Cast</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/SQLite3Adapter.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/SQLite3Adapter/ExplainPrettyPrinter.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::ExplainPrettyPrinter</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/SQLite3Adapter/StatementPool.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::StatementPool</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/SQLite3Adapter/Version.html">ActiveRecord::ConnectionAdapters::SQLite3Adapter::Version</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/SchemaCache.html">ActiveRecord::ConnectionAdapters::SchemaCache</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/StatementPool.html">ActiveRecord::ConnectionAdapters::StatementPool</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionAdapters/TransactionState.html">ActiveRecord::ConnectionAdapters::TransactionState</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionHandling.html">ActiveRecord::ConnectionHandling</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+        
+          <li><a href="../../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+        
+          <li><a href="../../../ActiveRecord/Core.html">ActiveRecord::Core</a></li>
+        
+          <li><a href="../../../ActiveRecord/Core/ClassMethods.html">ActiveRecord::Core::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+        
+          <li><a href="../../../ActiveRecord/CounterCache/ClassMethods.html">ActiveRecord::CounterCache::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+        
+          <li><a href="../../../ActiveRecord/DynamicMatchers.html">ActiveRecord::DynamicMatchers</a></li>
+        
+          <li><a href="../../../ActiveRecord/DynamicMatchers/FindBy.html">ActiveRecord::DynamicMatchers::FindBy</a></li>
+        
+          <li><a href="../../../ActiveRecord/DynamicMatchers/FindByBang.html">ActiveRecord::DynamicMatchers::FindByBang</a></li>
+        
+          <li><a href="../../../ActiveRecord/DynamicMatchers/Finder.html">ActiveRecord::DynamicMatchers::Finder</a></li>
+        
+          <li><a href="../../../ActiveRecord/DynamicMatchers/Method.html">ActiveRecord::DynamicMatchers::Method</a></li>
+        
+          <li><a href="../../../ActiveRecord/Explain.html">ActiveRecord::Explain</a></li>
+        
+          <li><a href="../../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/FixtureSet.html">ActiveRecord::FixtureSet</a></li>
+        
+          <li><a href="../../../ActiveRecord/ImmutableRelation.html">ActiveRecord::ImmutableRelation</a></li>
+        
+          <li><a href="../../../ActiveRecord/Inheritance.html">ActiveRecord::Inheritance</a></li>
+        
+          <li><a href="../../../ActiveRecord/Inheritance/ClassMethods.html">ActiveRecord::Inheritance::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Integration.html">ActiveRecord::Integration</a></li>
+        
+          <li><a href="../../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+        
+          <li><a href="../../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+        
+          <li><a href="../../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+        
+          <li><a href="../../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+        
+          <li><a href="../../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+        
+          <li><a href="../../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+        
+          <li><a href="../../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+        
+          <li><a href="../../../ActiveRecord/Migration/CheckPending.html">ActiveRecord::Migration::CheckPending</a></li>
+        
+          <li><a href="../../../ActiveRecord/Migration/CommandRecorder.html">ActiveRecord::Migration::CommandRecorder</a></li>
+        
+          <li><a href="../../../ActiveRecord/Migration/CommandRecorder/StraightReversions.html">ActiveRecord::Migration::CommandRecorder::StraightReversions</a></li>
+        
+          <li><a href="../../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+        
+          <li><a href="../../../ActiveRecord/ModelSchema.html">ActiveRecord::ModelSchema</a></li>
+        
+          <li><a href="../../../ActiveRecord/ModelSchema/ClassMethods.html">ActiveRecord::ModelSchema::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+        
+          <li><a href="../../../ActiveRecord/NestedAttributes.html">ActiveRecord::NestedAttributes</a></li>
+        
+          <li><a href="../../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+        
+          <li><a href="../../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+        
+          <li><a href="../../../ActiveRecord/Persistence/ClassMethods.html">ActiveRecord::Persistence::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+        
+          <li><a href="../../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+        
+          <li><a href="../../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/QueryMethods/WhereChain.html">ActiveRecord::QueryMethods::WhereChain</a></li>
+        
+          <li><a href="../../../ActiveRecord/Querying.html">ActiveRecord::Querying</a></li>
+        
+          <li><a href="../../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+        
+          <li><a href="../../../ActiveRecord/ReadonlyAttributes.html">ActiveRecord::ReadonlyAttributes</a></li>
+        
+          <li><a href="../../../ActiveRecord/ReadonlyAttributes/ClassMethods.html">ActiveRecord::ReadonlyAttributes::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+        
+          <li><a href="../../../ActiveRecord/RecordNotDestroyed.html">ActiveRecord::RecordNotDestroyed</a></li>
+        
+          <li><a href="../../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+        
+          <li><a href="../../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+        
+          <li><a href="../../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+        
+          <li><a href="../../../ActiveRecord/Reflection.html">ActiveRecord::Reflection</a></li>
+        
+          <li><a href="../../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+        
+          <li><a href="../../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+        
+          <li><a href="../../../ActiveRecord/Result.html">ActiveRecord::Result</a></li>
+        
+          <li><a href="../../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+        
+          <li><a href="../../../ActiveRecord/SQLCounter.html">ActiveRecord::SQLCounter</a></li>
+        
+          <li><a href="../../../ActiveRecord/Sanitization.html">ActiveRecord::Sanitization</a></li>
+        
+          <li><a href="../../../ActiveRecord/Sanitization/ClassMethods.html">ActiveRecord::Sanitization::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+        
+          <li><a href="../../../ActiveRecord/SchemaMigration.html">ActiveRecord::SchemaMigration</a></li>
+        
+          <li><a href="../../../ActiveRecord/Scoping.html">ActiveRecord::Scoping</a></li>
+        
+          <li><a href="../../../ActiveRecord/Scoping/ClassMethods.html">ActiveRecord::Scoping::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Scoping/Default.html">ActiveRecord::Scoping::Default</a></li>
+        
+          <li><a href="../../../ActiveRecord/Scoping/Default/ClassMethods.html">ActiveRecord::Scoping::Default::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Scoping/Named.html">ActiveRecord::Scoping::Named</a></li>
+        
+          <li><a href="../../../ActiveRecord/Scoping/Named/ClassMethods.html">ActiveRecord::Scoping::Named::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+        
+          <li><a href="../../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+        
+          <li><a href="../../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+        
+          <li><a href="../../../ActiveRecord/StatementCache.html">ActiveRecord::StatementCache</a></li>
+        
+          <li><a href="../../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+        
+          <li><a href="../../../ActiveRecord/Store.html">ActiveRecord::Store</a></li>
+        
+          <li><a href="../../../ActiveRecord/Store/ClassMethods.html">ActiveRecord::Store::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Tasks.html">ActiveRecord::Tasks</a></li>
+        
+          <li><a href="../../../ActiveRecord/Tasks/DatabaseAlreadyExists.html">ActiveRecord::Tasks::DatabaseAlreadyExists</a></li>
+        
+          <li><a href="../../../ActiveRecord/Tasks/DatabaseNotSupported.html">ActiveRecord::Tasks::DatabaseNotSupported</a></li>
+        
+          <li><a href="../../../ActiveRecord/Tasks/DatabaseTasks.html">ActiveRecord::Tasks::DatabaseTasks</a></li>
+        
+          <li><a href="../../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+        
+          <li><a href="../../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+        
+          <li><a href="../../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+        
+          <li><a href="../../../ActiveRecord/TransactionIsolationError.html">ActiveRecord::TransactionIsolationError</a></li>
+        
+          <li><a href="../../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+        
+          <li><a href="../../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/Translation.html">ActiveRecord::Translation</a></li>
+        
+          <li><a href="../../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+        
+          <li><a href="../../../ActiveRecord/UnknownPrimaryKey.html">ActiveRecord::UnknownPrimaryKey</a></li>
+        
+          <li><a href="../../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+        
+          <li><a href="../../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+        
+          <li><a href="../../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+        
+          <li><a href="../../../Mysql.html">Mysql</a></li>
+        
+          <li><a href="../../../Mysql/Result.html">Mysql::Result</a></li>
+        
+          <li><a href="../../../Mysql/Stmt.html">Mysql::Stmt</a></li>
+        
+          <li><a href="../../../Mysql/Time.html">Mysql::Time</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SchemaStatements</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add_column-method" class="method-detail ">
+          <a name="method-i-add_column"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_column</span><span
+              class="method-args">(table_name, column_name, type, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Adds a new column to the named table. See <a
+href="TableDefinition.html#method-i-column">TableDefinition#column</a> for
+details of the options you can use.</p>
+            
+
+            
+            <div class="method-source-code" id="add_column-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 378</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_column</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- add_column-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add_column-method -->
+
+      
+        <div id="change_column-method" class="method-detail ">
+          <a name="method-i-change_column"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">change_column</span><span
+              class="method-args">(table_name, column_name, type, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Changes the column of a table.</p>
+            
+
+            
+            <div class="method-source-code" id="change_column-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_column</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-identifier">quoted_table_name</span> = <span class="ruby-identifier">quote_table_name</span>(<span class="ruby-identifier">table_name</span>)
+  <span class="ruby-identifier">sql_type</span> = <span class="ruby-identifier">type_to_sql</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:precision</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:scale</span>])
+  <span class="ruby-identifier">sql_type</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;[]&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:array</span>]
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{quoted_table_name} ALTER COLUMN #{quote_column_name(column_name)} TYPE #{sql_type}&quot;</span>
+
+  <span class="ruby-identifier">change_column_default</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options_include_default?</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">change_column_null</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:null</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:null</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- change_column-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- change_column-method -->
+
+      
+        <div id="change_column_default-method" class="method-detail ">
+          <a name="method-i-change_column_default"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">change_column_default</span><span
+              class="method-args">(table_name, column_name, default)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Changes the default value of a table column.</p>
+            
+
+            
+            <div class="method-source-code" id="change_column_default-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 396</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_column_default</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">default</span>)
+  <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{quote_table_name(table_name)} ALTER COLUMN #{quote_column_name(column_name)} SET DEFAULT #{quote(default)}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- change_column_default-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- change_column_default-method -->
+
+      
+        <div id="change_column_null-method" class="method-detail ">
+          <a name="method-i-change_column_null"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">change_column_null</span><span
+              class="method-args">(table_name, column_name, null, default = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="change_column_null-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 401</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_column_null</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">null</span>, <span class="ruby-identifier">default</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">null</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;UPDATE #{quote_table_name(table_name)} SET #{quote_column_name(column_name)}=#{quote(default)} WHERE #{quote_column_name(column_name)} IS NULL&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;ALTER TABLE #{quote_table_name(table_name)} ALTER #{quote_column_name(column_name)} #{null ? 'DROP' : 'SET'} NOT NULL&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- change_column_null-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- change_column_null-method -->
+
+      
+        <div id="client_min_messages-method" class="method-detail ">
+          <a name="method-i-client_min_messages"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">client_min_messages</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current client message level.</p>
+            
+
+            
+            <div class="method-source-code" id="client_min_messages-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">client_min_messages</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">'SHOW client_min_messages'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- client_min_messages-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- client_min_messages-method -->
+
+      
+        <div id="client_min_messages-3D-method" class="method-detail ">
+          <a name="method-i-client_min_messages-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">client_min_messages=</span><span
+              class="method-args">(level)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Set the client message level.</p>
+            
+
+            
+            <div class="method-source-code" id="client_min_messages-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">client_min_messages=</span>(<span class="ruby-identifier">level</span>)
+  <span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;SET client_min_messages TO '#{level}'&quot;</span>, <span class="ruby-string">'SCHEMA'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- client_min_messages-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- client_min_messages-3D-method -->
+
+      
+        <div id="collation-method" class="method-detail ">
+          <a name="method-i-collation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">collation</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current database collation.</p>
+            
+
+            
+            <div class="method-source-code" id="collation-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">collation</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">            SELECT pg_database.datcollate FROM pg_database WHERE pg_database.datname LIKE '#{current_database}'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- collation-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- collation-method -->
+
+      
+        <div id="columns-method" class="method-detail ">
+          <a name="method-i-columns"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">columns</span><span
+              class="method-args">(table_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the list of all column definitions for a table.</p>
+            
+
+            
+            <div class="method-source-code" id="columns-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">columns</span>(<span class="ruby-identifier">table_name</span>)
+  <span class="ruby-comment"># Limit, precision, and scale are all handled by the superclass.</span>
+  <span class="ruby-identifier">column_definitions</span>(<span class="ruby-identifier">table_name</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">default</span>, <span class="ruby-identifier">notnull</span>, <span class="ruby-identifier">oid</span>, <span class="ruby-identifier">fmod</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">oid</span> = <span class="ruby-constant">OID</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_MAP</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">oid</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">fmod</span>.<span class="ruby-identifier">to_i</span>) {
+      <span class="ruby-constant">OID</span><span class="ruby-operator">::</span><span class="ruby-constant">Identity</span>.<span class="ruby-identifier">new</span>
+    }
+    <span class="ruby-constant">PostgreSQLColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">default</span>, <span class="ruby-identifier">oid</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">notnull</span> <span class="ruby-operator">==</span> <span class="ruby-string">'f'</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- columns-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- columns-method -->
+
+      
+        <div id="create_database-method" class="method-detail ">
+          <a name="method-i-create_database"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create_database</span><span
+              class="method-args">(name, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Create a new PostgreSQL database. Options include <tt>:owner</tt>,
+<tt>:template</tt>, <tt>:encoding</tt>, <tt>:collation</tt>,
+<tt>:ctype</tt>, <tt>:tablespace</tt>, and <tt>:connection_limit</tt> (note
+that MySQL uses <tt>:charset</tt> while PostgreSQL uses
+<tt>:encoding</tt>).</p>
+
+<p>Example:</p>
+
+<pre>create_database config[:database], config
+create_database 'foo_development', encoding: 'unicode'</pre>
+            
+
+            
+            <div class="method-source-code" id="create_database-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_database</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = { <span class="ruby-identifier">encoding</span><span class="ruby-operator">:</span> <span class="ruby-string">'utf8'</span> }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">symbolize_keys</span>)
+
+  <span class="ruby-identifier">option_string</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">sum</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">key</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:owner</span>
+      <span class="ruby-node">&quot; OWNER = \&quot;#{value}\&quot;&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:template</span>
+      <span class="ruby-node">&quot; TEMPLATE = \&quot;#{value}\&quot;&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:encoding</span>
+      <span class="ruby-node">&quot; ENCODING = '#{value}'&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:collation</span>
+      <span class="ruby-node">&quot; LC_COLLATE = '#{value}'&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:ctype</span>
+      <span class="ruby-node">&quot; LC_CTYPE = '#{value}'&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:tablespace</span>
+      <span class="ruby-node">&quot; TABLESPACE = \&quot;#{value}\&quot;&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:connection_limit</span>
+      <span class="ruby-node">&quot; CONNECTION LIMIT = #{value}&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;CREATE DATABASE #{quote_table_name(name)}#{option_string}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- create_database-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- create_database-method -->
+
+      
+        <div id="create_schema-method" class="method-detail ">
+          <a name="method-i-create_schema"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create_schema</span><span
+              class="method-args">(schema_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Creates a schema for the given schema name.</p>
+            
+
+            
+            <div class="method-source-code" id="create_schema-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_schema</span> <span class="ruby-identifier">schema_name</span>
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;CREATE SCHEMA #{schema_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- create_schema-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- create_schema-method -->
+
+      
+        <div id="ctype-method" class="method-detail ">
+          <a name="method-i-ctype"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ctype</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current database ctype.</p>
+            
+
+            
+            <div class="method-source-code" id="ctype-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ctype</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">            SELECT pg_database.datctype FROM pg_database WHERE pg_database.datname LIKE '#{current_database}'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ctype-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ctype-method -->
+
+      
+        <div id="current_database-method" class="method-detail ">
+          <a name="method-i-current_database"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">current_database</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current database name.</p>
+            
+
+            
+            <div class="method-source-code" id="current_database-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_database</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">'select current_database()'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- current_database-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- current_database-method -->
+
+      
+        <div id="current_schema-method" class="method-detail ">
+          <a name="method-i-current_schema"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">current_schema</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current schema name.</p>
+            
+
+            
+            <div class="method-source-code" id="current_schema-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_schema</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">'SELECT current_schema'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- current_schema-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- current_schema-method -->
+
+      
+        <div id="drop_schema-method" class="method-detail ">
+          <a name="method-i-drop_schema"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">drop_schema</span><span
+              class="method-args">(schema_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Drops the schema for the given schema name.</p>
+            
+
+            
+            <div class="method-source-code" id="drop_schema-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">drop_schema</span> <span class="ruby-identifier">schema_name</span>
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;DROP SCHEMA #{schema_name} CASCADE&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- drop_schema-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- drop_schema-method -->
+
+      
+        <div id="encoding-method" class="method-detail ">
+          <a name="method-i-encoding"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">encoding</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current database encoding format.</p>
+            
+
+            
+            <div class="method-source-code" id="encoding-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">            SELECT pg_encoding_to_char(pg_database.encoding) FROM pg_database            WHERE pg_database.datname LIKE '#{current_database}'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- encoding-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- encoding-method -->
+
+      
+        <div id="index_name_length-method" class="method-detail ">
+          <a name="method-i-index_name_length"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">index_name_length</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="index_name_length-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 429</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index_name_length</span>
+  <span class="ruby-value">63</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- index_name_length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- index_name_length-method -->
+
+      
+        <div id="indexes-method" class="method-detail ">
+          <a name="method-i-indexes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">indexes</span><span
+              class="method-args">(table_name, name = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns an array of indexes for the given table.</p>
+            
+
+            
+            <div class="method-source-code" id="indexes-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indexes</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+   <span class="ruby-identifier">result</span> = <span class="ruby-identifier">query</span>(<span class="ruby-string">             SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid             FROM pg_class t             INNER JOIN pg_index d ON t.oid = d.indrelid             INNER JOIN pg_class i ON d.indexrelid = i.oid             WHERE i.relkind = 'i'               AND d.indisprimary = 'f'               AND t.relname = '#{table_name}'               AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )            ORDER BY i.relname</span>, <span class="ruby-string">'SCHEMA'</span>)
+
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">index_name</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">unique</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'t'</span>
+    <span class="ruby-identifier">indkey</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+    <span class="ruby-identifier">inddef</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-identifier">oid</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">4</span>]
+
+    <span class="ruby-identifier">columns</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">query</span>(<span class="ruby-string">            SELECT a.attnum, a.attname            FROM pg_attribute a            WHERE a.attrelid = #{oid}            AND a.attnum IN (#{indkey.join(&quot;,&quot;)})</span>, <span class="ruby-string">&quot;SCHEMA&quot;</span>)]
+
+    <span class="ruby-identifier">column_names</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">values_at</span>(*<span class="ruby-identifier">indkey</span>).<span class="ruby-identifier">compact</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">column_names</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-comment"># add info on sort order for columns (only desc order is explicitly specified, asc is the default)</span>
+      <span class="ruby-identifier">desc_order_columns</span> = <span class="ruby-identifier">inddef</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/(\w+) DESC/</span>).<span class="ruby-identifier">flatten</span>
+      <span class="ruby-identifier">orders</span> = <span class="ruby-identifier">desc_order_columns</span>.<span class="ruby-identifier">any?</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">desc_order_columns</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">order_column</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">order_column</span>, <span class="ruby-value">:desc</span>]}] <span class="ruby-operator">:</span> {}
+      <span class="ruby-identifier">where</span> = <span class="ruby-identifier">inddef</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/WHERE (.+)$/</span>).<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">using</span> = <span class="ruby-identifier">inddef</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/USING (.+?) /</span>).<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_sym</span>
+
+      <span class="ruby-constant">IndexDefinition</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">index_name</span>, <span class="ruby-identifier">unique</span>, <span class="ruby-identifier">column_names</span>, [], <span class="ruby-identifier">orders</span>, <span class="ruby-identifier">where</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">using</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- indexes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- indexes-method -->
+
+      
+        <div id="primary_key-method" class="method-detail ">
+          <a name="method-i-primary_key"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">primary_key</span><span
+              class="method-args">(table)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns just a table’s primary key</p>
+            
+
+            
+            <div class="method-source-code" id="primary_key-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">primary_key</span>(<span class="ruby-identifier">table</span>)
+  <span class="ruby-identifier">row</span> = <span class="ruby-identifier">exec_query</span>(<span class="ruby-string">            SELECT attr.attname            FROM pg_attribute attr            INNER JOIN pg_constraint cons ON attr.attrelid = cons.conrelid AND attr.attnum = cons.conkey[1]            WHERE cons.contype = 'p'              AND cons.conrelid = '#{quote_table_name(table)}'::regclass</span>, <span class="ruby-string">'SCHEMA'</span>).<span class="ruby-identifier">rows</span>.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-identifier">row</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- primary_key-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- primary_key-method -->
+
+      
+        <div id="rename_column-method" class="method-detail ">
+          <a name="method-i-rename_column"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rename_column</span><span
+              class="method-args">(table_name, column_name, new_column_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Renames a column in a table.</p>
+            
+
+            
+            <div class="method-source-code" id="rename_column-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 410</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rename_column</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">new_column_name</span>)
+  <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{quote_table_name(table_name)} RENAME COLUMN #{quote_column_name(column_name)} TO #{quote_column_name(new_column_name)}&quot;</span>
+  <span class="ruby-identifier">rename_column_indexes</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">new_column_name</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rename_column-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rename_column-method -->
+
+      
+        <div id="rename_index-method" class="method-detail ">
+          <a name="method-i-rename_index"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rename_index</span><span
+              class="method-args">(table_name, old_name, new_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="rename_index-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 425</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rename_index</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">old_name</span>, <span class="ruby-identifier">new_name</span>)
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER INDEX #{quote_column_name(old_name)} RENAME TO #{quote_table_name(new_name)}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rename_index-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rename_index-method -->
+
+      
+        <div id="rename_table-method" class="method-detail ">
+          <a name="method-i-rename_table"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rename_table</span><span
+              class="method-args">(table_name, new_name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Renames a table. Also renames a table’s primary key sequence if the
+sequence name matches the Active Record default.</p>
+
+<p>Example:</p>
+
+<pre>rename_table('octopuses', 'octopi')</pre>
+            
+
+            
+            <div class="method-source-code" id="rename_table-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rename_table</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">new_name</span>)
+  <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{quote_table_name(table_name)} RENAME TO #{quote_table_name(new_name)}&quot;</span>
+  <span class="ruby-identifier">pk</span>, <span class="ruby-identifier">seq</span> = <span class="ruby-identifier">pk_and_sequence_for</span>(<span class="ruby-identifier">new_name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">seq</span> <span class="ruby-operator">==</span> <span class="ruby-node">&quot;#{table_name}_#{pk}_seq&quot;</span>
+    <span class="ruby-identifier">new_seq</span> = <span class="ruby-node">&quot;#{new_name}_#{pk}_seq&quot;</span>
+    <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{quote_table_name(seq)} RENAME TO #{quote_table_name(new_seq)}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">rename_table_indexes</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">new_name</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rename_table-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rename_table-method -->
+
+      
+        <div id="schema_exists-3F-method" class="method-detail ">
+          <a name="method-i-schema_exists-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">schema_exists?</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns true if schema exists.</p>
+            
+
+            
+            <div class="method-source-code" id="schema_exists-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">schema_exists?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">exec_query</span>(<span class="ruby-string">            SELECT COUNT(*)            FROM pg_namespace            WHERE nspname = '#{name}'</span>, <span class="ruby-string">'SCHEMA'</span>).<span class="ruby-identifier">rows</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- schema_exists-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- schema_exists-3F-method -->
+
+      
+        <div id="schema_names-method" class="method-detail ">
+          <a name="method-i-schema_names"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">schema_names</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns an array of schema names.</p>
+            
+
+            
+            <div class="method-source-code" id="schema_names-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">schema_names</span>
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">            SELECT nspname              FROM pg_namespace             WHERE nspname !~ '^pg_.*'               AND nspname NOT IN ('information_schema')             ORDER by nspname;</span>, <span class="ruby-string">'SCHEMA'</span>).<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- schema_names-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- schema_names-method -->
+
+      
+        <div id="schema_search_path-method" class="method-detail ">
+          <a name="method-i-schema_search_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">schema_search_path</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the active schema search path.</p>
+            
+
+            
+            <div class="method-source-code" id="schema_search_path-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">schema_search_path</span>
+  <span class="ruby-ivar">@schema_search_path</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">query</span>(<span class="ruby-string">'SHOW search_path'</span>, <span class="ruby-string">'SCHEMA'</span>)[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- schema_search_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- schema_search_path-method -->
+
+      
+        <div id="schema_search_path-3D-method" class="method-detail ">
+          <a name="method-i-schema_search_path-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">schema_search_path=</span><span
+              class="method-args">(schema_csv)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Sets the schema search path to a string of comma-separated schema names.
+Names beginning with $ have to be quoted (e.g. $user =&gt; ‘$user’). See:
+<a
+href="http://www.postgresql.org/docs/current/static/ddl-schemas.html">www.postgresql.org/docs/current/static/ddl-schemas.html</a></p>
+
+<p>This should be not be called manually but set in database.yml.</p>
+            
+
+            
+            <div class="method-source-code" id="schema_search_path-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">schema_search_path=</span>(<span class="ruby-identifier">schema_csv</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">schema_csv</span>
+    <span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;SET search_path TO #{schema_csv}&quot;</span>, <span class="ruby-string">'SCHEMA'</span>)
+    <span class="ruby-ivar">@schema_search_path</span> = <span class="ruby-identifier">schema_csv</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- schema_search_path-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- schema_search_path-3D-method -->
+
+      
+        <div id="serial_sequence-method" class="method-detail ">
+          <a name="method-i-serial_sequence"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">serial_sequence</span><span
+              class="method-args">(table, column)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="serial_sequence-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">serial_sequence</span>(<span class="ruby-identifier">table</span>, <span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">exec_query</span>(<span class="ruby-string">            SELECT pg_get_serial_sequence('#{table}', '#{column}')</span>, <span class="ruby-string">'SCHEMA'</span>)
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">rows</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- serial_sequence-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- serial_sequence-method -->
+
+      
+        <div id="table_exists-3F-method" class="method-detail ">
+          <a name="method-i-table_exists-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">table_exists?</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns true if table exists. If the schema is not specified as part of
+<tt>name</tt> then it will only find tables within the current schema
+search path (regardless of permissions to access tables in other schemas)</p>
+            
+
+            
+            <div class="method-source-code" id="table_exists-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">table_exists?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">schema</span>, <span class="ruby-identifier">table</span> = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">extract_schema_and_table</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">table</span>
+
+  <span class="ruby-identifier">binds</span> = [[<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">table</span>]]
+  <span class="ruby-identifier">binds</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">schema</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">schema</span>
+
+  <span class="ruby-identifier">exec_query</span>(<span class="ruby-string">              SELECT COUNT(*)              FROM pg_class c              LEFT JOIN pg_namespace n ON n.oid = c.relnamespace              WHERE c.relkind in ('v','r')              AND c.relname = '#{table.gsub(/(^&quot;|&quot;$)/,'')}'              AND n.nspname = #{schema ? &quot;'#{schema}'&quot; : 'ANY (current_schemas(false))'}</span>, <span class="ruby-string">'SCHEMA'</span>).<span class="ruby-identifier">rows</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- table_exists-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- table_exists-3F-method -->
+
+      
+        <div id="tables-method" class="method-detail ">
+          <a name="method-i-tables"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tables</span><span
+              class="method-args">(name = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the list of all tables in the schema search path or a specified
+schema.</p>
+            
+
+            
+            <div class="method-source-code" id="tables-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tables</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">query</span>(<span class="ruby-string">            SELECT tablename            FROM pg_tables            WHERE schemaname = ANY (current_schemas(false))</span>, <span class="ruby-string">'SCHEMA'</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span> <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>] }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tables-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tables-method -->
+
+      
+        <div id="type_to_sql-method" class="method-detail ">
+          <a name="method-i-type_to_sql"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">type_to_sql</span><span
+              class="method-args">(type, limit = nil, precision = nil, scale = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Maps logical Rails types to PostgreSQL-specific data types.</p>
+            
+
+            
+            <div class="method-source-code" id="type_to_sql-source">
+<pre>
+<span class="ruby-comment"># File lib/active_record/connection_adapters/postgresql/schema_statements.rb, line 434</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">type_to_sql</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">limit</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">precision</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">scale</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'binary'</span>
+    <span class="ruby-comment"># PostgreSQL doesn't support limits on binary (bytea) columns.</span>
+    <span class="ruby-comment"># The hard limit is 1Gb, because of a 32-bit size field, and TOAST.</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">limit</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0x3fffffff</span>; <span class="ruby-keyword">super</span>(<span class="ruby-identifier">type</span>)
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ActiveRecordError</span>, <span class="ruby-node">&quot;No binary type has byte size #{limit}.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'text'</span>
+    <span class="ruby-comment"># PostgreSQL doesn't support limits on text columns.</span>
+    <span class="ruby-comment"># The hard limit is 1Gb, according to section 8.3 in the manual.</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">limit</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0x3fffffff</span>; <span class="ruby-keyword">super</span>(<span class="ruby-identifier">type</span>)
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ActiveRecordError</span>, <span class="ruby-string">&quot;The limit on text can be at most 1GB - 1byte.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'integer'</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">'integer'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">limit</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">limit</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>, <span class="ruby-value">2</span>; <span class="ruby-string">'smallint'</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>, <span class="ruby-value">4</span>; <span class="ruby-string">'integer'</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">8</span>; <span class="ruby-string">'bigint'</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ActiveRecordError</span>, <span class="ruby-node">&quot;No integer type has byte size #{limit}. Use a numeric with precision 0 instead.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'datetime'</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">precision</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">precision</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>; <span class="ruby-node">&quot;timestamp(#{precision})&quot;</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ActiveRecordError</span>, <span class="ruby-node">&quot;No timestamp type has precision of #{precision}. The allowed range of precision is from 0 to 6&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- type_to_sql-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- type_to_sql-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

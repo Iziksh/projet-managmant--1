@@ -1,0 +1,18 @@
+Tue, 19 Nov 2013 19:59:37 +0200
+lib/mime/types.rb	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/text	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/application	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/message	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/multipart	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/audio	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/video	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/model	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime/types/image	Tue, 19 Nov 2013 19:54:01 +0200
+lib/mime-types.rb	Tue, 19 Nov 2013 19:54:00 +0200
+Contributing.rdoc	Tue, 19 Nov 2013 19:54:00 +0200
+History.rdoc	Tue, 19 Nov 2013 19:54:00 +0200
+Licence.rdoc	Tue, 19 Nov 2013 19:54:00 +0200
+Manifest.txt	Tue, 19 Nov 2013 19:54:00 +0200
+README.rdoc	Tue, 19 Nov 2013 19:54:00 +0200
+docs/COPYING.txt	Tue, 19 Nov 2013 19:54:00 +0200
+docs/artistic.txt	Tue, 19 Nov 2013 19:54:00 +0200

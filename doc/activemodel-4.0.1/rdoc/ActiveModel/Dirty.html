@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: ActiveModel::Dirty</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/active_model/dirty_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/active_model/dirty.rb">lib/active_model/dirty.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-changed">#changed</a></li>
+          
+          <li><a href="#method-i-changed-3F">#changed?</a></li>
+          
+          <li><a href="#method-i-changed_attributes">#changed_attributes</a></li>
+          
+          <li><a href="#method-i-changes">#changes</a></li>
+          
+          <li><a href="#method-i-previous_changes">#previous_changes</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../ActiveModel.html">ActiveModel</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+        
+          <li><a href="../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+        
+          <li><a href="../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+        
+          <li><a href="../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+        
+          <li><a href="../ActiveModel/ForbiddenAttributesError.html">ActiveModel::ForbiddenAttributesError</a></li>
+        
+          <li><a href="../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+        
+          <li><a href="../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+        
+          <li><a href="../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+        
+          <li><a href="../ActiveModel/Model.html">ActiveModel::Model</a></li>
+        
+          <li><a href="../ActiveModel/Name.html">ActiveModel::Name</a></li>
+        
+          <li><a href="../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword.html">ActiveModel::SecurePassword</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods.html">ActiveModel::SecurePassword::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/SecurePassword/ClassMethods/InstanceMethodsOnActivation.html">ActiveModel::SecurePassword::ClassMethods::InstanceMethodsOnActivation</a></li>
+        
+          <li><a href="../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+        
+          <li><a href="../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+        
+          <li><a href="../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+        
+          <li><a href="../ActiveModel/StrictValidationFailed.html">ActiveModel::StrictValidationFailed</a></li>
+        
+          <li><a href="../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+        
+          <li><a href="../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+        
+          <li><a href="../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+        
+          <li><a href="../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">ActiveModel::Dirty</h1>
+
+    <div id="description" class="description">
+      
+<h2>Active Model Dirty</h2>
+
+<p>Provides a way to track changes in your object in the same way as Active
+Record does.</p>
+
+<p>The requirements for implementing <a
+href="Dirty.html">ActiveModel::Dirty</a> are:</p>
+<ul><li>
+<p><tt>include ActiveModel::Dirty</tt> in your object.</p>
+</li><li>
+<p>Call <tt>define_attribute_methods</tt> passing each method you want to
+track.</p>
+</li><li>
+<p>Call <tt>attr_name_will_change!</tt> before each change to the tracked
+attribute.</p>
+</li></ul>
+
+<p>If you wish to also track previous changes on save or update, you need to
+add:</p>
+
+<pre>@previously_changed = changes</pre>
+
+<p>inside of your save or update method.</p>
+
+<p>A minimal implementation could be:</p>
+
+<pre>class Person
+  include ActiveModel::Dirty
+
+  define_attribute_methods :name
+
+  def name
+    @name
+  end
+
+  def name=(val)
+    name_will_change! unless val == @name
+    @name = val
+  end
+
+  def save
+    @previously_changed = changes
+    @changed_attributes.clear
+  end
+end</pre>
+
+<p>A newly instantiated object is unchanged:</p>
+
+<pre>person = Person.find_by(name: 'Uncle Bob')
+person.changed?       # =&gt; false</pre>
+
+<p>Change the name:</p>
+
+<pre>person.name = 'Bob'
+person.changed?       # =&gt; true
+person.name_changed?  # =&gt; true
+person.name_was       # =&gt; &quot;Uncle Bob&quot;
+person.name_change    # =&gt; [&quot;Uncle Bob&quot;, &quot;Bob&quot;]
+person.name = 'Bill'
+person.name_change    # =&gt; [&quot;Uncle Bob&quot;, &quot;Bill&quot;]</pre>
+
+<p>Save the changes:</p>
+
+<pre>person.save
+person.changed?       # =&gt; false
+person.name_changed?  # =&gt; false</pre>
+
+<p>Assigning the same value leaves the attribute unchanged:</p>
+
+<pre>person.name = 'Bill'
+person.name_changed?  # =&gt; false
+person.name_change    # =&gt; nil</pre>
+
+<p>Which attributes have changed?</p>
+
+<pre>person.name = 'Bob'
+person.changed        # =&gt; [&quot;name&quot;]
+person.changes        # =&gt; {&quot;name&quot; =&gt; [&quot;Bill&quot;, &quot;Bob&quot;]}</pre>
+
+<p>If an attribute is modified in-place then make use of
+<tt>[attribute_name]_will_change!</tt> to mark that the attribute is
+changing. Otherwise <a href="../ActiveModel.html">ActiveModel</a> can’t
+track changes to in-place attributes.</p>
+
+<pre>person.name_will_change!
+person.name_change    # =&gt; [&quot;Bill&quot;, &quot;Bill&quot;]
+person.name &lt;&lt; 'y'
+person.name_change    # =&gt; [&quot;Bill&quot;, &quot;Billy&quot;]</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="changed-method" class="method-detail ">
+          <a name="method-i-changed"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">changed</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns an array with the name of the attributes with unsaved changes.</p>
+
+<pre>person.changed # =&gt; []
+person.name = 'bob'
+person.changed # =&gt; [&quot;name&quot;]</pre>
+            
+
+            
+            <div class="method-source-code" id="changed-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/dirty.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">changed</span>
+  <span class="ruby-identifier">changed_attributes</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- changed-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- changed-method -->
+
+      
+        <div id="changed-3F-method" class="method-detail ">
+          <a name="method-i-changed-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">changed?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns <tt>true</tt> if any attribute have unsaved changes, <tt>false</tt>
+otherwise.</p>
+
+<pre>person.changed? # =&gt; false
+person.name = 'bob'
+person.changed? # =&gt; true</pre>
+            
+
+            
+            <div class="method-source-code" id="changed-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/dirty.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">changed?</span>
+  <span class="ruby-identifier">changed_attributes</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- changed-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- changed-3F-method -->
+
+      
+        <div id="changed_attributes-method" class="method-detail ">
+          <a name="method-i-changed_attributes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">changed_attributes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a hash of the attributes with unsaved changes indicating their
+original values like <tt>attr =&gt; original value</tt>.</p>
+
+<pre>person.name # =&gt; &quot;bob&quot;
+person.name = 'robert'
+person.changed_attributes # =&gt; {&quot;name&quot; =&gt; &quot;bob&quot;}</pre>
+            
+
+            
+            <div class="method-source-code" id="changed_attributes-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/dirty.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">changed_attributes</span>
+  <span class="ruby-ivar">@changed_attributes</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- changed_attributes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- changed_attributes-method -->
+
+      
+        <div id="changes-method" class="method-detail ">
+          <a name="method-i-changes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">changes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a hash of changed attributes indicating their original and new
+values like <tt>attr =&gt; [original value, new value]</tt>.</p>
+
+<pre>person.changes # =&gt; {}
+person.name = 'bob'
+person.changes # =&gt; { &quot;name&quot; =&gt; [&quot;bill&quot;, &quot;bob&quot;] }</pre>
+            
+
+            
+            <div class="method-source-code" id="changes-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/dirty.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">changes</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">HashWithIndifferentAccess</span>[<span class="ruby-identifier">changed</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">attribute_change</span>(<span class="ruby-identifier">attr</span>)] }]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- changes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- changes-method -->
+
+      
+        <div id="previous_changes-method" class="method-detail ">
+          <a name="method-i-previous_changes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">previous_changes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a hash of attributes that were changed before the model was saved.</p>
+
+<pre>person.name # =&gt; &quot;bob&quot;
+person.name = 'robert'
+person.save
+person.previous_changes # =&gt; {&quot;name&quot; =&gt; [&quot;bob&quot;, &quot;robert&quot;]}</pre>
+            
+
+            
+            <div class="method-source-code" id="previous_changes-source">
+<pre>
+<span class="ruby-comment"># File lib/active_model/dirty.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">previous_changes</span>
+  <span class="ruby-ivar">@previously_changed</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- previous_changes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- previous_changes-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
